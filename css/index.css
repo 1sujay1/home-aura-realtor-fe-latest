@@ -1,0 +1,98 @@
+
+
+/* Custom CSS for animations and smooth effects */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+:root { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+/* Sticky Header */
+.header-sticky { transition: background-color 0.3s, box-shadow 0.3s; }
+.header-scrolled { background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+
+/* Hero Banner Animation */
+.animate-hero-text {
+    animation: fadeInTranslate 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+@keyframes fadeInTranslate {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll Reveal Animation (Default hidden state) */
+.scroll-reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Parallax Effect for About Image */
+.parallax-bg {
+    background-image: url('image/about.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
+/* Hover Effect for Service Cards */
+.service-card, .project-carousel-card { 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.service-card:hover, .project-carousel-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); 
+}
+
+/* Custom Carousel Styling for Services and Projects (4 cards wide on desktop) */
+/* IMPORTANT: Overflow changed to hidden, and scrollbar hidden for auto-scroll */
+.carousel-container { 
+    overflow-x: hidden; 
+    scroll-snap-type: none; /* Disable manual snapping for auto-scroll */
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for WebKit, IE, and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+/* Adjusted carousel item width to ensure 4 fit perfectly with gap, across all main carousels */
+.carousel-item { flex: 0 0 90%; }
+@media (min-width: 640px) { .carousel-item { flex: 0 0 50%; } }
+@media (min-width: 1024px) { 
+    /* This calculation (25% minus gap) is approximated by letting flexbox handle it, 
+       but enforcing 25% for 4 columns on large screens. */
+    .carousel-item { flex: 0 0 calc(25% - 1.5rem); } /* 1.5rem gap = 8px * 3 = 24px */
+    /* Tailwind gap-8 is 2rem (32px), so four items need 3 gaps total. Total width is 100%. */
+    .carousel-item { flex: 0 0 calc(25% - 24px); } 
+    /* Let's simplify and rely on flex-shrink-0 and gap for the effect, 
+       and set a responsive max-width/flex-basis */
+    .carousel-item { flex: 0 0 calc(25% - 24px); max-width: calc(25% - 24px); } /* Approximation for 4 items */
+}
+/* Re-enforcing the simple way that works better with Tailwind's flex/gap logic */
+@media (min-width: 1024px) { .carousel-item { flex: 0 0 calc(25% - 24px); max-width: calc(25% - 24px); } }
+
+/* Logo Carousel Styling (More dense, 5-6 logos on desktop) */
+/* IMPORTANT: Overflow changed to hidden, and scrollbar hidden for auto-scroll */
+.logo-carousel-container { 
+    overflow-x: hidden; 
+    scroll-snap-type: none; /* Disable manual snapping for auto-scroll */
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for WebKit, IE, and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.logo-carousel-container::-webkit-scrollbar {
+    display: none;
+}
+/* .logo-carousel-item { flex: 0 0 33.3333%; }
+@media (min-width: 640px) { .logo-carousel-item { flex: 0 0 20%; } }
+@media (min-width: 1024px) { .logo-carousel-item { flex: 0 0 16.6666%; } } */
+
+
+/* Contact Popup Transition */
+.popup-modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+.popup-modal.hidden { opacity: 0; visibility: hidden; }
+.popup-modal.show { opacity: 1; visibility: visible; }
+.popup-content { transform: scale(0.9); transition: transform 0.3s ease; }
+.popup-modal.show .popup-content { transform: scale(1); }

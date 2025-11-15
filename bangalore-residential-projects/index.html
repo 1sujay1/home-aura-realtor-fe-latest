@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Realty - Projects | Exclusive Real Estate Listings</title>
+    <meta name="description" content="Explore Elite Realty's portfolio of premium real estate projects and investment opportunities.">
+
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+        /* Sticky Header */
+        .header-sticky { transition: background-color 0.3s, box-shadow 0.3s; }
+        .header-scrolled { background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        
+        /* Hero Banner Animation */
+        .animate-hero-text { animation: fadeInTranslate 1s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInTranslate { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Enhanced Project Card Animation */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: calc(var(--delay, 0) * 0.1s);
+            will-change: transform, box-shadow, opacity;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        } */
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-card:hover .project-image::after {
+            opacity: 1;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            position: relative;
+            padding: 1.5rem;
+            z-index: 2;
+            background: white;
+            transition: all 0.5s ease;
+        }
+
+        .project-card:hover .project-content {
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(10, 102, 194, 0.1);
+            color: #0a66c2;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-tag {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced Scroll Reveal Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, opacity;
+        }
+        
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Staggered animation for grid items */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Enhanced Project Modal Transition */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(30px) scale(0.95);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .modal-overlay.show .modal-content {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        /* Enhanced Contact Modal Transition */
+        .contact-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .contact-modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .contact-content {
+            background: white;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.95);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+        
+        .contact-modal-overlay.show .contact-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        .close-contact-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .close-contact-modal:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header id="header" class="header-sticky fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Responsive Logo -->
+            <a href="www.homeaurarealtor.com" style="color:#B49B11" class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">HOME <span   class="text-blue-500">AURA</span></a>
+            
+            <!-- Navigation Menu (Desktop) -->
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="/" class="text-white hover:text-blue-400 transition duration-300">Home</a>
+                <a href="/bangalore-residential-projects" class="text-white hover:text-blue-400 transition duration-300">Projects</a>
+                <a href="/contact-us" class="text-white hover:text-blue-400 transition duration-300">Contact</a>
+                
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="text-white md:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="md:hidden bg-gray-900 bg-opacity-95 text-center transition-all duration-300 max-h-0 overflow-hidden">
+            <a href="/" class="block py-3 text-white hover:bg-gray-700">Home</a>
+            <a href="/bangalore-residential-projects" class="block py-3 text-white hover:bg-gray-700">Projects</a>
+            <a href="/contact-us" class="block py-3 text-white hover:bg-gray-700">Contact</a>
+           
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner (Identical structure to Home Page) -->
+        <section id="hero" class="relative h-[720px] overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('image/projectbanner.jpg');">
+                <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
+            </div>
+            <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="animate-hero-text text-5xl md:text-7xl font-extrabold text-white mb-4" style="animation-delay: 0.1s;">
+                    Explore Our Exclusive Projects
+                </h1>
+                <p class="animate-hero-text text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl" style="animation-delay: 0.3s;">
+                    Discover premium real estate listings and investment opportunities curated just for you.
+                </p>
+                <a  style="background-color: #B49B11;"  href="#project-grid" class="animate-hero-text bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-xl transition duration-300 transform hover:scale-105" style="animation-delay: 0.5s;">
+                    View All Listings
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Card Grid -->
+        <section id="project-grid" class="py-16 md:py-24 bg-gray-50">
+            <!-- UPDATED: max-w-7xl removed. Width set to 80% and centered. -->
+            <div class="w-11/12 md:w-4/5 mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-12 text-gray-900 scroll-reveal"></h2>
+                
+                <!-- UPDATED: Grid layout ensures 4 columns on large screens with padding (gap-8) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- REPEAT CARDS TO CREATE 4 ROWS (16 TOTAL) -->
+                    
+                    <!-- Row 1 -->
+                    <!-- Project Card 1 -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.1s;" data-project-id="1" data-name="The Skyline Residences" data-location="Downtown, City" data-price="Starts at $500k" data-details="Ultra-modern apartments with panoramic city views. Amenities include a rooftop pool, gym, and co-working space. Expected completion: Q3 2025.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/urbanrise.jpg" alt="The Skyline Residences" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">URBANRISE</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Paradise On Earth</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">4BHK, 4.5BHK, 5BHK Villas</p>
+                            <p class="text-gray-500 text-sm mb-4">Kanakapura Road, bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹3.17 Cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/urbanrise-paradise-on-earth-luxury-villa" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.2s;" data-project-id="2" data-name="Green Valley Villas" data-location="Suburban Enclave" data-price="Starts at $1.2M" data-details="Spacious luxury villas surrounded by natural parks. Each unit features a private garden and smart home technology. Expected completion: Q1 2026.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/godrejlakeside.jpg" alt="Green Valley Villas" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">GODREJ</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Lakeside Orchard</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK, 3.5BHK, 4BHK Flats</p>
+                            <p class="text-gray-500 text-sm mb-4">Sarjapur Road, bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.25 Cr Onwards</p>
+                             <a  style="background-color: #B49B11;"  href="/godrej-lakeside-orchard" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 3 -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.3s;" data-project-id="3" data-name="The Commercial Hub" data-location="Business District" data-price="Price on Request" data-details="Premium office spaces and retail outlets in the heart of the business district. High foot traffic and excellent connectivity. Available for fit-out immediately.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/sunworthcity.jpg" alt="The Commercial Hub" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">PROVIDENT</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Sunworth City</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHK,3BHk Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">RR Nagar, Mysore Road, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹62 L Onwards</p>
+                           <a   style="background-color: #B49B11;"  href="/provident-sunworthcity-apartment" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.4s;" data-project-id="4" data-name="Bayfront Penthouses" data-location="Coastal Road" data-price="POA" data-details="Exclusive, limited-edition penthouses with breathtaking ocean views. Private elevator access and bespoke interior design options. Construction starting soon.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/simplicity.jpg" alt="Bayfront Penthouses" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">SATTVA</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Simplicity</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">1BHK,2BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">BHEL Layout, RR Nagar, Mysore Road</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹42 L Onwards</p>
+                           <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <!-- Project Card 5 (Copy of 1) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.5s;" data-project-id="5" data-name="Azure Towers" data-location="North City" data-price="Starts at $650k" data-details="High-end apartment complex focusing on sustainable living and energy efficiency. Great investment potential.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/tatacarnatica.jpg" alt="Azure Towers" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">TATA</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Carnatica</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Shettigere, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹1.80 cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 6 (Copy of 2) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.6s;" data-project-id="6" data-name="Riverbend Retreat" data-location="Countryside" data-price="Starts at $900k" data-details="Luxury homes with direct river access and expansive private grounds. Perfect for a secluded family life.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/codenamebliss.jpg" alt="Riverbend Retreat" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">PURAVANKARA - New Launch</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Codename BLISS </h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK, 3.5BHK, 4BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Hebbagodi, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.50 cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 7 (Copy of 3) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.7s;" data-project-id="7" data-name="Tech Park Office Suites" data-location="Tech Hub" data-price="POR" data-details="Flexible, modern office suites designed for startups and technology companies. High-speed connectivity guaranteed.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/birlaevara.jpg" alt="Tech Park Office Suites" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">BIRLA</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Evara</h3>
+                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK, 4BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Sarjapur Road, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹71 L Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 8 (Copy of 4) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.8s;" data-project-id="8" data-name="Central Lofts" data-location="Midtown" data-price="POA" data-details="Stylish, industrial-design lofts located in the central entertainment district. High rental yield potential.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/atmosphere.jpg" alt="Central Lofts" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">PURAVANKARA</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Atmosphere</h3>
+                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Thanisandra, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.85 Cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <!-- Project Card 9 (Copy of 1) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.9s;" data-project-id="9" data-name="Emerald Gardens" data-location="West End" data-price="Starts at $720k" data-details="Luxury apartments integrated with parklands and exclusive club facilities. Ideal for families.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/Deansgate.jpg" alt="Emerald Gardens" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">PROVIDENT</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Deansgate</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK Dublex Villa</p>
+                            <p class="text-gray-500 text-sm mb-4">IVC Road, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.9 Cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 10 (Copy of 2) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.0s;" data-project-id="10" data-name="Oasis Penthouses" data-location="The Island" data-price="Starts at $2.5M" data-details="Ultra-luxury two-level penthouses with private rooftop terraces and infinity pools overlooking the ocean.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/allureavani.jpg" alt="Oasis Penthouses" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">ALLURE</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Avani Villa</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">4BHK Villa</p>
+                            <p class="text-gray-500 text-sm mb-4">Kammasandra, Bengaluru</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹4 Cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 11 (Copy of 3) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.1s;" data-project-id="11" data-name="Metro Retail Center" data-location="Transit Hub" data-price="Price on Request" data-details="Prime retail spaces adjacent to the main metro station. High investment returns expected due to traffic.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/assetztrees.jpg" alt="Metro Retail Center" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">Assetz</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Trees & Tandem</h3>
+                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK Luxury Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Off Sarjapur Road, Bengaluru</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.02 Cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 12 (Copy of 4) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.2s;" data-project-id="12" data-name="Vista Homes" data-location="Hillside" data-price="POA" data-details="Bespoke luxury homes situated on a hillside with stunning natural views. Private, gated community.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/Melodiesoflife.jpg" alt="Vista Homes" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">Assetz</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Melodies of Life</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">Luxury Villa Plots</p>
+                            <p class="text-gray-500 text-sm mb-4">Off Hosa Road, Bengaluru</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.83 Cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Row dublicate -->
+                    <!-- Project Card 9 (Copy of 1) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.9s;" data-project-id="9" data-name="Emerald Gardens" data-location="West End" data-price="Starts at $720k" data-details="Luxury apartments integrated with parklands and exclusive club facilities. Ideal for families.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/aaria.webp" alt="Emerald Gardens" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">ABHEE</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Aaria</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHK,3 BHK,4.5 BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Gunjur Lake, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹1.42 Cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 10 (Copy of 2) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.0s;" data-project-id="10" data-name="Oasis Penthouses" data-location="The Island" data-price="Starts at $2.5M" data-details="Ultra-luxury two-level penthouses with private rooftop terraces and infinity pools overlooking the ocean.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/celestialcity.jpg" alt="Oasis Penthouses" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">ABHEE</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Serenity Springs</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHK,3BHk Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Bommasandra, Bengaluru</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹78 L Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 11 (Copy of 3) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.1s;" data-project-id="11" data-name="Metro Retail Center" data-location="Transit Hub" data-price="Price on Request" data-details="Prime retail spaces adjacent to the main metro station. High investment returns expected due to traffic.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/tvsproject.jpg" alt="Metro Retail Center" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">TVS</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Emerald Auralis</h3>
+                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHk,3BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Thanisandra Main Road, Bengaluru</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹1.14 Cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 12 (Copy of 4) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.2s;" data-project-id="12" data-name="Vista Homes" data-location="Hillside" data-price="POA" data-details="Bespoke luxury homes situated on a hillside with stunning natural views. Private, gated community.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/ProvidentBotanico.jpg" alt="Vista Homes" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">PROVIDENT</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Botanico</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">Luxury Villa Plots</p>
+                            <p class="text-gray-500 text-sm mb-4">Soukya Road, Whitefield, Bengaluru</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹94 L Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <!-- Project Card 13 (Copy of 1) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.3s;" data-project-id="13" data-name="The Nexus Apartments" data-location="University Area" data-price="Starts at $350k" data-details="Affordable, compact apartments designed for students and young professionals. High rental occupancy rates.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/sattvavasanta.jpg" alt="The Nexus Apartments" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">SATTVA</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Vasanta Sky</h3>
+                               <p  style="color:coral" class="text-gray-500 text-sm mb-4">1,2,3,4 BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">Bellary Road, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹78 L Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 14 (Copy of 2) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.4s;" data-project-id="14" data-name="Coastal Cottages" data-location="Beachfront" data-price="Starts at $1.5M" data-details="Charming, modern cottages steps away from the sand. Excellent for vacation rentals and seasonal income.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/parkcubix.jpg" alt="Coastal Cottages" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">SATTVA</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Park Cubix</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">1,2,3 BHK Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">At Devanahalli, Bengaluru</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹48 L Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 15 (Copy of 3) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.5s;" data-project-id="15" data-name="Logistics Hub" data-location="Industrial Zone" data-price="Price on Request" data-details="Large-scale warehousing and distribution facilities. Strategically located near major transport links.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/lavita.jpg" alt="Logistics Hub" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">SATTVA</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">La Vita</h3>
+                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">4BHK Villa</p>
+                            <p class="text-gray-500 text-sm mb-4">Off Hennur Main Road, Bengaluru</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹5.26 cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 16 (Copy of 4) -->
+                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.6s;" data-project-id="16" data-name="Apex Residences" data-location="Mountain View" data-price="POA" data-details="Exclusive high-rise with unparalleled views and state-of-the-art security features. Available only to qualified investors.">
+                        <div class="relative overflow-hidden h-56 rounded-t-xl">
+                            <img src="/image/celestialcity.jpg" alt="Apex Residences" class="project-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
+                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">ABHEE</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Celestial City</h3>
+                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHK, 3BHk Apartments</p>
+                            <p class="text-gray-500 text-sm mb-4">At Sarjapur Road, Bangalore</p>
+                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹1.52 cr Onwards</p>
+                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+  View Details</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Information Modal (Popup) - Z-50 -->
+    <div id="project-modal" class="modal-overlay hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex items-center justify-center p-4">
+        <div class="modal-content bg-white p-8 rounded-3xl shadow-2xl max-w-2xl w-full relative">
+            <button id="close-project-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 id="modal-project-name" class="text-3xl font-bold mb-4 text-blue-600"></h3>
+            <div class="space-y-4">
+                <p class="text-gray-600"><strong class="font-semibold text-gray-800">Location:</strong> <span id="modal-project-location"></span></p>
+                <p class="text-gray-600"><strong class="font-semibold text-gray-800">Price:</strong> <span id="modal-project-price"></span></p>
+                <p class="text-gray-700 leading-relaxed"><strong class="font-semibold text-gray-800">Details:</strong> <span id="modal-project-details"></span></p>
+            </div>
+            
+            <!-- UPDATED: CTA button to open the Contact Form Modal -->
+            <button id="inquire-cta" class="mt-6 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 transform hover:scale-[1.02]">
+                Inquire About This Project
+            </button>
+        </div>
+    </div>
+
+    <!-- Contact Popup/Modal - Z-[100] (New Element) -->
+    <div id="contact-modal" class="contact-modal-overlay hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4">
+        <div class="contact-content bg-white p-8 rounded-3xl shadow-2xl max-w-lg w-full relative">
+            <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="text-3xl font-bold mb-4 text-blue-600">Request Project Information</h3>
+            <p class="mb-6 text-gray-600">Tell us how to reach you regarding the specific project you are interested in.</p>
+
+            <form id="lead-form" class="space-y-4">
+                <input type="text" id="lead-name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <input type="email" id="lead-email" placeholder="Email Address" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <input type="tel" id="lead-phone" placeholder="Phone Number (Optional)" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <textarea id="lead-message" placeholder="Optional: Any specific questions about this project?" rows="3" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200"></textarea>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition duration-300 transform hover:shadow-lg">
+                    Send Inquiry
+                </button>
+                <div id="form-message" class="text-center mt-3 hidden text-sm"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer (Identical structure to Home Page) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a  style="color:#B49B11" href="#" class="text-3xl font-bold text-white mb-6 block">HOME<span  style="color:#096088" class="text-blue-500"> AURA</span></a>
+            <div class="flex justify-center space-x-6 mb-8 text-gray-400">
+                <p class="hover:text-blue-400 transition duration-300">Email: marketing@homeaurarealtor.com</p>
+                <p class="hover:text-blue-400 transition duration-300">Phone: +91 98807 79843</p>
+                <p class="hover:text-blue-400 transition duration-300">Location: Bangalore</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-blue-500 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.422-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-blue-400 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.791-1.574 2.153-2.723-.951.554-2.005.959-3.127 1.184-.896-.957-2.173-1.556-3.593-1.556-3.592 0-6.492 2.901-6.492 6.492 0 .51.058 1.006.174 1.485-5.404-.273-10.223-2.85-13.43-6.795-.56.963-.884 2.083-.884 3.267 0 2.247 1.146 4.254 2.887 5.435-.98-.03-1.896-.3-2.693-.742v.081c0 3.167 2.26 5.8 5.234 6.394-.552.15-.909.231-1.304.231-.318 0-.626-.031-.922-.092.837 2.607 3.255 4.475 6.134 4.527-2.243 1.758-5.068 2.809-8.156 2.809-.533 0-1.054-.031-1.566-.091 2.905 1.862 6.345 2.951 10.038 2.951 12.046 0 18.66-9.993 18.66-18.66 0-.285-.008-.567-.02-.848.86-.62 1.603-1.393 2.193-2.257z"/></svg>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm mt-4">
+                &copy; <span id="current-year-project"></span>  Home Aura Realtor Channel Partners in Bangalore. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year-project').textContent = new Date().getFullYear();
+
+            // --- Header and Mobile Menu Logic ---
+            const header = document.getElementById('header');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled', 'bg-gray-900', 'bg-opacity-95');
+                } else {
+                    header.classList.remove('header-scrolled', 'bg-gray-900', 'bg-opacity-95');
+                }
+            });
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('max-h-0');
+                mobileMenu.classList.toggle('max-h-96');
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('opacity-100');
+            });
+
+            // --- Scroll Reveal Animation ---
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal, .project-card');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            scrollRevealElements.forEach(el => observer.observe(el));
+
+
+            // --- Project Modal Logic (Level 1: Project Details) ---
+            const projectModal = document.getElementById('project-modal');
+            const closeProjectModalBtn = document.getElementById('close-project-modal');
+            const viewProjectBtns = document.querySelectorAll('.view-project-btn');
+            
+            // Function to close the Project Modal
+            const closeProjectModal = () => {
+                projectModal.classList.remove('show');
+                projectModal.classList.add('hidden');
+            };
+
+            viewProjectBtns.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const card = e.target.closest('.project-card');
+                    
+                    document.getElementById('modal-project-name').textContent = card.dataset.name;
+                    document.getElementById('modal-project-location').textContent = card.dataset.location;
+                    document.getElementById('modal-project-price').textContent = card.dataset.price;
+                    document.getElementById('modal-project-details').textContent = card.dataset.details;
+                    
+                    projectModal.classList.add('show');
+                    projectModal.classList.remove('hidden');
+                });
+            });
+
+            if (closeProjectModalBtn) closeProjectModalBtn.addEventListener('click', closeProjectModal);
+            if (projectModal) {
+                projectModal.addEventListener('click', (e) => {
+                    if (e.target === projectModal) closeProjectModal();
+                });
+            }
+
+
+            // --- Contact Modal Logic (Level 2: Lead Form) ---
+            const contactModal = document.getElementById('contact-modal');
+            const inquireCta = document.getElementById('inquire-cta');
+            const closeContactModalBtn = document.getElementById('close-contact-modal');
+            const leadForm = document.getElementById('lead-form');
+            const formMessage = document.getElementById('form-message');
+
+            // Function to open the Contact Modal
+            const openContactModal = () => {
+                closeProjectModal(); // Close the project details modal first
+                if (contactModal) {
+                    contactModal.classList.add('show');
+                    contactModal.classList.remove('hidden');
+                }
+            };
+
+            // Function to close the Contact Modal
+            const closeContactModal = () => {
+                if (contactModal) {
+                    contactModal.classList.remove('show');
+                    contactModal.classList.add('hidden');
+                    formMessage.classList.add('hidden'); // Clear previous message
+                    leadForm.reset();
+                    // Optional: Re-open the project modal if needed, but usually we go back to the list
+                }
+            };
+
+            // Listener to open Contact Modal from inside Project Modal
+            if (inquireCta) inquireCta.addEventListener('click', openContactModal);
+
+            // Listener to close Contact Modal
+            if (closeContactModalBtn) closeContactModalBtn.addEventListener('click', closeContactModal);
+            if (contactModal) {
+                contactModal.addEventListener('click', (e) => {
+                    if (e.target === contactModal) closeContactModal();
+                });
+            }
+
+            // Lead Form Submission Simulation
+            if (leadForm) {
+                leadForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Simple validation check
+                    const name = document.getElementById('lead-name').value.trim();
+                    const email = document.getElementById('lead-email').value.trim();
+                    
+                    if (!name || !email) {
+                        formMessage.textContent = 'Please fill out all required fields.';
+                        formMessage.className = 'text-center mt-3 text-red-500 text-sm';
+                        formMessage.classList.remove('hidden');
+                        return;
+                    }
+
+                    // Simulate form submission animation/delay
+                    const submitButton = leadForm.querySelector('button[type="submit"]');
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    submitButton.classList.add('opacity-75');
+
+                    setTimeout(() => {
+                        // Success message
+                        formMessage.textContent = 'Inquiry sent! We will contact you shortly about this project.';
+                        formMessage.className = 'text-center mt-3 text-green-600 text-sm animate-pulse';
+                        formMessage.classList.remove('hidden');
+
+                        // Reset form and button
+                        leadForm.reset();
+                        submitButton.textContent = 'Inquiry Sent!';
+                        submitButton.classList.remove('opacity-75');
+                        
+                        // Auto-close modal after a delay
+                        setTimeout(() => {
+                            closeContactModal();
+                            submitButton.textContent = 'Send Inquiry'; // Reset for next time
+                            submitButton.disabled = false;
+                        }, 3000); 
+
+                    }, 1500); // 1.5 second simulated submission time
+                });
+            }
+        });
+    </script>
+</body>
+</html>

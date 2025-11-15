@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Aura Realtor | Premium Real Estate Partner in Bangalore</title>
+    <meta name="description"
+        content="Home Aura Realtor is your trusted real estate partner for premium residential and commercial properties in Bangalore. Find your dream home today.">
+    <meta name="keywords"
+        content="real estate, bangalore properties, luxury homes, apartments for sale, villas, plots, real estate investment">
+    <meta name="author" content="Home Aura Realtor">
+    <meta property="og:title" content="Home Aura Realtor | Premium Real Estate Partner in Bangalore">
+    <meta property="og:description"
+        content="Find your dream home with Home Aura Realtor. Premium residential and commercial properties in Bangalore.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://homeaurarealtor.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style" onload="this.on='style';this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/index.css">
+ 
+    <link rel="stylesheet" href="/css/enhancements.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- <style>
+        /* Custom CSS for animations and smooth effects */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+        /* Sticky Header */
+        .header-sticky { transition: background-color 0.3s, box-shadow 0.3s; }
+        .header-scrolled { background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+
+        /* Hero Banner Animation */
+        .animate-hero-text {
+            animation: fadeInTranslate 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInTranslate {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Scroll Reveal Animation (Default hidden state) */
+        .scroll-reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Parallax Effect for About Image */
+        .parallax-bg {
+            background-image: url('image/about.webp');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px;
+        }
+
+        /* Hover Effect for Service Cards */
+        .service-card, .project-carousel-card { 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .service-card:hover, .project-carousel-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); 
+        }
+        
+        /* Custom Carousel Styling for Services and Projects (4 cards wide on desktop) */
+        /* IMPORTANT: Overflow changed to hidden, and scrollbar hidden for auto-scroll */
+        .carousel-container { 
+            overflow-x: hidden; 
+            scroll-snap-type: none; /* Disable manual snapping for auto-scroll */
+            -webkit-overflow-scrolling: touch;
+            /* Hide scrollbar for WebKit, IE, and Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        /* Adjusted carousel item width to ensure 4 fit perfectly with gap, across all main carousels */
+        .carousel-item { flex: 0 0 90%; }
+        @media (min-width: 640px) { .carousel-item { flex: 0 0 50%; } }
+        @media (min-width: 1024px) { 
+            /* This calculation (25% minus gap) is approximated by letting flexbox handle it, 
+               but enforcing 25% for 4 columns on large screens. */
+            .carousel-item { flex: 0 0 calc(25% - 1.5rem); } /* 1.5rem gap = 8px * 3 = 24px */
+            /* Tailwind gap-8 is 2rem (32px), so four items need 3 gaps total. Total width is 100%. */
+            .carousel-item { flex: 0 0 calc(25% - 24px); } 
+            /* Let's simplify and rely on flex-shrink-0 and gap for the effect, 
+               and set a responsive max-width/flex-basis */
+            .carousel-item { flex: 0 0 calc(25% - 24px); max-width: calc(25% - 24px); } /* Approximation for 4 items */
+        }
+        /* Re-enforcing the simple way that works better with Tailwind's flex/gap logic */
+        @media (min-width: 1024px) { .carousel-item { flex: 0 0 calc(25% - 24px); max-width: calc(25% - 24px); } }
+
+        /* Logo Carousel Styling (More dense, 5-6 logos on desktop) */
+        /* IMPORTANT: Overflow changed to hidden, and scrollbar hidden for auto-scroll */
+        .logo-carousel-container { 
+            overflow-x: hidden; 
+            scroll-snap-type: none; /* Disable manual snapping for auto-scroll */
+            -webkit-overflow-scrolling: touch;
+            /* Hide scrollbar for WebKit, IE, and Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .logo-carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        .logo-carousel-item { flex: 0 0 33.3333%; }
+        @media (min-width: 640px) { .logo-carousel-item { flex: 0 0 20%; } }
+        @media (min-width: 1024px) { .logo-carousel-item { flex: 0 0 16.6666%; } }
+
+
+        /* Contact Popup Transition */
+        .popup-modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .popup-modal.hidden { opacity: 0; visibility: hidden; }
+        .popup-modal.show { opacity: 1; visibility: visible; }
+        .popup-content { transform: scale(0.9); transition: transform 0.3s ease; }
+        .popup-modal.show .popup-content { transform: scale(1); }
+    </style> -->
+</head>
+
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header id="header" class="header-sticky fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Responsive Logo -->
+            <a href="#" style="color:#B49B11"
+                class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">HOME<span
+                    style="color:#096088" class="text-blue-500"> AURA</span></a>
+
+            <!-- Navigation Menu (Desktop) -->
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="#about" class="text-white hover:text-blue-400 transition duration-300">About</a>
+                <a href="#services" class="text-white hover:text-blue-400 transition duration-300">Services</a>
+                <a href="/bangalore-residential-projects"
+                    class="text-white hover:text-blue-400 transition duration-300">Projects</a>
+                <a href="/contact-us" class="text-white hover:text-blue-400 transition duration-300">Contact</a>
+
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn"
+                class="text-white md:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu"
+            class="md:hidden bg-gray-900 bg-opacity-95 text-center transition-all duration-300 max-h-0 overflow-hidden">
+            <a href="#about" class="block py-3 text-white hover:bg-gray-700">About</a>
+            <a href="#services" class="block py-3 text-white hover:bg-gray-700">Services</a>
+            <a href="/bangalore-residential-projects" class="block py-3 text-white hover:bg-gray-700">Projects</a>
+            <a href="/contact-us" class="block py-3 text-white hover:bg-gray-700">Contact</a>
+
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section id="hero" class="relative h-[720px] overflow-hidden">
+            <!-- Background Image -->
+            <img src="/image/homebanner1.jpg" alt="Hero Background"
+                class="absolute inset-0 w-full h-full object-cover" />
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gray-900 opacity-30"></div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+                <div>
+                    <h1 class="text-5xl font-bold mb-4">Smart Property Solutions in Bangalore</h1>
+                    <p class="text-lg">Apartments, Villas, Plots & Commercial Spaces — Home Aura Realtor</p>
+                    <a style="background-color: #B49B11;" href="#services"
+                        class="mt-6 inline-block text-black px-6 py-3 rounded-full font-medium hover:bg-yellow-400 transition">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <!-- <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="animate-hero-text text-5xl md:text-7xl font-extrabold text-white mb-4" style="animation-delay: 0.1s;">
+                    Your Vision, Our Expertise.
+                </h1>
+                <p class="animate-hero-text text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl" style="animation-delay: 0.3s;">
+                    The leading channel partner delivering exclusive opportunities and strategic real estate consultation.
+                </p>
+                <button id="hero-cta" class="animate-hero-text bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-xl transition duration-300 transform hover:scale-105" style="animation-delay: 0.5s;">
+                    Explore Premium Projects
+                </button>
+            </div> -->
+        </section>
+
+
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Parallax Image Placeholder -->
+                <div class="parallax-bg rounded-2xl shadow-2xl overflow-hidden scroll-reveal">
+                    <!-- Placeholder for parallax effect -->
+                </div>
+
+                <div class="scroll-reveal">
+                    <h2 style="font-size: 32px;" class="text-4xl font-bold mb-6 text-gray-900">Best Channel Partner in
+                        <Span style="color:#B49B11; ">Bangalore</Span></h2>
+                    <p style="text-align: justify;" class="text-lg text-gray-600 mb-4">
+                        <strong class="text-gray-600">Located in the heart of Koramangala, we’re more than just property
+                            consultants — we are your long-term partners in real estate. Our mission is to simplify
+                            property discovery while maintaining a client-first approach.
+                    </p>
+                    <p style="text-align: justify;" class="text-lg text-gray-600">
+                        With exclusive channel partnerships with Bangalore’s leading builders, we offer unbeatable
+                        access to pre-launch, under-construction, and ready-to-move-in properties.
+                    </p>
+                    <!-- UPDATED CTA button to open modal -->
+                    <a style="background-color: #B49B11;cursor: pointer;width:100%;text-align: center;"
+                        class="inline-block mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition duration-300 transform hover:scale-105 openCallbackModal">
+                        Schedule a Consultation
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Builder Logos Section (Auto-Scroll Carousel) -->
+        <section id="builder-logos" class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
+                <h2 class="text-center text-xl font-semibold text-gray-500 mb-8 uppercase tracking-wider">Trusted by
+                    Industry Leading Builders</h2>
+
+                <!-- Builder Logo Carousel Container -->
+                <!-- Duplicated content for seamless scrolling -->
+
+
+                <div id="logo-carousel" class="logo-carousel-container flex overflow-x-hidden gap-4 pb-4">
+                    <!-- Original Logos -->
+
+
+                    <div class="logo-group flex flex-shrink-0 gap-4">
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/abhee.png" alt="Builder A Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=A'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/Assetz.png" alt="Builder B Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=B'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/Brigade.png" alt="Developer C Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=C'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/Ds max.png" alt="Group D Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=D'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/Godrej.png" alt="Partners E Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=E'">
+                        </div>
+
+                    </div>
+                    <!-- Duplicated Logos for Infinite Scroll Effect -->
+                    <div class="logo-group flex flex-shrink-0 gap-4" aria-hidden="true">
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/sattva.png" alt="Builder A Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=A'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/urbanrise logo.png" alt="Builder B Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=B'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/Assetz.png" alt="Developer C Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=C'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/abhee.png" alt="Group D Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=D'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/sattva.png" alt="Partners E Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=E'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/Prestige.png" alt="Realties F Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=F'">
+                        </div>
+                        <div class="logo-carousel-item flex-shrink-0 p-2 flex justify-center items-center">
+                            <img src="/image/logo/Brigade.png" alt="Homez G Logo"
+                                class="h-16 w-auto object-contain rounded-xl opacity-70 hover:opacity-100 transition duration-300"
+                                onerror="this.onerror=null; this.src='https://placehold.co/100x50/f3f4f6/374151?text=G'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Now Auto-Scroll Carousel) - UPDATED TO TWO-TONE DESIGN -->
+        <section id="services" class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-4 text-gray-900 scroll-reveal">Our Services</h2>
+                <!-- <p class="text-center text-xl text-gray-600 mb-12 scroll-reveal" style="animation-delay: 0.2s;">
+                    Tailored solutions for every stage of your real estate investment.
+                </p> -->
+
+                <!-- Responsive Image Carousel Container (Services) -->
+                <!-- ADDED PX-4 (p-4 on larger screens) to the container to simulate padding around the slide group -->
+                <div id="services-carousel"
+                    class="carousel-container flex overflow-x-hidden gap-8 pb-4 scroll-reveal px-4 lg:px-0"
+                    style="animation-delay: 0.4s;">
+                    <!-- Original Service Cards -->
+                    <!-- Used a wrapper div to contain all slides for the scrolling effect -->
+                    <div class="service-group flex flex-shrink-0 gap-8">
+                        <!-- Service Card 1 (Two-Tone Design) -->
+                        <!-- ADDED MAX-W-SM to match project card max width -->
+                        <div
+                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
+                            <!-- Top Primary Color Section (Icon/Header) -->
+                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m3 0V7a4 4 0 014-4h2a4 4 0 014 4v12m-8 0h8">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Residential Property Sales</h3>
+                            </div>
+                            <!-- Bottom Light Section (Details) -->
+                            <div class="p-6 flex flex-col flex-grow h-[150px]">
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">Apartments, villas, and premium flats
+                                    across Bangalore’s top localities. We have a wide range of properties to choose
+                                    from.</p>
+                                <button type="button"
+                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
+                                    onclick="openModal()">Learn More &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 2 (Two-Tone Design) -->
+                        <div
+                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
+                            <!-- Top Primary Color Section (Icon/Header) -->
+                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 13.255A23.55 23.55 0 0112 15c-3.185 0-6.22-.62-9-1.745M16 4v12a2 2 0 002 2h2">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Commercial Leasing & Sales</h3>
+                            </div>
+                            <!-- Bottom Light Section (Details) -->
+                            <div class="p-6 flex flex-col flex-grow h-[150px]">
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">Premium office and retail spaces in key
+                                    business districts. </p>
+                                <button
+                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
+                                    onclick="openModal()">Learn More &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 3 (Two-Tone Design) -->
+                        <div
+                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
+                            <!-- Top Primary Color Section (Icon/Header) -->
+                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">End-to-End Transaction Support</h3>
+                            </div>
+                            <!-- Bottom Light Section (Details) -->
+                            <div class="p-6 flex flex-col flex-grow h-[150px]">
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">From property visits to documentation,
+                                    loans, and legal checks. </p>
+                                <button
+                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
+                                    onclick="openModal()">Learn More &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 4 (Two-Tone Design) -->
+                        <div
+                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
+                            <!-- Top Primary Color Section (Icon/Header) -->
+                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V9a1 1 0 00-1-1H5a1 1 0 00-1 1v6a1 1 0 001 1h6m4 0h-4m4 0h6m-3-3v3m0 0l-3-3m3 3l3-3">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Builder Tie-Up Assistance</h3>
+                            </div>
+                            <!-- Bottom Light Section (Details) -->
+                            <div class="p-6 flex flex-col flex-grow h-[150px]">
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">Access to exclusive builder tie-ups,
+                                    pre-launch offers, and discounts.</p>
+                                <button
+                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
+                                    onclick="openModal()">Learn More &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicated Service Cards for Infinite Scroll Effect -->
+                    <div class="service-group flex flex-shrink-0 gap-8" aria-hidden="true">
+                        <!-- Service Card 1 -->
+                        <div
+                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
+                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m3 0V7a4 4 0 014-4h2a4 4 0 014 4v12m-8 0h8">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Luxury Villa Marketing</h3>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow h-[150px]">
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">Specialized villa marketing solutions
+                                    for luxury and gated communities. </p>
+                                <button
+                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
+                                    onclick="openModal()">Learn More &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 2 -->
+                        <div
+                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
+                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 13.255A23.55 23.55 0 0112 15c-3.185 0-6.22-.62-9-1.745M16 4v12a2 2 0 002 2h2">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">HNI & NRI Investment Advisory</h3>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow h-[150px]">
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">Tailored real estate investment plans
+                                    for HNI and NRI clients. </p>
+                                <button
+                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
+                                    onclick="openModal()">Learn More &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 3 -->
+                        <div
+                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
+                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Plot Sales & Development</h3>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow h-[150px]">
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">Curated residential and commercial plots
+                                    in prime and emerging zones.</p>
+                                <button
+                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
+                                    onclick="openModal()">Learn More &rarr;</button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 4 -->
+                        <div
+                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
+                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
+                                <div
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V9a1 1 0 00-1-1H5a1 1 0 00-1 1v6a1 1 0 001 1h6m4 0h-4m4 0h6m-3-3v3m0 0l-3-3m3 3l3-3">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Real Estate Project Collaboration</h3>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow h-[150px]">
+                                <p class="text-gray-600 text-sm mb-4 flex-grow">Joint venture and co-development
+                                    opportunities for landowners and builders.</p>
+                                <a
+                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left openCallbackModal">Learn
+                                    More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- NEW CTA Button for Services -->
+                <div class="text-center mt-12 scroll-reveal" style="animation-delay: 0.6s;">
+                    <a style="background-color: #B49B11;"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-xl shadow-xl transition duration-300 transform hover:scale-105 openCallbackModal">
+                        Discuss Your Investment Needs
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Featured Projects Carousel Section with Image Headers -->
+        <section id="featured-projects" class="py-16 md:py-24 bg-white">
+            <div class="w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-4 text-gray-900 scroll-reveal">Bangalore's Leading
+                    Residential Projects</h2>
+                <p class="text-center text-xl text-gray-600 mb-12 scroll-reveal" style="animation-delay: 0.2s;">
+                    Discover the top-rated residential projects in Bangalore.
+                </p>
+
+                <!-- Carousel Container -->
+                <div id="projects-carousel"
+                    class="carousel-container flex overflow-x-hidden gap-8 pb-4 scroll-reveal px-4 lg:px-0"
+                    style="animation-delay: 0.4s;">
+                    <!-- Project Group -->
+                    <div class="project-group flex flex-shrink-0 gap-8">
+
+                        <!-- Project Card 1 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <!-- Image Section -->
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/urbanrise.jpg" alt="Project Skyline" class="w-full h-full object-cover">
+                                <span
+                                    class="bg-blue-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Urbanrise</span>
+                            </div>
+                            <!-- Details -->
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Urbanrise Paradise On Earth</p>
+                                <p class="text-xs text-gray-500 mb-3">Gangasandra, Kanakapura Road</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4"> ₹3.17 Cr Onwards</p>
+                                <a style="background-color: #B49B11;" href="/project"
+                                    class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
+                                    View Details</a>
+
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/godrejlakeside.jpg" alt="Green Valley Villas"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-green-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Godrej</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Godrej Lakeside Orchard</p>
+                                <p class="text-xs text-gray-500 mb-3">Sarjapur Road, Bangalore</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹2.25 Cr Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/sunworthcity.jpg" alt="Commercial Hub"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-yellow-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Provident</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Provident Sunworth city</p>
+                                <p class="text-xs text-gray-500 mb-3">RR Nagar, Off Mysore Road</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹69 Lakhs Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/simplicity.jpg" alt="Bayfront Penthouses"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Sattva</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Sattva Simplicity</p>
+                                <p class="text-xs text-gray-500 mb-3">BHEL Layout, RR Nagar, Mysore Road</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹42 L Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/tatacarnatica.jpg" alt="Bayfront Penthouses"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">TATA</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">TATA Carnatica</p>
+                                <p class="text-xs text-gray-500 mb-3">Shettigere, Bangalore</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹1.80 Cr Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/birlaevara.jpg" alt="Bayfront Penthouses"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Birla</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Birla Evara</p>
+                                <p class="text-xs text-gray-500 mb-3">Sarjapur Road, Bangalore</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹71 Lakhs Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/allureavani.jpg" alt="Bayfront Penthouses"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Allure</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Avani</p>
+                                <p class="text-xs text-gray-500 mb-3">Kammasandra, Bengaluru</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹4 cr Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/codenamebliss.jpg" alt="Bayfront Penthouses"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Puravankara</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Codename Bliss</p>
+                                <p class="text-xs text-gray-500 mb-3">ECR Coastal Zone</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹2.5 Cr Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 5 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/Deansgate.jpg" alt="Bayfront Penthouses"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Provident</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Deansgate - 3BHK Dublex Villa</p>
+                                <p class="text-xs text-gray-500 mb-3">IVC Road, Bangalore</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹2.9 Cr Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 5 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/sattvavasanta.jpg" alt="Bayfront Penthouses"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">SATTVA</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Vasanta Sky</p>
+                                <p class="text-xs text-gray-500 mb-3">Bellary Road, Bangalore</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹78 L Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 6 -->
+                        <div
+                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="/image/atmosphere.jpg" alt="Bayfront Penthouses"
+                                    class="w-full h-full object-cover">
+                                <span
+                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Puravankara</span>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow">
+                                <p class="text-lg font-bold mb-1 text-gray-900">Atmosphere</p>
+                                <p class="text-xs text-gray-500 mb-3">Thanisandra, Bangalore</p>
+                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹2.85 cr Onwards</p>
+                                <button style="background-color: #B49B11;"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-12 scroll-reveal" style="animation-delay: 0.6s;">
+                    <a style="background-color: #B49B11;" href="/bangalore-residential-projects"
+                        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-xl shadow-xl transition duration-300 transform hover:scale-105">
+                        View All Available Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- NEW: Contact Us Form and Map Section -->
+        <section id="contact-map" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-4 text-gray-900 scroll-reveal">Ready to Partner?</h2>
+                <p class="text-center text-xl text-gray-600 mb-12 scroll-reveal" style="animation-delay: 0.2s;">
+                    Connect with our experts and visualize our global presence.
+                </p>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-stretch" id="contact-section-div">
+                    <!-- Contact Form (Inline) -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-xl scroll-reveal flex flex-col h-full">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Get in Touch Directly</h3>
+                        <form id="contact-form2" class="space-y-4">
+                            <input type="text" name="name" placeholder="Your Name" required
+                                class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200"/>
+                            <input type="email" name="email" placeholder="Email Address" required
+                                class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200"/>
+                                <input type="text" name="mobile" placeholder="Mobile Number" required
+                                class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200"/>
+                                <input type="text" name="secondaryNumber" placeholder="Secondary Number (optional)"
+                                class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200"/>
+                            <textarea name="message" placeholder="Tell us about your query..." rows="4" required
+                                class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200"></textarea>
+                           
+                            <!-- CTA to open the existing popup form -->
+                            <button style="background-color: #B49B11;" id="contact_form_btn2" type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition duration-300 transform hover:shadow-lg">
+                                Request Callback or Brochure
+                            </button>
+                            <div id="success_message_col2" class='mt-2'>
+
+                            </div>
+                            <div id="error_message2" class='error'>
+            
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Map/Location Placeholder -->
+                    <div class="scroll-reveal" style="animation-delay: 0.4s;">
+                        <!-- <h3 class="text-2xl font-bold mb-4 text-gray-900">Our Global Footprint</h3> -->
+                        <div class="bg-gray-200 rounded-2xl overflow-hidden flex-1 shadow-xl h-full">
+                            <!-- Placeholder for Embedded Google Map -->
+                            <img src="/image/contactus.jpg" alt="Map Location Placeholder"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-sm text-gray-500 mt-3 text-center">We operate across major metropolitan areas,
+                            connecting you to the best opportunities worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-12 text-gray-900 scroll-reveal">Frequently Asked Questions
+                </h2>
+
+                <div class="space-y-4 scroll-reveal" style="animation-delay: 0.2s;">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <button
+                            class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300">
+                            <span>What does Home Aura Realtor do as a channel partner</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform accordion-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 bg-gray-50">
+                            <p class="p-5 pt-0 text-gray-600">Home Aura Realtor is a trusted
+                                    real estate channel partner in Bangalore, connecting home buyers with top builders
+                                    and premium projects. We help clients find the right property—from apartments to
+                                    villas—based on their budget, lifestyle, and location preferences,
+                                    ensuring a smooth buying experience from site visit to booking.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <button
+                            class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300">
+                            <span>Why should I buy a property through Home Aura Realtor?</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform accordion-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 bg-gray-50">
+                            <p class="p-5 pt-0 text-gray-600">We work directly with verified builders—no middlemen, no
+                                extra cost. You get exclusive deals, transparent pricing, and personalized assistance
+                                throughout your home-buying journey.
+                                Our goal is to make property buying stress-free and trustworthy.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <button
+                            class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300">
+                            <span>What types of properties do you deal with?</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform accordion-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 bg-gray-50">
+                            <p class="p-5 pt-0 text-gray-600">Home Aura Realtor offers a wide range of apartments,
+                                villas, and plots from reputed builders across prime Bangalore locations such as
+                                Whitefield, Sarjapur, Electronic City, and Kanakapura Road.
+                                Whether you’re an investor or end-user, we help you choose the right home at the right
+                                price.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <button
+                            class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300">
+                            <span>Do you charge any service fee for buyers?</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform accordion-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 bg-gray-50">
+                            <p class="p-5 pt-0 text-gray-600">No, our services are absolutely free for property buyers.
+                                We are officially associated with the builders, so our commission comes from them—not
+                                from you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Popup/Modal -->
+    <div id="contact-modal"
+        class="popup-modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex items-center justify-center p-4">
+        <div class="popup-content bg-white p-8 rounded-3xl shadow-2xl max-w-lg w-full relative">
+            <button type="button" id="close-modal"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition duration-300"
+                aria-label="Close modal">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <h3 class="text-3xl font-bold mb-4 text-blue-600">Start Your Consultation</h3>
+            <p class="mb-6 text-gray-600">Tell us about your investment goals, and one of our experts will contact you
+                Soon.</p>
+
+            <form id="contact-form" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required
+                    class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <input type="email" name="email" placeholder="Email Address" required
+                    class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <input type="tel" name="mobile" placeholder="Phone Number" required
+                    class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <textarea name="message" placeholder="What are you looking for?" rows="3" required
+                    class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200"></textarea>
+                <button id="contact_form_btn" type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition duration-300 transform hover:shadow-lg">
+                    Send Request
+                </button>
+                <div id="success_message_col" class='mt-2'>
+
+                </div>
+                <div id="error_message" class='error'>
+
+                </div>
+                <!-- <div id="form-message" class="text-center mt-3 hidden text-sm"></div> -->
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Centered Logo -->
+            <a style="color:#B49B11" href="#" class="text-3xl font-bold text-white mb-6 block">HOME<span
+                    style="color:#096088" class="text-blue-500"> AURA</span></a>
+
+            <!-- Contact Info: Stacks vertically on mobile, switches to row on desktop -->
+            <div
+                class="flex flex-col items-center space-y-2 md:flex-row md:justify-center md:space-y-0 md:space-x-6 mb-8 text-gray-400">
+                <p class="hover:text-blue-400 transition duration-300">Email: marketing@homeaurarealtor.com</p>
+                <p class="hover:text-blue-400 transition duration-300">Phone: +91 98807 79843</p>
+                <p class="hover:text-blue-400 transition duration-300">Location: Bangalore</p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" aria-label="LinkedIn"
+                    class="text-gray-400 hover:text-blue-500 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.422-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter"
+                    class="text-gray-400 hover:text-blue-400 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.791-1.574 2.153-2.723-.951.554-2.005.959-3.127 1.184-.896-.957-2.173-1.556-3.593-1.556-3.592 0-6.492 2.901-6.492 6.492 0 .51.058 1.006.174 1.485-5.404-.273-10.223-2.85-13.43-6.795-.56.963-.884 2.083-.884 3.267 0 2.247 1.146 4.254 2.887 5.435-.98-.03-1.896-.3-2.693-.742v.081c0 3.167 2.26 5.8 5.234 6.394-.552.15-.909.231-1.304.231-.318 0-.626-.031-.922-.092.837 2.607 3.255 4.475 6.134 4.527-2.243 1.758-5.068 2.809-8.156 2.809-.533 0-1.054-.031-1.566-.091 2.905 1.862 6.345 2.951 10.038 2.951 12.046 0 18.66-9.993 18.66-18.66 0-.285-.008-.567-.02-.848.86-.62 1.603-1.393 2.193-2.257z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram"
+                    class="text-gray-400 hover:text-pink-500 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85 0 3.204-.012 3.584-.069 4.85-0.148 3.228-1.667 4.772-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.253-0.148-4.772-1.691-4.919-4.919-0.058-1.265-0.07-1.644-0.07-4.85s.012-3.584.07-4.85c0.148-3.227 1.668-4.772 4.919-4.919 1.266-0.058 1.644-0.07 4.85-0.07zm0-2.163c-3.259 0-3.667.014-4.945.071-4.435.201-6.793 2.617-7.004 7.004-0.057 1.278-0.071 1.687-0.071 4.945s0.014 3.667 0.071 4.945c0.201 4.387 2.617 6.793 7.004 7.004 1.278 0.057 1.687 0.071 4.945 0.071s3.667-0.014 4.945-0.071c4.387-0.201 6.793-2.617 7.004-7.004 0.057-1.278 0.071-1.687 0.071-4.945s-0.014-3.667-0.071-4.945c-0.201-4.387-2.617-6.793-7.004-7.004-1.278-0.057-1.687-0.071-4.945-0.071zM12 5.838c-3.4 0-6.162 2.762-6.162 6.162s2.762 6.162 6.162 6.162 6.162-2.762 6.162-6.162c0-3.4-2.762-6.162-6.162-6.162zM12 16.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zM18.406 7.317c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.44-.645 1.44-1.44s-.645-1.44-1.44-1.44z" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Copyright and Disclaimer -->
+            <p class="text-gray-500 text-sm mt-4">
+                &copy; <span id="current-year"></span> Home Aura Realtor Channel Partners in Bangalore. All rights
+                reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/config.js"></script>
+    
+    <script src="/js/common.js"></script>
+    <script src="/js/sticky.js"></script>
+    <script src="/js/index.js"></script>
+<!-- <script src="/js/main.js"></script> -->
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // 1. Sticky Header Functionality
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = mobileMenu.classList.toggle('max-h-0');
+                mobileMenu.classList.toggle('max-h-96'); // Adjust max-h value as needed
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('opacity-100');
+            });
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('max-h-96', 'opacity-100');
+                    mobileMenu.classList.add('max-h-0', 'opacity-0');
+                });
+            });
+
+            // 3. Scroll Reveal Animation (Intersection Observer)
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            scrollRevealElements.forEach(el => observer.observe(el));
+
+            // 4. FAQ Accordion Logic
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const icon = item.querySelector('.accordion-icon');
+
+                if (header && content && icon) {
+                    header.addEventListener('click', () => {
+                        const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+                        // Close all other open items
+                        document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                            const otherContent = otherItem.querySelector('.accordion-content');
+                            const otherIcon = otherItem.querySelector('.accordion-icon');
+                            if (otherContent && otherIcon && otherContent !== content) {
+                                otherContent.style.maxHeight = '0px';
+                                otherIcon.style.transform = 'rotate(0deg)';
+                            }
+                        });
+
+                        // Toggle current item
+                        if (isExpanded) {
+                            content.style.maxHeight = '0px';
+                            icon.style.transform = 'rotate(0deg)';
+                        } else {
+                            // Set max height to content's scroll height
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            icon.style.transform = 'rotate(180deg)';
+                        }
+                    });
+                }
+            });
+
+            // 5. Contact Popup Logic
+            // const modal = document.getElementById('contact-modal');
+            // const closeModalBtn = document.getElementById('close-modal');
+
+            // Function to close the modal
+            // const closeModal = (e) => {
+            //     if (e) {
+            //         e.preventDefault();
+            //         e.stopPropagation();
+            //     }
+            //     if (modal) {
+            //         modal.classList.remove('show');
+            //         modal.classList.add('hidden');
+            //         document.body.style.overflow = 'auto'; // Re-enable scrolling
+            //     }
+            // };
+
+
+
+            // Add event listeners to all modal triggers
+            // const modalTriggers = [
+            //     'hero-cta',
+            //     'about-cta',
+            //     'services-cta',
+            //     'inline-contact-cta'
+            // ];
+
+            // modalTriggers.forEach(triggerId => {
+            //     const trigger = document.getElementById(triggerId);
+            //     if (trigger) {
+            //         trigger.addEventListener('click', openModalWithPrevention);
+            //         // If it's an anchor tag, prevent default navigation
+            //         if (trigger.tagName === 'A') {
+            //             trigger.addEventListener('click', (e) => e.preventDefault());
+            //         }
+            //     }
+            // });
+
+            // Close modal when clicking the close button
+            // if (closeModalBtn) {
+            //     closeModalBtn.addEventListener('click', closeModal);
+            //     // Add tabindex for better accessibility
+            //     closeModalBtn.setAttribute('tabindex', '0');
+            // }
+
+            // Close modal on outside click
+            // if (modal) {
+            //     modal.addEventListener('click', (e) => {
+            //         if (e.target === modal) {
+            //             closeModal(e);
+            //         }
+            //     });
+            // }
+
+            // // Close modal with Escape key
+            // document.addEventListener('keydown', (e) => {
+            //     if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+            //         closeModal(e);
+            //     }
+            // });
+
+            // // Prevent form submission from reloading the page
+            // const contactForm = document.getElementById('contact-form');
+            // if (contactForm) {
+            //     contactForm.addEventListener('submit', (e) => {
+            //         e.preventDefault();
+            //         // Handle form submission here if needed
+            //         console.log('Form submitted');
+            //         // Optionally close the modal after submission
+            //         // closeModal();
+            //     });
+            // }
+
+            // // 6. Lead Form Submission
+            // const leadForm = document.getElementById('lead-form');
+            // const formMessage = document.getElementById('form-message');
+
+            // if (leadForm) {
+            //     leadForm.addEventListener('submit', (e) => {
+            //         e.preventDefault();
+
+            //         // Simple validation check
+            //         const name = document.getElementById('lead-name').value.trim();
+            //         const email = document.getElementById('lead-email').value.trim();
+
+            //         if (!name || !email) {
+            //             formMessage.textContent = 'Please fill out all required fields.';
+            //             formMessage.className = 'text-center mt-3 text-red-500 text-sm';
+            //             formMessage.classList.remove('hidden');
+            //             return;
+            //         }
+
+            //         // Simulate form submission animation/delay
+            //         const submitButton = leadForm.querySelector('button[type="submit"]');
+            //         submitButton.textContent = 'Sending...';
+            //         submitButton.disabled = true;
+            //         submitButton.classList.add('opacity-75');
+
+            //         setTimeout(() => {
+            //             // Success message
+            //             formMessage.textContent = 'Thank you! Your request has been sent successfully. We will be in touch soon.';
+            //             formMessage.className = 'text-center mt-3 text-green-600 text-sm animate-pulse';
+            //             formMessage.classList.remove('hidden');
+
+            //             // Reset form and button
+            //             leadForm.reset();
+            //             submitButton.textContent = 'Request Sent!';
+            //             submitButton.classList.remove('opacity-75');
+
+            //             // Auto-close modal after a delay
+            //             setTimeout(() => {
+            //                 if(modal) {
+            //                     modal.classList.remove('show');
+            //                     modal.classList.add('hidden');
+            //                 }
+            //                 submitButton.textContent = 'Send Request'; // Reset for next time
+            //                 submitButton.disabled = false;
+            //                 formMessage.classList.add('hidden');
+            //             }, 3000); 
+
+            //         }, 1500); // 1.5 second simulated submission time
+            //     });
+            // }
+
+            // 7. Auto-Scroll Carousel Logic (NEW)
+            const autoScrollCarousel = (containerId, scrollSpeed) => {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+
+                let animationFrameId;
+                let isPaused = false;
+                let currentScroll = 0;
+
+                const scrollLoop = () => {
+                    if (isPaused) {
+                        animationFrameId = requestAnimationFrame(scrollLoop);
+                        return;
+                    }
+
+                    currentScroll += scrollSpeed;
+                    container.scrollLeft = currentScroll;
+
+                    // The content is duplicated, so we reset the scroll when we reach the halfway point.
+                    const scrollWidthHalf = container.scrollWidth / 2;
+
+                    if (container.scrollLeft >= scrollWidthHalf) {
+                        currentScroll = 0;
+                        container.scrollLeft = 0;
+                    } else {
+                        currentScroll = container.scrollLeft;
+                    }
+
+                    animationFrameId = requestAnimationFrame(scrollLoop);
+                };
+
+                // Pause on hover for better user interaction
+                container.addEventListener('mouseenter', () => isPaused = true);
+                container.addEventListener('mouseleave', () => isPaused = false);
+
+                scrollLoop(); // Start the animation loop
+            };
+
+            // Initialize auto-scroll carousels
+            autoScrollCarousel('logo-carousel', 0.5); // Slow speed for logos
+            autoScrollCarousel('services-carousel', 0.8); // Medium speed for services
+            autoScrollCarousel('projects-carousel', 1); // Normal speed for projects
+        });
+    </script>
+    
+
+    
+
+</body>
+
+</html>

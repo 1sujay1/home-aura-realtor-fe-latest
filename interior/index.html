@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Realty - Interior Showcase | Detailed Property Views</title>
+    <meta name="description" content="A detailed look at the premium interiors and architectural design of our exclusive real estate projects.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+        /* Sticky Header */
+        .header-sticky { transition: background-color 0.3s, box-shadow 0.3s; }
+        .header-scrolled { background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        
+        /* Hero Banner Animation */
+        .animate-hero-text { animation: fadeInTranslate 1s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInTranslate { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Scroll-Triggered Icon/Indicator */
+        #scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 40;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        #scroll-indicator.visible { opacity: 1; transform: scale(1); }
+        .bounce { animation: bounce 1s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); } 50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); } }
+
+
+        /* Scroll Reveal Animation */
+        .scroll-reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Lightbox Modal */
+        .lightbox-modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .lightbox-modal.hidden { opacity: 0; visibility: hidden; }
+        .lightbox-modal.show { opacity: 1; visibility: visible; }
+        .lightbox-content { transform: scale(0.95); transition: transform 0.3s ease; }
+        .lightbox-modal.show .lightbox-content { transform: scale(1); }
+        
+        /* Contact Popup Transition (NEW) */
+        .popup-modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .popup-modal.hidden { opacity: 0; visibility: hidden; }
+        .popup-modal.show { opacity: 1; visibility: visible; }
+        .popup-content { transform: scale(0.9); transition: transform 0.3s ease; }
+        .popup-modal.show .popup-content { transform: scale(1); }
+
+        /* Carousel Styling */
+        .interior-carousel { overflow-x: scroll; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .carousel-item-interior { scroll-snap-align: start; flex: 0 0 90%; /* Default to 90% width on mobile */ }
+        @media (min-width: 640px) { .carousel-item-interior { flex: 0 0 33.3333%; } }
+
+        /* Floating Animation for Dynamic Showcase */
+        @keyframes floatDepth {
+            0% { transform: translateY(0) scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+            50% { transform: translateY(-5px) scale(1.01); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); }
+            100% { transform: translateY(0) scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        }
+
+        .floating-image {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .scroll-reveal.visible .floating-image {
+            animation: floatDepth 4s ease-in-out infinite;
+        }
+
+        /* Video embed wrapper for responsiveness */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header id="header" class="header-sticky fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Responsive Logo -->
+            <a href="#" class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">Elite<span class="text-blue-500">Realty</span></a>
+            
+            <!-- Navigation Menu (Desktop) -->
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="#about" class="text-white hover:text-blue-400 transition duration-300">About</a>
+                
+                <a href="/project" class="text-white hover:text-blue-400 transition duration-300">Projects</a>
+               
+                <a href="/contact-us/" class="text-white hover:text-blue-400 transition duration-300">Contact</a>
+                
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="text-white md:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="md:hidden bg-gray-900 bg-opacity-95 text-center transition-all duration-300 max-h-0 overflow-hidden">
+            <a href="#about" class="block py-3 text-white hover:bg-gray-700">About</a>
+           
+            <a href="/project" class="block py-3 text-white hover:bg-gray-700">Projects</a>
+            
+            <a href="/contact-us" class="block py-3 text-white hover:bg-gray-700">Contact</a>
+           
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner with Video Background -->
+        <section id="hero" class="relative h-[720px] overflow-hidden">
+            <!-- Video Placeholder -->
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted poster="https://placehold.co/1920x720/1e293b/ffffff?text=Video+Placeholder">
+                <!-- Replace src with actual video URL -->
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-bright-kitchen-with-window-view-4424-large.mp4" type="video/mp4">
+            </video>
+            
+            <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
+            
+            <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="animate-hero-text text-5xl md:text-7xl font-extrabold text-white mb-4" style="animation-delay: 0.1s;">
+                    The Art of Living
+                </h1>
+                <p class="animate-hero-text text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl" style="animation-delay: 0.3s;">
+                    Experience bespoke interiors and world-class design in every detail.
+                </p>
+                <a href="#interior-gallery" class="animate-hero-text text-white font-bold text-lg transition duration-300 hover:text-blue-400 underline" style="animation-delay: 0.5s;">
+                    View Gallery Below
+                </a>
+            </div>
+        </section>
+
+        <!-- Existing Detailed Interior Showcase - Image Gallery with Lightbox -->
+        <section id="interior-gallery" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-12 text-gray-900 scroll-reveal">Signature Design Gallery</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Image 1 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x700/60a5fa/ffffff?text=Living+Room" data-caption="Luxurious Living Room Design" class="gallery-item block rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] scroll-reveal">
+                        <img src="https://placehold.co/600x400/60a5fa/ffffff?text=Living+Room" alt="Luxurious Living Room" class="w-full h-full object-cover aspect-video"/>
+                    </a>
+                    
+                    <!-- Image 2 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x700/34d399/ffffff?text=Master+Bedroom" data-caption="Opulent Master Bedroom Suite" class="gallery-item block rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] scroll-reveal" style="animation-delay: 0.1s;">
+                        <img src="https://placehold.co/600x400/34d399/ffffff?text=Master+Bedroom" alt="Opulent Master Bedroom" class="w-full h-full object-cover aspect-video"/>
+                    </a>
+                    
+                    <!-- Image 3 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x700/f87171/ffffff?text=Designer+Kitchen" data-caption="State-of-the-Art Designer Kitchen" class="gallery-item block rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] scroll-reveal" style="animation-delay: 0.2s;">
+                        <img src="https://placehold.co/600x400/f87171/ffffff?text=Designer+Kitchen" alt="State-of-the-Art Kitchen" class="w-full h-full object-cover aspect-video"/>
+                    </a>
+
+                    <!-- Image 4 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x700/fb923c/ffffff?text=Bathroom+Suite" data-caption="Minimalist Bathroom Suite" class="gallery-item block rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] scroll-reveal" style="animation-delay: 0.3s;">
+                        <img src="https://placehold.co/600x400/fb923c/ffffff?text=Bathroom+Suite" alt="Minimalist Bathroom" class="w-full h-full object-cover aspect-video"/>
+                    </a>
+
+                    <!-- Image 5 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x700/a78bfa/ffffff?text=Home+Office" data-caption="Integrated Home Office Space" class="gallery-item block rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] scroll-reveal" style="animation-delay: 0.4s;">
+                        <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Home+Office" alt="Integrated Home Office" class="w-full h-full object-cover aspect-video"/>
+                    </a>
+
+                    <!-- Image 6 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x700/38bdf8/ffffff?text=Dining+Area" data-caption="Elegant Open-Plan Dining Area" class="gallery-item block rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] scroll-reveal" style="animation-delay: 0.5s;">
+                        <img src="https://placehold.co/600x400/38bdf8/ffffff?text=Dining+Area" alt="Open-Plan Dining Area" class="w-full h-full object-cover aspect-video"/>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Carousel - Detailed Features -->
+        <section id="interior-features" class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-12 text-gray-900 scroll-reveal">Standard Interior Features</h2>
+                
+                <div class="interior-carousel flex snap-x snap-mandatory overflow-x-auto gap-8 pb-4 scroll-reveal">
+                    <!-- Feature Card 1 -->
+                    <div class="carousel-item-interior bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex-shrink-0">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-600">Smart Home Integration</h3>
+                        <p class="text-gray-600">Voice-activated climate control, security, and lighting systems installed in every unit for modern living.</p>
+                    </div>
+                    
+                    <!-- Feature Card 2 -->
+                    <div class="carousel-item-interior bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex-shrink-0">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-600">Italian Marble Flooring</h3>
+                        <p class="text-gray-600">Premium, sourced Italian marble used throughout the main living areas for a touch of timeless elegance.</p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="carousel-item-interior bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex-shrink-0">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-600">Designer Appliances</h3>
+                        <p class="text-gray-600">Fully equipped kitchens featuring high-end, integrated appliances from world-renowned brands.</p>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="carousel-item-interior bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex-shrink-0">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-600">Bespoke Millwork</h3>
+                        <p class="text-gray-600">Custom-crafted cabinetry and wardrobe solutions designed for maximum storage and aesthetic appeal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quality and Pricing Section (Best Style) -->
+        <section id="quality-pricing" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-4 text-gray-900 scroll-reveal">Unmatched Quality & Transparent Pricing</h2>
+                <p class="text-center text-xl text-gray-600 mb-12 scroll-reveal" style="animation-delay: 0.2s;">
+                    We believe luxury should be built on substance, not just cost.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8 scroll-reveal" style="animation-delay: 0.4s;">
+                    
+                    <!-- Card 1: Premium Materials -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-xl border-t-4 border-blue-500 hover:shadow-2xl transition duration-300">
+                        <div class="text-blue-500 mb-4">
+                            <!-- SVG: Quality Check -->
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Premium Materials</h3>
+                        <p class="text-gray-600 mb-4">We use certified, sustainably sourced materials for superior durability and finish, exceeding industry standards by 15%.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">&check;</span> High-grade structural steel</li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">&check;</span> Triple-layered soundproofing</li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">&check;</span> Energy-efficient windows</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card 2: Value & Pricing - CTA changed to button with ID -->
+                    <div class="bg-blue-600 p-8 rounded-2xl shadow-2xl border-t-4 border-white transform scale-105 transition duration-500 text-white">
+                        <div class="mb-4">
+                            <!-- SVG: Diamond -->
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.083 2.083a4.872 4.872 0 005.167 7.643L20 14m-1.414-9.914L10 10l-.293.293M9.364 5.364l4 4"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Superior Value</h3>
+                        <p class="mb-4">Our strategic partnerships allow us to offer the highest specifications at highly competitive prices, ensuring exceptional value per square foot.</p>
+                        <p class="text-4xl font-extrabold mb-4">$450k <span class="text-xl font-normal text-blue-200">Starting Price</span></p>
+                        <!-- Updated CTA button with ID -->
+                        <button id="pricing-cta" class="w-full bg-white text-blue-600 font-bold py-3 rounded-xl hover:bg-gray-100 transition duration-300 shadow-md">
+                            Download Pricing Sheet
+                        </button>
+                    </div>
+
+                    <!-- Card 3: Warranty & Support -->
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-xl border-t-4 border-blue-500 hover:shadow-2xl transition duration-300">
+                        <div class="text-blue-500 mb-4">
+                            <!-- SVG: Shield -->
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.275a1.216 1.216 0 010 1.719L18.498 12l3.12 3.556a1.216 1.216 0 01-1.719 1.719L12 14.717l-6.899 6.899a1.216 1.216 0 01-1.719-1.719L5.502 12 2.382 8.444a1.216 1.216 0 011.719-1.719L12 9.283l6.899-6.899a1.216 1.216 0 011.719 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Extended Warranty</h3>
+                        <p class="text-gray-600 mb-4">Peace of mind guaranteed with comprehensive structural and finishing warranties included with every purchase.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">&check;</span> 10-year structural warranty</li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">&check;</span> 2-year finishing warranty</li>
+                            <li class="flex items-center"><span class="text-blue-500 mr-2">&check;</span> 24/7 client support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section with Content -->
+        <section id="project-video" class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-12 text-gray-900 scroll-reveal">A Closer Look: Project Walkthrough</h2>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Video Embed -->
+                    <div class="scroll-reveal">
+                        <div class="video-wrapper shadow-2xl">
+                            <!-- Placeholder for Responsive Video Embed (e.g., YouTube) -->
+                            <iframe 
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                title="Project Walkthrough Video" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="scroll-reveal" style="animation-delay: 0.2s;">
+                        <h3 class="text-3xl font-bold mb-4 text-gray-900">See the Vision Come to Life</h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            This exclusive video provides an in-depth, immersive virtual tour of a finished unit, showcasing the flow, natural light, and premium fixtures you can expect. It's the best way to visualize your new home without setting foot inside.
+                        </p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center text-lg"><span class="text-blue-600 mr-3">&diams;</span> Detailed kitchen appliance review</li>
+                            <li class="flex items-center text-lg"><span class="text-blue-600 mr-3">&diams;</span> Panoramas of the balcony views</li>
+                            <li class="flex items-center text-lg"><span class="text-blue-600 mr-3">&diams;</span> Demonstration of smart home features</li>
+                        </ul>
+                        <!-- Updated CTA button with ID -->
+                        <button id="tour-cta" class="inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl transition duration-300 transform hover:scale-105">
+                            Book a Private Virtual Tour
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Interior Showcase with Animated Images -->
+        <section id="dynamic-showcase" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-12 text-gray-900 scroll-reveal">Dynamic Interior Showcase</h2>
+                <p class="text-center text-xl text-gray-600 mb-12 scroll-reveal" style="animation-delay: 0.2s;">
+                    Hover over or click the images below to see the luxury and details up close.
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Dynamic Animated Image 1 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x750/1e40af/ffffff?text=Modern+Balcony" data-caption="Outdoor Terrace with City View" class="gallery-item block rounded-xl overflow-hidden shadow-xl scroll-reveal">
+                        <img src="https://placehold.co/500x500/1e40af/ffffff?text=Modern+Balcony" alt="Modern Balcony" class="floating-image w-full h-48 md:h-64 object-cover"/>
+                    </a>
+                    
+                    <!-- Dynamic Animated Image 2 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x750/065f46/ffffff?text=Cozy+Nook" data-caption="A Quiet Reading Nook" class="gallery-item block rounded-xl overflow-hidden shadow-xl scroll-reveal" style="animation-delay: 0.1s;">
+                        <img src="https://placehold.co/500x500/065f46/ffffff?text=Cozy+Nook" alt="Cozy Nook" class="floating-image w-full h-48 md:h-64 object-cover"/>
+                    </a>
+                    
+                    <!-- Dynamic Animated Image 3 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x750/d97706/ffffff?text=Walk+in+Closet" data-caption="Custom Walk-in Closet" class="gallery-item block rounded-xl overflow-hidden shadow-xl scroll-reveal" style="animation-delay: 0.2s;">
+                        <img src="https://placehold.co/500x500/d97706/ffffff?text=Walk+in+Closet" alt="Walk in Closet" class="floating-image w-full h-48 md:h-64 object-cover"/>
+                    </a>
+
+                    <!-- Dynamic Animated Image 4 -->
+                    <a href="#" data-img-src="https://placehold.co/1000x750/9333ea/ffffff?text=High+Ceilings" data-caption="Loft with High Ceilings" class="gallery-item block rounded-xl overflow-hidden shadow-xl scroll-reveal" style="animation-delay: 0.3s;">
+                        <img src="https://placehold.co/500x500/9333ea/ffffff?text=High+Ceilings" alt="High Ceilings" class="floating-image w-full h-48 md:h-64 object-cover"/>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-[100] flex items-center justify-center p-4">
+        <div class="lightbox-content relative max-w-5xl w-full mx-auto">
+            <button id="close-lightbox" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition duration-300 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <img id="lightbox-image" src="" alt="Full-size gallery image" class="rounded-xl shadow-2xl w-full max-h-[80vh] object-contain">
+            <p id="lightbox-caption" class="text-white text-center mt-4 text-lg"></p>
+        </div>
+    </div>
+    
+    <!-- Contact Popup/Modal (NEWLY ADDED) -->
+    <div id="contact-modal" class="popup-modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-[101] flex items-center justify-center p-4">
+        <div class="popup-content bg-white p-8 rounded-3xl shadow-2xl max-w-lg w-full relative">
+            <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="text-3xl font-bold mb-4 text-blue-600">Request Information</h3>
+            <p class="mb-6 text-gray-600">Get the full pricing sheet or book your virtual tour now.</p>
+
+            <form id="lead-form" class="space-y-4">
+                <input type="text" id="lead-name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <input type="email" id="lead-email" placeholder="Email Address" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <input type="tel" id="lead-phone" placeholder="Phone Number (Optional)" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <textarea id="lead-message" placeholder="I am interested in..." rows="3" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 transition duration-200"></textarea>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition duration-300 transform hover:shadow-lg">
+                    Submit Request
+                </button>
+                <div id="form-message" class="text-center mt-3 hidden text-sm"></div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Scroll-Triggered Animated Icon/Indicator -->
+    <a href="#interior-gallery" id="scroll-indicator" class="bg-blue-600 text-white p-3 rounded-full shadow-2xl hover:bg-blue-700 transition duration-300 bounce">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </a>
+
+    <!-- Footer (Identical structure to Home Page) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/" class="text-3xl font-bold text-white mb-6 block">Elite<span class="text-blue-500">Realty</span></a>
+            <p class="text-gray-500 text-sm mt-4">
+                &copy; <span id="current-year-interior"></span> Elite Realty Channel Partners. All rights reserved. | Design is subject to change by the developer.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year-interior').textContent = new Date().getFullYear();
+
+            // 1. Sticky Header Functionality
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled', 'bg-gray-900', 'bg-opacity-95');
+                } else {
+                    header.classList.remove('header-scrolled', 'bg-gray-900', 'bg-opacity-95');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('max-h-0');
+                mobileMenu.classList.toggle('max-h-96');
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('opacity-100');
+            });
+
+            // 3. Scroll Reveal Animation
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            scrollRevealElements.forEach(el => observer.observe(el));
+            
+            // 4. Scroll Indicator Visibility
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            const heroSection = document.getElementById('hero');
+
+            if (heroSection && scrollIndicator) {
+                const indicatorObserver = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) {
+                        scrollIndicator.classList.remove('visible');
+                    } else {
+                        scrollIndicator.classList.add('visible');
+                    }
+                }, {
+                    root: null,
+                    threshold: 0,
+                    rootMargin: '0px 0px -100px 0px' // Show indicator after scrolling 100px past the hero bottom
+                });
+                indicatorObserver.observe(heroSection);
+            }
+
+
+            // 5. Lightbox Gallery Logic 
+            const lightbox = document.getElementById('lightbox-modal');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeLightboxBtn = document.getElementById('close-lightbox');
+            const galleryItems = document.querySelectorAll('.gallery-item'); 
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    lightboxImage.src = item.dataset.imgSrc;
+                    lightboxImage.alt = item.dataset.caption;
+                    lightboxCaption.textContent = item.dataset.caption;
+                    lightbox.classList.add('show');
+                    lightbox.classList.remove('hidden');
+                });
+            });
+
+            if (closeLightboxBtn && lightbox) {
+                closeLightboxBtn.addEventListener('click', () => {
+                    lightbox.classList.remove('show');
+                    lightbox.classList.add('hidden');
+                });
+
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox || e.target === lightboxImage) { 
+                        lightbox.classList.remove('show');
+                        lightbox.classList.add('hidden');
+                    }
+                });
+            }
+
+
+            // 6. Contact Popup Logic (NEW)
+            const contactModal = document.getElementById('contact-modal');
+            const closeContactModalBtn = document.getElementById('close-contact-modal');
+            const pricingCtaBtn = document.getElementById('pricing-cta');
+            const tourCtaBtn = document.getElementById('tour-cta');
+
+            const openContactModal = () => {
+                if (contactModal) {
+                    contactModal.classList.add('show');
+                    contactModal.classList.remove('hidden');
+                }
+            };
+
+            // Attach listeners to new CTAs
+            if (pricingCtaBtn) pricingCtaBtn.addEventListener('click', openContactModal);
+            if (tourCtaBtn) tourCtaBtn.addEventListener('click', openContactModal);
+
+            // Close modal functions
+            if (closeContactModalBtn && contactModal) {
+                closeContactModalBtn.addEventListener('click', () => {
+                    contactModal.classList.remove('show');
+                    contactModal.classList.add('hidden');
+                });
+                contactModal.addEventListener('click', (e) => {
+                    if (e.target === contactModal) {
+                        contactModal.classList.remove('show');
+                        contactModal.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // 7. Lead Form Submission (NEW)
+            const leadForm = document.getElementById('lead-form');
+            const formMessage = document.getElementById('form-message');
+            
+            if (leadForm) {
+                leadForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('lead-name').value.trim();
+                    const email = document.getElementById('lead-email').value.trim();
+                    const message = document.getElementById('lead-message').value.trim();
+                    
+                    if (!name || !email || !message) {
+                        formMessage.textContent = 'Please fill out all required fields.';
+                        formMessage.className = 'text-center mt-3 text-red-500 text-sm';
+                        formMessage.classList.remove('hidden');
+                        return;
+                    }
+
+                    // Simulate form submission animation/delay
+                    const submitButton = leadForm.querySelector('button[type="submit"]');
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    submitButton.classList.add('opacity-75');
+
+                    setTimeout(() => {
+                        // Success message
+                        formMessage.textContent = 'Success! Our team will contact you shortly.';
+                        formMessage.className = 'text-center mt-3 text-green-600 text-sm animate-pulse';
+                        formMessage.classList.remove('hidden');
+
+                        // Reset form and button
+                        leadForm.reset();
+                        
+                        // Auto-close modal after a delay
+                        setTimeout(() => {
+                            if (contactModal) {
+                                contactModal.classList.remove('show');
+                                contactModal.classList.add('hidden');
+                            }
+                            submitButton.textContent = 'Submit Request'; // Reset for next time
+                            submitButton.disabled = false;
+                            submitButton.classList.remove('opacity-75');
+                            formMessage.classList.add('hidden');
+                        }, 2000); 
+
+                    }, 1500); // 1.5 second simulated submission time
+                });
+            }
+        });
+    </script>
+</body>
+</html>

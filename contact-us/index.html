@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Realty - Contact | Get in Touch with Our Experts</title>
+    <meta name="description" content="Contact Elite Realty for property inquiries, investment consultations, and partnership opportunities.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+        /* Sticky Header */
+        .header-sticky { transition: background-color 0.3s, box-shadow 0.3s; }
+        .header-scrolled { background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        
+        /* Hero Banner Animation */
+        .animate-hero-text { animation: fadeInTranslate 1s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInTranslate { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Scroll Reveal Animation */
+        .scroll-reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Contact Form Submission Animation */
+        .form-submitted {
+            transition: all 0.5s ease-in-out;
+            transform: scale(0.95);
+            opacity: 0.5;
+        }
+
+        /* Input Field Styling */
+        input:not([type="submit"]), textarea {
+            transition: border-color 0.3s, box-shadow 0.3s;
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+        input:focus:required:invalid, textarea:focus:required:invalid {
+            border-color: #ef4444; /* red-500 */
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+        }
+
+        /* FAQ Accordion */
+        .accordion-content { transition: max-height 0.5s ease-in-out, background-color 0.3s; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header (Identical structure to Home Page) -->
+    <header id="header" class="header-sticky fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="www.homeaurarealtor.com"  style="color:#B49B11" class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">HOME<span style="color:#096088" class="text-blue-500"> AURA</span></a>
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="/" class="text-white hover:text-blue-400 transition duration-300">Home</a>
+                <a href="/bangalore-residential-projects" class="text-white hover:text-blue-400 transition duration-300">Projects</a>
+                <a href="/contact-us" class="text-blue-400 font-semibold transition duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-btn" class="text-white md:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="md:hidden bg-gray-900 bg-opacity-95 text-center transition-all duration-300 max-h-0 overflow-hidden">
+            <a href="/" class="block py-3 text-white hover:bg-gray-700">Home</a>
+            <a href="/bangalore-residential-projects" class="block py-3 text-white hover:bg-gray-700">Projects</a>
+            <a href="/contact-us" class="block py-3 text-blue-400 font-semibold bg-gray-700">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner (Identical structure to Home Page) -->
+        <section id="hero" class="relative h-[720px] overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('image/contactusbanner.jpg');">
+                <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
+            </div>
+            <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="animate-hero-text text-5xl md:text-7xl font-extrabold text-white mb-4" style="animation-delay: 0.1s;">
+                    Connect with Us
+                </h1>
+                <p class="animate-hero-text text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl" style="animation-delay: 0.3s;">
+                    Have questions or ready to explore your property options? Our experts are here to assist you every step of the way.
+                </p>
+                <a  style="background-color: #B49B11;"  href="#contact-form-section" class="animate-hero-text bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-xl transition duration-300 transform hover:scale-105" style="animation-delay: 0.5s;">
+                    Go to Form
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Form and Location Section -->
+        <section id="contact-form-section" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-start">
+                
+                <!-- Contact Form -->
+                <div class="scroll-reveal" style="animation-delay: 0.1s;">
+                    <h2 class="text-4xl font-bold mb-6 text-gray-900">Send Us an Inquiry</h2>
+                    <p class="text-lg text-gray-600 mb-8"> Have questions or want to explore your property options? Our experts are here to assist you every step of the way.</p>
+
+                    <form id="contact-form" class="space-y-6 bg-gray-50 p-8 rounded-2xl shadow-xl border border-gray-100">
+                        <div>
+                            <input type="text" name="name" placeholder="Full Name *" required class="w-full p-4 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                            <span id="name-error" class="text-sm text-red-500 mt-1 hidden">Name is required.</span>
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Email Address *" required class="w-full p-4 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                            <span id="email-error" class="text-sm text-red-500 mt-1 hidden">Please enter a valid email.</span>
+                        </div>
+                        <div>
+                            <input type="tel" name="mobile" required placeholder="Phone Number (e.g., +91 98807 79843)" class="w-full p-4 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                        </div>
+                        <div>
+                            <textarea name="message" placeholder="Please enter your message..." rows="5" required class="w-full p-4 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 transition duration-200"></textarea>
+                            <span id="message-error" class="text-sm text-red-500 mt-1 hidden">Please enter your message.</span>
+                        </div>
+
+                        <button type="submit"  style="background-color: #B49B11;" type="submit" id="contact_form_btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition duration-300 transform hover:scale-[1.01] flex items-center justify-center">
+                            Submit Request
+                        </button>
+                        <!-- <div id="submit-message" class="text-center mt-4 hidden p-3 rounded-lg text-white"></div> -->
+                        <div id="success_message_col" class='mt-2'>
+
+                        </div>
+                        <div id="error_message" class='error'>
+        
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Location Information & Map -->
+                <div class="scroll-reveal" style="animation-delay: 0.3s;">
+                    <!-- <h2 class="text-4xl font-bold mb-6 text-gray-900">Our Global HQ</h2> -->
+                    
+                    <div class="space-y-6 mb-12">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-blue-600 pt-1"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM12 13a3 3 0 100-6 3 3 0 000 6z"></path></svg></div>
+                            <div>
+                                <h3 class="font-semibold text-xl">Address</h3>
+                                <p class="text-gray-600">No,409, 6B Cross, 6th Block, Koramangala, Bangalore - 560095</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-blue-600 pt-1"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+                            <div>
+                                <h3 class="font-semibold text-xl">Email</h3>
+                                <p class="text-gray-600">marketing@homeaurarealtor.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-blue-600 pt-1"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
+                            <div>
+                                <h3 class="font-semibold text-xl">Phone</h3>
+                                <p class="text-gray-600">+91 9880779843</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Google Map -->
+                    <div class="rounded-2xl overflow-hidden shadow-xl h-96 w-full">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.4959517473835!2d77.61958921321205!3d12.942308326173746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1583f2d301c1%3A0xe967d50acc089469!2sHome%20Aura%20Realtor!5e1!3m2!1sen!2sin!4v1763040271519!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-4xl font-bold mb-12 text-gray-900 scroll-reveal">Frequently Asked Questions</h2>
+                
+                <div class="space-y-4 scroll-reveal" style="animation-delay: 0.2s;">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300">
+                            <span>What does Home Aura Realtor do as a channel partner</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 bg-gray-50">
+                            <p class="p-5 pt-0 text-gray-600">Home Aura Realtor is a trusted real estate channel partner in Bangalore, connecting home buyers with top builders and premium projects. We help clients find the right property—from apartments to villas—based on their budget, lifestyle, and location preferences, 
+                                ensuring a smooth buying experience from site visit to booking.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300">
+                            <span>Why should I buy a property through Home Aura Realtor?</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 bg-gray-50">
+                            <p class="p-5 pt-0 text-gray-600">We work directly with verified builders—no middlemen, no extra cost. You get exclusive deals, transparent pricing, and personalized assistance throughout your home-buying journey. 
+                                Our goal is to make property buying stress-free and trustworthy.</p>
+                        </div>
+                    </div>
+
+                     <!-- FAQ 2 -->
+                    <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300">
+                            <span>What types of properties do you deal with?</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 bg-gray-50">
+                            <p class="p-5 pt-0 text-gray-600">Home Aura Realtor offers a wide range of apartments, villas, and plots from reputed builders across prime Bangalore locations such as Whitefield, Sarjapur, Electronic City, and Kanakapura Road. 
+                                Whether you’re an investor or end-user, we help you choose the right home at the right price.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300">
+                            <span>Do you charge any service fee for buyers?</span>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 bg-gray-50">
+                            <p class="p-5 pt-0 text-gray-600">No, our services are absolutely free for property buyers. 
+                                We are officially associated with the builders, so our commission comes from them—not from you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Identical structure to Home Page) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+           <a href="www.homeaurarealtor.com"  style="color:#B49B11" class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">HOME<span style="color:#096088" class="text-blue-500"> AURA</span></a>
+            <div class="flex justify-center space-x-6 mb-8 text-gray-400">
+                <p>Email: marketing@homeaurarealtor.com</p>
+                <p>Phone: +91 98807 79843</p>
+                <p>Location: Bangalore</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-blue-500 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.422-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-blue-400 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.791-1.574 2.153-2.723-.951.554-2.005.959-3.127 1.184-.896-.957-2.173-1.556-3.593-1.556-3.592 0-6.492 2.901-6.492 6.492 0 .51.058 1.006.174 1.485-5.404-.273-10.223-2.85-13.43-6.795-.56.963-.884 2.083-.884 3.267 0 2.247 1.146 4.254 2.887 5.435-.98-.03-1.896-.3-2.693-.742v.081c0 3.167 2.26 5.8 5.234 6.394-.552.15-.909.231-1.304.231-.318 0-.626-.031-.922-.092.837 2.607 3.255 4.475 6.134 4.527-2.243 1.758-5.068 2.809-8.156 2.809-.533 0-1.054-.031-1.566-.091 2.905 1.862 6.345 2.951 10.038 2.951 12.046 0 18.66-9.993 18.66-18.66 0-.285-.008-.567-.02-.848.86-.62 1.603-1.393 2.193-2.257z"/></svg>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm mt-4">
+                &copy; <span id="current-year-contact"></span> Home Aura Realtor - Channel Partners in Bangalore. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year-contact').textContent = new Date().getFullYear();
+
+            // 1. Sticky Header Functionality
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled', 'bg-gray-900', 'bg-opacity-95');
+                } else {
+                    header.classList.remove('header-scrolled', 'bg-gray-900', 'bg-opacity-95');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('max-h-0');
+                mobileMenu.classList.toggle('max-h-96');
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('opacity-100');
+            });
+
+            // 3. Scroll Reveal Animation
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            scrollRevealElements.forEach(el => observer.observe(el));
+
+            // 4. Contact Form Validation and Submission
+            // const form = document.getElementById('contact-form');
+            // const submitBtn = document.getElementById('submit-btn');
+            // const submitMessage = document.getElementById('submit-message');
+
+            // const validateField = (input, errorId) => {
+            //     const errorElement = document.getElementById(errorId);
+            //     if (input.required && input.value.trim() === '') {
+            //         errorElement.classList.remove('hidden');
+            //         return false;
+            //     }
+            //     if (input.type === 'email' && input.value.trim() !== '' && !input.checkValidity()) {
+            //         errorElement.classList.remove('hidden');
+            //         return false;
+            //     }
+            //     errorElement.classList.add('hidden');
+            //     return true;
+            // };
+
+            // const allInputs = form.querySelectorAll('input[required], textarea[required], input[type="email"]');
+            // allInputs.forEach(input => {
+            //     const errorId = input.id.replace('c-', '') + '-error';
+            //     input.addEventListener('input', () => {
+            //         validateField(input, errorId);
+            //     });
+            // });
+
+
+            // form.addEventListener('submit', (e) => {
+            //     e.preventDefault();
+            //     let isFormValid = true;
+
+            //     // Re-validate all fields on submission
+            //     allInputs.forEach(input => {
+            //         const errorId = input.id.replace('c-', '') + '-error';
+            //         if (!validateField(input, errorId)) {
+            //             isFormValid = false;
+            //         }
+            //     });
+
+            //     if (!isFormValid) {
+            //         submitMessage.textContent = 'Please correct the errors above.';
+            //         submitMessage.classList.remove('hidden', 'bg-green-600');
+            //         submitMessage.classList.add('bg-red-500');
+            //         return;
+            //     }
+
+            //     // --- Simulated Successful Submission ---
+                
+            //     // Animated form submission feedback
+            //     form.classList.add('form-submitted');
+            //     submitBtn.textContent = 'Sending...';
+            //     submitBtn.disabled = true;
+
+            //     setTimeout(() => {
+            //         submitMessage.textContent = 'Message Sent! We will be in touch soon.';
+            //         submitMessage.classList.remove('hidden', 'bg-red-500');
+            //         submitMessage.classList.add('bg-green-600');
+            //         submitBtn.textContent = 'Request Submitted';
+            //         submitBtn.classList.add('bg-gray-400'); // Change style after success
+            //         form.reset();
+                    
+            //         setTimeout(() => {
+            //             form.classList.remove('form-submitted');
+            //             submitMessage.classList.add('hidden');
+            //             submitBtn.textContent = 'Submit Request';
+            //             submitBtn.disabled = false;
+            //             submitBtn.classList.remove('bg-gray-400');
+            //         }, 4000);
+
+            //     }, 1500); // 1.5 second simulated delay
+            // });
+
+            // 5. FAQ Accordion Logic (Same as Home Page)
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const icon = item.querySelector('.accordion-icon');
+
+                header.addEventListener('click', () => {
+                    const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+                    // Toggle current item
+                    if (isExpanded) {
+                        content.style.maxHeight = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        // Close other items
+                        document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                            const otherContent = otherItem.querySelector('.accordion-content');
+                            const otherIcon = otherItem.querySelector('.accordion-icon');
+                            if (otherContent !== content) {
+                                otherContent.style.maxHeight = '0px';
+                                otherIcon.style.transform = 'rotate(0deg)';
+                            }
+                        });
+                        // Open current item
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="/js/config.js"></script>
+    <script src="/js/contact.js"></script>
+</body>
+</html>

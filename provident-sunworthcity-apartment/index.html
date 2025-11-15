@@ -1,0 +1,724 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- ================= SEO BASIC TAGS ================= -->
+<title>Provident Sunworth City | Premium Apartments in Mysore Road | Home Aura Realtor</title>
+<meta name="description" content="Discover Provident Sunworth City on Mysore Road, Bangalore – premium 2 & 3 BHK apartments with world-class comfort. Contact Home Aura Realtor, authorized channel partner. Call 9880779843 for site visit & best offers.">
+<meta name="keywords" content="Provident Sunworth City, Provident Sunworth Bangalore, Sunworth City Mysore Road, Provident apartments Mysore Road, 2 BHK Sunworth City, 3 BHK Sunworth City, Home Aura Realtor, Bangalore real estate, channel partner Bangalore">
+<link rel="canonical" href="https://www.homeaurarealtor.com//provident-sunworthcity-apartment" />
+  <meta name="robots" content="index, follow">
+
+ 
+
+
+  <!-- Open Graph / Facebook -->
+<!-- ================= OPEN GRAPH TAGS ================= -->
+<meta property="og:title" content="Provident Sunworth City | Premium Apartments in Mysore Road" />
+<meta property="og:description" content="Explore Provident Sunworth City – spacious 2 & 3 BHK apartments on Mysore Road. Book through Home Aura Realtor. Call 9880779843." />
+<meta property="og:url" content="https://www.homeaurarealtor.com//provident-sunworthcity-apartment" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Home Aura Realtor" />
+<meta property="og:image" content="https://www.homeaurarealtor.com/images/provident-sunworthcity-cover.jpg" />
+<meta property="og:image:alt" content="Provident Sunworth City Apartments" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Residence",
+  "name": "Provident Sunworth City",
+  "description": "Premium 2 & 3 BHK apartments located on Mysore Road, Bangalore. Project marketed by Home Aura Realtor.",
+  "url": "https://www.homeaurarealtor.com//provident-sunworthcity-apartment",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mysore Road",
+    "addressRegion": "Bangalore",
+    "addressCountry": "India"
+  },
+  "image": "https://www.homeaurarealtor.com/images/provident-sunworthcity-cover.jpg",
+  "telephone": "+91-9880779843",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "INR"
+    }
+  },
+  "seller": {
+    "@type": "RealEstateAgent",
+    "name": "Home Aura Realtor",
+    "url": "https://www.homeaurarealtor.com",
+    "telephone": "+91-9880779843"
+  }
+}
+</script>
+
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for animations and smooth effects */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+        /* Sticky Header */
+        .header-sticky { transition: background-color 0.3s, box-shadow 0.3s; }
+        .header-scrolled { background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+
+        /* Hero Banner Animation */
+        .animate-hero-text {
+            animation: fadeInTranslate 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInTranslate {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Scroll Reveal Animation (Default hidden state) */
+        .scroll-reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Parallax Effect for About Image */
+        .parallax-bg {
+            background-image: url('https://placehold.co/1200x800/2563eb/ffffff?text=Professional+Image');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px;
+        }
+
+        /* Hover Effect for Service Cards */
+        .service-card, .project-carousel-card { 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .service-card:hover, .project-carousel-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); 
+        }
+        
+        /* Custom Carousel Styling for Services and Projects (4 cards wide on desktop) */
+        /* IMPORTANT: Overflow changed to hidden, and scrollbar hidden for auto-scroll */
+        .carousel-container { 
+            overflow-x: hidden; 
+            scroll-snap-type: none; /* Disable manual snapping for auto-scroll */
+            -webkit-overflow-scrolling: touch;
+            /* Hide scrollbar for WebKit, IE, and Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        /* Adjusted carousel item width to ensure 4 fit perfectly with gap, across all main carousels */
+        .carousel-item { flex: 0 0 90%; }
+        @media (min-width: 640px) { .carousel-item { flex: 0 0 50%; } }
+        @media (min-width: 1024px) { 
+            /* This calculation (25% minus gap) is approximated by letting flexbox handle it, 
+               but enforcing 25% for 4 columns on large screens. */
+            .carousel-item { flex: 0 0 calc(25% - 1.5rem); } /* 1.5rem gap = 8px * 3 = 24px */
+            /* Tailwind gap-8 is 2rem (32px), so four items need 3 gaps total. Total width is 100%. */
+            .carousel-item { flex: 0 0 calc(25% - 24px); } 
+            /* Let's simplify and rely on flex-shrink-0 and gap for the effect, 
+               and set a responsive max-width/flex-basis */
+            .carousel-item { flex: 0 0 calc(25% - 24px); max-width: calc(25% - 24px); } /* Approximation for 4 items */
+        }
+        /* Re-enforcing the simple way that works better with Tailwind's flex/gap logic */
+        @media (min-width: 1024px) { .carousel-item { flex: 0 0 calc(25% - 24px); max-width: calc(25% - 24px); } }
+
+        /* Logo Carousel Styling (More dense, 5-6 logos on desktop) */
+        /* IMPORTANT: Overflow changed to hidden, and scrollbar hidden for auto-scroll */
+        .logo-carousel-container { 
+            overflow-x: hidden; 
+            scroll-snap-type: none; /* Disable manual snapping for auto-scroll */
+            -webkit-overflow-scrolling: touch;
+            /* Hide scrollbar for WebKit, IE, and Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .logo-carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        .logo-carousel-item { flex: 0 0 33.3333%; }
+        @media (min-width: 640px) { .logo-carousel-item { flex: 0 0 20%; } }
+        @media (min-width: 1024px) { .logo-carousel-item { flex: 0 0 16.6666%; } }
+
+
+        /* Contact Popup Transition */
+        .popup-modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .popup-modal.hidden { opacity: 0; visibility: hidden; }
+        .popup-modal.show { opacity: 1; visibility: visible; }
+        .popup-content { transform: scale(0.9); transition: transform 0.3s ease; }
+        .popup-modal.show .popup-content { transform: scale(1); }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header id="header" class="header-sticky fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Responsive Logo -->
+           <a href="#"  style="color:#B49B11" class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">HOME<span style="color:#096088" class="text-blue-500"> AURA</span></a>
+            
+            <!-- Navigation Menu (Desktop) -->
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="#about" class="text-white hover:text-blue-400 transition duration-300">About</a>
+              <a href="/bangalore-residential-projects" class="text-white hover:text-blue-400 transition duration-300">Projects</a>             
+                <a href="/contact-us" class="text-white hover:text-blue-400 transition duration-300">Contact</a>
+                
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="text-white md:hidden focus:outline-none p-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="md:hidden bg-gray-900 bg-opacity-95 text-center transition-all duration-300 max-h-0 overflow-hidden">
+            <a href="#about" class="block py-3 text-white hover:bg-gray-700">About</a>          
+            <a href="/bangalore-residential-projects" class="block py-3 text-white hover:bg-gray-700">Projects</a>          
+            <a href="/contact-us" class="block py-3 text-white hover:bg-gray-700">Contact</a>
+            
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner (Identical structure to Home Page) -->
+        <section id="hero" class="relative h-[720px] overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('image/sunworthcitybanner.jpg');">
+                <div class="absolute inset-0 bg-gray-900 opacity-30"></div>
+            </div>
+            <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="animate-hero-text text-5xl md:text-7xl font-extrabold text-white mb-4" style="animation-delay: 0.1s;">
+                   Provident Sunworth City
+                </h1>
+                <p class="animate-hero-text text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl" style="animation-delay: 0.3s;">
+                    Experience serene living with lake views, lush greenery, and world-class amenities at Provident Sunworth City.
+                </p>
+                <!-- <a href="#project-grid"  class="animate-hero-text bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-xl transition duration-300 transform hover:scale-105" style="animation-delay: 0.5s;">
+                    View All Listings
+                </a> -->
+            </div>
+        </section>
+            <!-- Content -->
+            <!-- <div class="relative h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="animate-hero-text text-5xl md:text-7xl font-extrabold text-white mb-4" style="animation-delay: 0.1s;">
+                    Your Vision, Our Expertise.
+                </h1>
+                <p class="animate-hero-text text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl" style="animation-delay: 0.3s;">
+                    The leading channel partner delivering exclusive opportunities and strategic real estate consultation.
+                </p>
+                <button id="hero-cta" class="animate-hero-text bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-xl transition duration-300 transform hover:scale-105" style="animation-delay: 0.5s;">
+                    Explore Premium Projects
+                </button>
+            </div> -->
+        </section>
+
+        <!-- About Section -->
+    <!-- <section id="about" class="py-16">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-4xl font-extrabold text-center text-godrej-primary mb-4 animate-fade-in">
+                About Godrej Lakeside Orchard
+            </h2>
+            <p  style="text-align: justify;" class="text-center text-xl text-gray-600 mb-12 max-w-3xl mx-auto animate-fade-in transition-delay-100">
+               You deserve a life where every moment feels like an adventure and every day a dream come true. Welcome to Godrej Lakeside Orchard – a serene haven with shimmering lake views, 6 acres of lush greenery, a blooming orchard with 700+ trees, 
+               and 40+ world-class amenities including a grand clubhouse, all designed to create a lifestyle of peace, luxury, and cherished memories..
+            </p>
+          -->
+
+            <!-- Key Features Grid -->
+            
+            <!-- </div>
+        </div>
+    </section> -->
+
+    <section id="about" class="py-16">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <h2 class="text-4xl font-extrabold text-center text-godrej-primary mb-4 animate-fade-in">
+            About Godrej Lakeside Orchard
+        </h2>
+        <p style="text-align: justify;" class="text-center text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in transition-delay-100">
+           Located off Mysore Road-NICE Junction, Provident Sunworth City is the largest township in South Bengaluru, sprawling over mammoth ~60 acres. 
+           Situated close to the Challaghatta metro station, a home here brings every convenience to your doorstep without any compromise on connectivity to 
+           the rest of Bengaluru. With 19 acres of dedicated green cover which encapsulate 7000 trees, behold the mesmerizing views of this green sanctuary with your
+            loved ones. The offering of 2 & 3 BHK Homes at Provident Sunworth City are planned with minute attention to detail and functionality and comes with 50+ 
+            amenities to meet your fitness & recreational choices. The project boasts a Chrysalis High School and Retail-Commercial space within the 
+            premises, to cater to all the residential & educational needs of a community.
+
+
+        </p>
+
+        <div class="text-center mb-12">
+            <button style="background-color: #B49B11;" id="open-popup-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                GET MORE INFO
+            </button>
+        </div>
+        </div>
+</section>
+
+<div id="inquiry-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center hidden">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md mx-4 transform transition-all duration-300 ease-in-out scale-95 opacity-0" id="popup-content">
+        <div class="flex justify-end">
+            <button id="close-popup-btn" class="text-gray-500 hover:text-gray-800 text-2xl font-bold leading-none">
+                &times;
+            </button>
+        </div>
+        
+        <h3 class="text-3xl font-extrabold text-center text-blue-600 mb-6">
+            Get Exclusive Details
+        </h3>
+        
+        <form action="#" method="POST">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Full Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your full name">
+            </div>
+            <div class="mb-4">
+                <label for="phone" class="block text-gray-700 text-sm font-semibold mb-2">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your phone number">
+            </div>
+            <div class="mb-6">
+                <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email (Optional)</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email address">
+            </div>
+            
+            <button  style="background-color: #B49B11;" type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Submit & Get Instant Brochure
+            </button>
+        </form>
+        </div>
+</div>
+
+    <!-- Price of Godrej Lakeside Orchard (Table) -->
+    <section id="plans" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-3xl font-bold text-center text-godrej-primary mb-10 animate-fade-in">
+                Price Of Godrej Lakeside Orchard
+            </h2>
+
+            <div class="bg-white shadow-xl rounded-xl overflow-hidden animate-fade-in transition-delay-200">
+                <!-- Table Header -->
+                <div class="bg-godrej-primary text-white grid grid-cols-3 md:grid-cols-5 p-4 font-bold text-center text-sm md:text-base uppercase tracking-wider">
+                    <div class="hidden md:block">Configuration</div>
+                    <div>Configuration</div>
+                    <div class="hidden md:block">Size (Sq.Ft.)</div>
+                    <div>Price (Starting)</div>
+                    <div>Action</div>
+                </div>
+
+                <!-- 2 BHK Row -->
+                <div class="grid grid-cols-3 md:grid-cols-5 items-center p-4 border-b hover:bg-gray-100 transition duration-200">
+                    <div class="hidden md:block font-semibold text-godrej-primary">Type</div>
+                    <div class="font-semibold text-godrej-primary">2BHK </div>
+                    <div class="hidden md:block text-gray-600">883 Sq.Ft.</div>
+                    <div class="text-lg font-bold text-godrej-accent">Request for Pricing</div>
+                    <div class="text-center">
+                        <button  style="background-color: #B49B11;"   type="button" class="bg-godrej-accent text-godrej-primary text-sm px-4 py-2 rounded-lg font-semibold hover:bg-orange-400 transition duration-300 w-full md:w-auto">
+                            Download Brochure
+                        </button>
+                    </div>
+                </div>
+
+                 <!-- 2 BHK Row -->
+                <div class="grid grid-cols-3 md:grid-cols-5 items-center p-4 hover:bg-gray-100 transition duration-200">
+                    <div class="hidden md:block font-semibold text-godrej-primary">Type</div>
+                    <div class="font-semibold text-godrej-primary">3BHK</div>
+                    <div class="hidden md:block text-gray-600">1082 Sq.Ft.</div>
+                    <div class="text-lg font-bold text-godrej-accent">Request for Pricing</div>
+                    <div class="text-center">
+                        <button style="background-color: #B49B11;" type="button" class="bg-godrej-accent text-godrej-primary text-sm px-4 py-2 rounded-lg font-semibold hover:bg-orange-400 transition duration-300 w-full md:w-auto">
+                            Download Brochure
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3 BHK Row -->
+                <div class="grid grid-cols-3 md:grid-cols-5 items-center p-4 hover:bg-gray-100 transition duration-200">
+                    <div class="hidden md:block font-semibold text-godrej-primary">Type</div>
+                    <div class="font-semibold text-godrej-primary">3BHK Grand</div>
+                    <div class="hidden md:block text-gray-600">1766 Sq.Ft.</div>
+                    <div class="text-lg font-bold text-godrej-accent">Request for Pricing</div>
+                    <div class="text-center">
+                        <button style="background-color: #B49B11;" type="button" class="bg-godrej-accent text-godrej-primary text-sm px-4 py-2 rounded-lg font-semibold hover:bg-orange-400 transition duration-300 w-full md:w-auto">
+                            Download Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-sm text-gray-500 mt-6 animate-fade-in transition-delay-400">*Price is indicative and subject to change. Limited inventory available.</p>
+        </div>
+    </section>
+
+   <section id="amenities" class="py-16">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <h2 class="text-3xl font-bold text-center text-godrej-primary mb-10 animate-fade-in">
+            Amenities Of Godrej Lakeside Orchard
+        </h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-8 text-center">
+
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in">
+                <div class="font-semibold text-godrej-primary">Swimming Pool</div>
+                <!-- <p class="text-xs text-gray-500">Relaxing dip</p> -->
+            </div>
+
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-100">
+                <div class="font-semibold text-godrej-primary">Cafe</div>
+                <!-- <p class="text-xs text-gray-500">Daily fitness</p> -->
+            </div>
+
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-200">
+                <div class="font-semibold text-godrej-primary">Yoga</div>
+                <!-- <p class="text-xs text-gray-500">Safe recreation</p> -->
+            </div>
+
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-300">
+                <div class="font-semibold text-godrej-primary">Clubhouse</div>
+                <!-- <p class="text-xs text-gray-500">Social hub</p> -->
+            </div>
+
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-400">
+                <div class="font-semibold text-godrej-primary">Gymnasium</div>
+                <!-- <p class="text-xs text-gray-500">Modern equipment</p> -->
+            </div>
+
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-400">
+                <div class="font-semibold text-godrej-primary">Football</div>
+                <!-- <p class="text-xs text-gray-500">Modern equipment</p> -->
+            </div>
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-400">
+                <div class="font-semibold text-godrej-primary">Kids Play</div>
+                <!-- <p class="text-xs text-gray-500">Modern equipment</p> -->
+            </div>
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-400">
+                <div class="font-semibold text-godrej-primary">Inddor Game</div>
+                <!-- <p class="text-xs text-gray-500">Modern equipment</p> -->
+            </div>
+
+            <div class="flex flex-col items-center p-4 rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-500">
+                <div class="font-semibold text-godrej-primary">Jacking</div>
+                <!-- <p class="text-xs text-gray-500">Sports facility</p> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Floor Plans & Master Plan Section -->
+   <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <h2 class="text-3xl font-bold text-center text-godrej-primary mb-10 animate-fade-in">
+            Floor Plans & Master Plan
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Master Plan -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden animate-fade-in">
+                <img src="/image/floorplan/1.jpg" alt="Master Plan" 
+                     class="w-full h-48 object-cover blur-[5px]">
+                <div class="p-6">
+                    <button style="background-color: #B49B11;" type="button"
+                        class="w-full bg-godrej-accent text-godrej-primary px-4 py-2 rounded-lg font-bold block text-center hover:bg-orange-400 transition duration-300">
+                        Download Brouchers
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2 BHK Plan -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden animate-fade-in transition-delay-100">
+                <img src="/image/floorplan/2.jpg" alt="2 BHK Floor Plan" 
+                     class="w-full h-48 object-cover blur-[5px]">
+                <div class="p-6">
+                    <button style="background-color: #B49B11;" type="button"
+                        class="w-full bg-godrej-accent text-godrej-primary px-4 py-2 rounded-lg font-bold block text-center hover:bg-orange-400 transition duration-300">
+                        Download Brouchers
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3 BHK Plan -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden animate-fade-in transition-delay-200">
+                <img src="/image/floorplan/3.jpg" alt="3 BHK Floor Plan" 
+                     class="w-full h-48 object-cover blur-[5px]">
+                <div class="p-6">
+                    <button style="background-color: #B49B11;" type="button"
+                        class="w-full bg-godrej-accent text-godrej-primary px-4 py-2 rounded-lg font-bold block text-center hover:bg-orange-400 transition duration-300">
+                        Download Brouchers
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-7xl">
+      
+    <h2 class="text-3xl font-bold text-center text-godrej-primary mb-10 animate-fade-in">
+      Gallery
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- Image 1 -->
+      <div class="overflow-hidden rounded-xl shadow-md group">
+        <img src="/image/sunworthgallery1.jpg" 
+             alt="Project Gallery Image 1" 
+             class="w-full h-64 object-cover transition-all duration-500 group-hover:scale-110 ">
+      </div>
+
+      <!-- Image 2 -->
+      <div class="overflow-hidden rounded-xl shadow-md group">
+        <img src="/image/sunworthgallery2.jpg" 
+             alt="Project Gallery Image 2" 
+             class="w-full h-64 object-cover transition-all duration-500 group-hover:scale-110 ">
+      </div>
+
+      <!-- Image 3 -->
+      <div class="overflow-hidden rounded-xl shadow-md group">
+        <img src="/image/sunworthgallery3.jpg" 
+             alt="Project Gallery Image 3" 
+             class="w-full h-64 object-cover transition-all duration-500 group-hover:scale-110 ">
+      </div>
+
+      <!-- Image 4 -->
+      <div class="overflow-hidden rounded-xl shadow-md group">
+        <img src="/image/sunworthgallery4.jpg" 
+             alt="Project Gallery Image 4" 
+             class="w-full h-64 object-cover transition-all duration-500 group-hover:scale-110 ">
+      </div>
+
+      <!-- Image 5 -->
+      <div class="overflow-hidden rounded-xl shadow-md group">
+        <img src="/image/sunworthgallery5.jpg" 
+             alt="Project Gallery Image 5" 
+             class="w-full h-64 object-cover transition-all duration-500 group-hover:scale-110 ">
+      </div>
+
+      <!-- Image 6 -->
+      <div class="overflow-hidden rounded-xl shadow-md group">
+        <img src="/image/sunworthgallery6.jpg" 
+             alt="Project Gallery Image 6" 
+             class="w-full h-64 object-cover transition-all duration-500 group-hover:scale-110 ">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Project Walkthrough Video Section -->
+    <section id="walkthrough" class="py-16">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-3xl font-bold text-center text-godrej-primary mb-10 animate-fade-in">
+                Project Walkthrough & Highlights
+            </h2>
+
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden p-4 sm:p-8 animate-fade-in transition-delay-200">
+                <div class="aspect-w-16 aspect-h-9 w-full h-96 bg-gray-200 flex items-center justify-center text-gray-500 rounded-lg">
+                    <!-- Mock Video Player -->
+                   <iframe width="900" height="350" src="https://www.youtube.com/embed/7oBrZuX1VRg?si=245_KyEHHVNNoPdB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <!-- <p class="text-center text-sm text-gray-500 mt-4">Project Walkthrough & Development Progress Video</p> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-3xl font-bold text-center text-godrej-primary mb-10 animate-fade-in">
+                Project Location: Proximity & Connectivity
+            </h2>
+
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden animate-fade-in transition-delay-100">
+                <div class="w-full h-96 bg-gray-200">
+                    <!-- Mock Google Map -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m24!1m8!1m3!1d44275.68861720977!2d77.6997151854203!3d12.892972942405232!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3bae13770d8ab99b%3A0x346ffde1c7a0d564!2sGodrej%20Lakeside%20Orchard%20-%20Sarjapur%E2%80%A6!3m2!1d12.8911287!2d77.7044572!4m5!1s0x3bae13770d8ab99b%3A0x346ffde1c7a0d564!2sGodrej%20Lakeside%20Orchard%20-%20Sarjapur%20Road%2C%20Bangalore%20Ground%20Floor%20Main%20Road%2C%20Chikkakannalli%20near%20Hadosiddapura%2C%20lake%20Bengaluru%2C%20Karnataka%20560035!3m2!1d12.8911287!2d77.7044572!5e1!3m2!1sen!2sin!4v1762508986210!5m2!1sen!2sin" width="1250" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+
+                <!-- Location Landmarks Grid -->
+                <div class="p-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-3 border rounded-lg">
+                        <div class="font-bold text-godrej-primary">Challaghatta Metro Station </div>
+                        <div class="text-sm text-gray-600">5 mins</div>
+                    </div>
+                    <div class="p-3 border rounded-lg">
+                        <div class="font-bold text-godrej-primary">Mysore Road Expressway  </div>
+                        <div class="text-sm text-gray-600">10-lane connectivity </div>
+                    </div>
+                    <div class="p-3 border rounded-lg">
+                        <div class="font-bold text-godrej-primary">Raja Rajeshwari Medical College </div>
+                        <div class="text-sm text-gray-600">5 mins</div>
+                    </div>
+                    <div class="p-3 border rounded-lg">
+                        <div class="font-bold text-godrej-primary">IT | School</div>
+                        <div class="text-sm text-gray-600">Within 5 mins</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Contact Form (Footer CT A) -->
+    <section id="contact" class="bg-godrej-primary py-16">
+        <div class="container mx-auto px-4 max-w-xl text-center">
+            <h2 style="color: black;" class="text-4xl font-extrabold text-white mb-4 animate-fade-in">
+                Schedule A Site Visit
+            </h2>
+            <!-- <p style="color: black; class="text-gray-300 text-xl mb-8 animate-fade-in transition-delay-100">
+                Get a personalized tour of the site and experience luxury firsthand.
+            </p> -->
+            
+            <form action="#" method="POST" class="space-y-4 bg-white p-8 rounded-xl shadow-2xl animate-fade-in transition-delay-200">
+                <h3 class="text-2xl font-bold text-godrej-primary">Book Your Dream Home</h3>
+                <input type="text" name="name" placeholder="Full Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-godrej-accent focus:border-godrej-accent transition duration-200">
+                <input type="tel" name="phone" placeholder="Mobile Number" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-godrej-accent focus:border-godrej-accent transition duration-200">
+                <button  style="background-color: chocolate;"  type="submit" class="w-full bg-godrej-accent text-godrej-primary p-3 rounded-full font-bold uppercase tracking-wider hover:bg-orange-400 transition duration-300 shadow-lg">
+                    Submit Query
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Centered Logo -->
+            <a href="#"  style="color:#B49B11" class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">HOME<span style="color:#096088" class="text-blue-500"> AURA</span></a>
+
+            <!-- Contact Info: Stacks vertically on mobile, switches to row on desktop -->
+            <div class="flex flex-col items-center space-y-2 md:flex-row md:justify-center md:space-y-0 md:space-x-6 mb-8 text-gray-400">
+                <p class="hover:text-blue-400 transition duration-300">Email: marketing@homeaurarealtor.com</p>
+                <p class="hover:text-blue-400 transition duration-300">Phone: +91 98807 79843</p>
+                <p class="hover:text-blue-400 transition duration-300">Location: Bangalore</p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-blue-500 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.422-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-blue-400 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.791-1.574 2.153-2.723-.951.554-2.005.959-3.127 1.184-.896-.957-2.173-1.556-3.593-1.556-3.592 0-6.492 2.901-6.492 6.492 0 .51.058 1.006.174 1.485-5.404-.273-10.223-2.85-13.43-6.795-.56.963-.884 2.083-.884 3.267 0 2.247 1.146 4.254 2.887 5.435-.98-.03-1.896-.3-2.693-.742v.081c0 3.167 2.26 5.8 5.234 6.394-.552.15-.909.231-1.304.231-.318 0-.626-.031-.922-.092.837 2.607 3.255 4.475 6.134 4.527-2.243 1.758-5.068 2.809-8.156 2.809-.533 0-1.054-.031-1.566-.091 2.905 1.862 6.345 2.951 10.038 2.951 12.046 0 18.66-9.993 18.66-18.66 0-.285-.008-.567-.02-.848.86-.62 1.603-1.393 2.193-2.257z"/></svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-pink-500 transition duration-300 transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85 0 3.204-.012 3.584-.069 4.85-0.148 3.228-1.667 4.772-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.253-0.148-4.772-1.691-4.919-4.919-0.058-1.265-0.07-1.644-0.07-4.85s.012-3.584.07-4.85c0.148-3.227 1.668-4.772 4.919-4.919 1.266-0.058 1.644-0.07 4.85-0.07zm0-2.163c-3.259 0-3.667.014-4.945.071-4.435.201-6.793 2.617-7.004 7.004-0.057 1.278-0.071 1.687-0.071 4.945s0.014 3.667 0.071 4.945c0.201 4.387 2.617 6.793 7.004 7.004 1.278 0.057 1.687 0.071 4.945 0.071s3.667-0.014 4.945-0.071c4.387-0.201 6.793-2.617 7.004-7.004 0.057-1.278 0.071-1.687 0.071-4.945s-0.014-3.667-0.071-4.945c-0.201-4.387-2.617-6.793-7.004-7.004-1.278-0.057-1.687-0.071-4.945-0.071zM12 5.838c-3.4 0-6.162 2.762-6.162 6.162s2.762 6.162 6.162 6.162 6.162-2.762 6.162-6.162c0-3.4-2.762-6.162-6.162-6.162zM12 16.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zM18.406 7.317c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.44-.645 1.44-1.44s-.645-1.44-1.44-1.44z"/></svg>
+                </a>
+            </div>
+
+            <!-- Copyright and Disclaimer -->
+            <p class="text-gray-500 text-sm mt-4">
+                &copy; <span id="current-year"></span> home aura realtor Channel Partners. All rights reserved. 
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- JavaScript for Interactivity and Animations ---
+
+        // 1. Intersection Observer for Smooth On-Scroll Animations
+        const observerOptions = {
+            root: null, // relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the 'is-visible' class to trigger the CSS transition
+                    entry.target.classList.add('is-visible');
+                    // Stop observing once it's visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Target all elements with the 'animate-fade-in' class (excluding the ones in the hero)
+        document.querySelectorAll('.animate-fade-in:not(.hero-section .animate-fade-in)').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Immediately show hero elements (they don't need scroll trigger)
+        document.querySelectorAll('.hero-section .animate-fade-in').forEach(el => {
+            // Use a slight delay to make it feel intentional
+            setTimeout(() => {
+                el.classList.add('is-visible');
+            }, 100); 
+        });
+
+        // Removed: Sticky Header Logic
+        // Removed: Mobile Menu Toggle Logic
+        // Removed: Smooth Scrolling Logic
+
+        
+    document.addEventListener('DOMContentLoaded', function() {
+        const openButton = document.getElementById('open-popup-btn');
+        const closeButton = document.getElementById('close-popup-btn');
+        const popup = document.getElementById('inquiry-popup');
+        const popupContent = document.getElementById('popup-content');
+
+        // Function to show the modal with animation
+        function openModal() {
+            popup.classList.remove('hidden');
+            // Force reflow to ensure transition runs
+            void popupContent.offsetWidth; 
+            popupContent.classList.remove('scale-95', 'opacity-0');
+            popupContent.classList.add('scale-100', 'opacity-100');
+        }
+
+        // Function to hide the modal with animation
+        function closeModal() {
+            popupContent.classList.remove('scale-100', 'opacity-100');
+            popupContent.classList.add('scale-95', 'opacity-0');
+            
+            // Hide the wrapper after the transition completes (300ms)
+            setTimeout(() => {
+                popup.classList.add('hidden');
+            }, 300); 
+        }
+
+        // Open popup on button click
+        openButton.addEventListener('click', openModal);
+
+        // Close popup on close button click
+        closeButton.addEventListener('click', closeModal);
+
+        // Close popup if user clicks outside the form
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                closeModal();
+            }
+        });
+
+        // Optional: Close popup with 'Escape' key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !popup.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
