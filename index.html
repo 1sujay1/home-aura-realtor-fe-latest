@@ -8,7 +8,7 @@
     <meta name="description"
         content="Home Aura Realtor is your trusted real estate partner for premium residential and commercial properties in Bangalore. Find your dream home today.">
     <meta name="keywords"
-        content="real estate, bangalore properties, luxury homes, apartments for sale, villas, plots, real estate investment">
+        content="real estate, bangalore properties, luxury homes, apartments for sale, villas, plots, real estate investment,channel partner in bangalore, property consultant, commercial spaces, residential properties">
     <meta name="author" content="Home Aura Realtor">
     <meta property="og:title" content="Home Aura Realtor | Premium Real Estate Partner in Bangalore">
     <meta property="og:description"
@@ -16,11 +16,15 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://homeaurarealtor.com">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://homeaurarealtor.com/" />
+    <meta name="robots" content="index, follow">
+
+
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="image/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
@@ -30,13 +34,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> -->
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/index.css">
- 
     <link rel="stylesheet" href="/css/enhancements.css">
 
     <!-- AOS Animation Library -->
@@ -139,6 +143,8 @@
         .popup-content { transform: scale(0.9); transition: transform 0.3s ease; }
         .popup-modal.show .popup-content { transform: scale(1); }
     </style> -->
+
+
 </head>
 
 <body class="text-gray-800">
@@ -155,8 +161,7 @@
             <nav class="hidden md:flex space-x-8 text-lg">
                 <a href="#about" class="text-white hover:text-blue-400 transition duration-300">About</a>
                 <a href="#services" class="text-white hover:text-blue-400 transition duration-300">Services</a>
-                <a href="/bangalore-residential-projects"
-                    class="text-white hover:text-blue-400 transition duration-300">Projects</a>
+                <a href="/bangalore-residential-projects" class="text-white hover:text-blue-400 transition duration-300">Projects</a>
                 <a href="/contact-us" class="text-white hover:text-blue-400 transition duration-300">Contact</a>
 
             </nav>
@@ -231,14 +236,14 @@
                 </div>
 
                 <div class="scroll-reveal">
-                    <h2 style="font-size: 32px;" class="text-4xl font-bold mb-6 text-gray-900">Best Channel Partner in
+                    <h2 style="font-size: 28px;" class="text-4xl font-bold mb-6 text-gray-900">Best Channel Partner in
                         <Span style="color:#B49B11; ">Bangalore</Span></h2>
-                    <p style="text-align: justify;" class="text-lg text-gray-600 mb-4">
+                    <p style="text-align: justify; font-size: 16px;" class="text-lg text-gray-600 mb-4">
                         <strong class="text-gray-600">Located in the heart of Koramangala, we’re more than just property
                             consultants — we are your long-term partners in real estate. Our mission is to simplify
                             property discovery while maintaining a client-first approach.
                     </p>
-                    <p style="text-align: justify;" class="text-lg text-gray-600">
+                    <p style="text-align: justify; font-size: 16px;" class="text-lg text-black-600">
                         With exclusive channel partnerships with Bangalore’s leading builders, we offer unbeatable
                         access to pre-launch, under-construction, and ready-to-move-in properties.
                     </p>
@@ -336,232 +341,93 @@
             </div>
         </section>
 
-        <!-- Services Section (Now Auto-Scroll Carousel) - UPDATED TO TWO-TONE DESIGN -->
-        <section id="services" class="py-16 md:py-24 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-center text-4xl font-bold mb-4 text-gray-900 scroll-reveal">Our Services</h2>
-                <!-- <p class="text-center text-xl text-gray-600 mb-12 scroll-reveal" style="animation-delay: 0.2s;">
-                    Tailored solutions for every stage of your real estate investment.
-                </p> -->
+      <!-- Service Header -->
+    <div class="text-center mb-12 sm:mb-16">
+        <h2 style="font-size: 28px;" class="text-2xl sm:text-5xl font-extrabold tracking-tight">
+            OUR <span class="text-primary-red">SERVICES</span>
+        </h2>
+        <div class="w-16 h-1 bg-primary-red mx-auto mt-2 rounded"></div>
+        <p class="mt-4 text-gray-400 text-lg max-w-2xl mx-auto">
+            As your trusted channel partner in Bangalore, we simplify your real estate journey from discovery to closure.
+        </p>
+    </div>
 
-                <!-- Responsive Image Carousel Container (Services) -->
-                <!-- ADDED PX-4 (p-4 on larger screens) to the container to simulate padding around the slide group -->
-                <div id="services-carousel"
-                    class="carousel-container flex overflow-x-hidden gap-8 pb-4 scroll-reveal px-4 lg:px-0"
-                    style="animation-delay: 0.4s;">
-                    <!-- Original Service Cards -->
-                    <!-- Used a wrapper div to contain all slides for the scrolling effect -->
-                    <div class="service-group flex flex-shrink-0 gap-8">
-                        <!-- Service Card 1 (Two-Tone Design) -->
-                        <!-- ADDED MAX-W-SM to match project card max width -->
-                        <div
-                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
-                            <!-- Top Primary Color Section (Icon/Header) -->
-                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m3 0V7a4 4 0 014-4h2a4 4 0 014 4v12m-8 0h8">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold">Residential Property Sales</h3>
-                            </div>
-                            <!-- Bottom Light Section (Details) -->
-                            <div class="p-6 flex flex-col flex-grow h-[150px]">
-                                <p class="text-gray-600 text-sm mb-4 flex-grow">Apartments, villas, and premium flats
-                                    across Bangalore’s top localities. We have a wide range of properties to choose
-                                    from.</p>
-                                <button type="button"
-                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
-                                    onclick="openModal()">Learn More &rarr;</button>
-                            </div>
-                        </div>
+    <!-- Services Grid Container -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full mx-auto">
 
-                        <!-- Service Card 2 (Two-Tone Design) -->
-                        <div
-                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
-                            <!-- Top Primary Color Section (Icon/Header) -->
-                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 13.255A23.55 23.55 0 0112 15c-3.185 0-6.22-.62-9-1.745M16 4v12a2 2 0 002 2h2">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold">Commercial Leasing & Sales</h3>
-                            </div>
-                            <!-- Bottom Light Section (Details) -->
-                            <div class="p-6 flex flex-col flex-grow h-[150px]">
-                                <p class="text-gray-600 text-sm mb-4 flex-grow">Premium office and retail spaces in key
-                                    business districts. </p>
-                                <button
-                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
-                                    onclick="openModal()">Learn More &rarr;</button>
-                            </div>
-                        </div>
+        <!-- 1. Project Consultation -->
+        <div class="service-card p-6 rounded-lg shadow-lg hover:z-10 cursor-pointer">
+            <div class="mb-3 text-center">
+                <!-- Lucide Users Icon (Inline SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-red service-card:hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 style="color:#B49B11; font-size: 18px;" class="text-xl font-bold mb-2 uppercase">End-to-End Property Assistance</h3>
+            <p  style="font-size: 14px; text-align: justify;" class="text-gray-400">
+                We guide you through the entire home-buying journey—from understanding project options to completing registration—ensuring a smooth and stress-free experience at every step.
+            </p>
+        </div>
 
-                        <!-- Service Card 3 (Two-Tone Design) -->
-                        <div
-                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
-                            <!-- Top Primary Color Section (Icon/Header) -->
-                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                        </path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold">End-to-End Transaction Support</h3>
-                            </div>
-                            <!-- Bottom Light Section (Details) -->
-                            <div class="p-6 flex flex-col flex-grow h-[150px]">
-                                <p class="text-gray-600 text-sm mb-4 flex-grow">From property visits to documentation,
-                                    loans, and legal checks. </p>
-                                <button
-                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
-                                    onclick="openModal()">Learn More &rarr;</button>
-                            </div>
-                        </div>
+        <!-- 2. Site Visit Management -->
+        <div class="service-card p-6 rounded-lg shadow-lg hover:z-10 cursor-pointer">
+            <div class="mb-3 text-center">
+                <!-- Lucide MapPin Icon (Inline SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-red service-card:hover:text-white"><path d="M21 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 style="color:#B49B11; font-size: 18px; text-align: justify;" class="text-xl font-bold mb-2 uppercase">Expert Project Recommendations</h3>
+            <p  style="font-size: 14px; text-align: justify;" class="text-gray-400">
+               Based on your budget, lifestyle, and location preference, we suggest the most suitable apartments and villas from top builders across Bangalore.
+            </p>
+        </div>
 
-                        <!-- Service Card 4 (Two-Tone Design) -->
-                        <div
-                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
-                            <!-- Top Primary Color Section (Icon/Header) -->
-                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V9a1 1 0 00-1-1H5a1 1 0 00-1 1v6a1 1 0 001 1h6m4 0h-4m4 0h6m-3-3v3m0 0l-3-3m3 3l3-3">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold">Builder Tie-Up Assistance</h3>
-                            </div>
-                            <!-- Bottom Light Section (Details) -->
-                            <div class="p-6 flex flex-col flex-grow h-[150px]">
-                                <p class="text-gray-600 text-sm mb-4 flex-grow">Access to exclusive builder tie-ups,
-                                    pre-launch offers, and discounts.</p>
-                                <button
-                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
-                                    onclick="openModal()">Learn More &rarr;</button>
-                            </div>
-                        </div>
-                    </div>
+        <!-- 3. Home Loan Assistance -->
+        <div class="service-card p-6 rounded-lg shadow-lg hover:z-10 cursor-pointer">
+            <div class="mb-3 text-center">
+                <!-- Lucide Banknote Icon (Inline SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-red service-card:hover:text-white"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg>
+            </div>
+            <h3 style="color:#B49B11; font-size: 18px; " class="text-xl font-bold mb-2 uppercase">Verified Builder & Project Support</h3>
+            <p  style="font-size: 14px; text-align: justify;" class="text-gray-400">
+                All our project listings are pre-verified for legal clearance, approvals, and credibility, giving you confidence and peace of mind before booking.
+            </p>
+        </div>
 
-                    <!-- Duplicated Service Cards for Infinite Scroll Effect -->
-                    <div class="service-group flex flex-shrink-0 gap-8" aria-hidden="true">
-                        <!-- Service Card 1 -->
-                        <div
-                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
-                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m3 0V7a4 4 0 014-4h2a4 4 0 014 4v12m-8 0h8">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold">Luxury Villa Marketing</h3>
-                            </div>
-                            <div class="p-6 flex flex-col flex-grow h-[150px]">
-                                <p class="text-gray-600 text-sm mb-4 flex-grow">Specialized villa marketing solutions
-                                    for luxury and gated communities. </p>
-                                <button
-                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
-                                    onclick="openModal()">Learn More &rarr;</button>
-                            </div>
-                        </div>
+        <!-- 4. RERA & Legal Due Diligence -->
+        <div class="service-card p-6 rounded-lg shadow-lg hover:z-10 cursor-pointer">
+            <div class="mb-3 text-center">
+                <!-- Lucide Gavel Icon (Inline SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-red service-card:hover:text-white"><path d="M15 17h5a2 2 0 0 0 0-4h-5v-3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3H8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h4V8a2 2 0 1 0-4 0"/><rect x="3" y="2" width="18" height="4" rx="2"/></svg>
+            </div>
+            <h3 style="color:#B49B11; font-size: 18px;" class="text-xl font-bold mb-2 uppercase">Free Site Visit Coordination</h3>
+            <p  style="font-size: 14px; text-align: justify;" class="text-gray-400">
+                We arrange site visits with builder teams at your preferred time, including project walkthroughs, amenity tours, and unit selection guidance.
+            </p>
+        </div>
 
-                        <!-- Service Card 2 -->
-                        <div
-                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
-                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 13.255A23.55 23.55 0 0112 15c-3.185 0-6.22-.62-9-1.745M16 4v12a2 2 0 002 2h2">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold">HNI & NRI Investment Advisory</h3>
-                            </div>
-                            <div class="p-6 flex flex-col flex-grow h-[150px]">
-                                <p class="text-gray-600 text-sm mb-4 flex-grow">Tailored real estate investment plans
-                                    for HNI and NRI clients. </p>
-                                <button
-                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
-                                    onclick="openModal()">Learn More &rarr;</button>
-                            </div>
-                        </div>
+        <!-- 5. Investment Strategy -->
+        <div class="service-card p-6 rounded-lg shadow-lg hover:z-10 cursor-pointer">
+            <div class="mb-3 text-center">
+                <!-- Lucide TrendingUp Icon (Inline SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-red service-card:hover:text-white"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
+            </div>
+            <h3 style="color:#B49B11; font-size: 18px;" class="text-xl font-bold mb-2 uppercase">Best Price & Exclusive Offers</h3>
+            <p  style="font-size: 14px; text-align: justify;" class="text-gray-400">
+                As an authorized channel partner, we help you secure the best possible pricing, launch benefits, and builder-exclusive offers you won’t get directly.
+            </p>
+        </div>
 
-                        <!-- Service Card 3 -->
-                        <div
-                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
-                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                        </path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold">Plot Sales & Development</h3>
-                            </div>
-                            <div class="p-6 flex flex-col flex-grow h-[150px]">
-                                <p class="text-gray-600 text-sm mb-4 flex-grow">Curated residential and commercial plots
-                                    in prime and emerging zones.</p>
-                                <button
-                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left"
-                                    onclick="openModal()">Learn More &rarr;</button>
-                            </div>
-                        </div>
+        <!-- 6. Documentation & Closure -->
+        <div class="service-card p-6 rounded-lg shadow-lg hover:z-10 cursor-pointer">
+            <div class="mb-3 text-center">
+                <!-- Lucide FileText Icon (Inline SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-red service-card:hover:text-white"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-5-5z"/><path d="M15 2v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/><path d="M9 9h3"/></svg>
+            </div>
+            <h3 style="color:#B49B11; font-size: 18px;" class="text-xl font-bold mb-2 uppercase">Home Loan Support</h3>
+            <p  style="font-size: 14px; text-align: justify;" class="text-gray-400">
+               From booking forms to legal papers and loan assistance, our team simplifies your documentation process so you can focus only on choosing your dream home.
+            </p>
+        </div>
+    </div>
 
-                        <!-- Service Card 4 -->
-                        <div
-                            class="carousel-item service-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col flex-shrink-0 overflow-hidden w-full max-w-sm">
-                            <div class="bg-blue-600 text-white p-6 flex flex-col items-start justify-start h-28">
-                                <div
-                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V9a1 1 0 00-1-1H5a1 1 0 00-1 1v6a1 1 0 001 1h6m4 0h-4m4 0h6m-3-3v3m0 0l-3-3m3 3l3-3">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold">Real Estate Project Collaboration</h3>
-                            </div>
-                            <div class="p-6 flex flex-col flex-grow h-[150px]">
-                                <p class="text-gray-600 text-sm mb-4 flex-grow">Joint venture and co-development
-                                    opportunities for landowners and builders.</p>
-                                <a
-                                    class="text-blue-600 font-semibold text-sm hover:text-blue-800 transition duration-300 text-left openCallbackModal">Learn
-                                    More &rarr;</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- NEW CTA Button for Services -->
                 <div class="text-center mt-12 scroll-reveal" style="animation-delay: 0.6s;">
                     <a style="background-color: #B49B11;"
@@ -576,231 +442,156 @@
         <!-- Featured Projects Carousel Section with Image Headers -->
         <section id="featured-projects" class="py-16 md:py-24 bg-white">
             <div class="w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-center text-4xl font-bold mb-4 text-gray-900 scroll-reveal">Bangalore's Leading
+                <h2   style="font-size: 28px;" class="text-center text-4xl font-bold mb-4 text-gray-900 scroll-reveal">Bangalore's Leading
                     Residential Projects</h2>
-                <p class="text-center text-xl text-gray-600 mb-12 scroll-reveal" style="animation-delay: 0.2s;">
+                <p  style="font-size: 16px;" class="text-center text-xl text-gray-600 mb-12 scroll-reveal" style="animation-delay: 0.2s;">
                     Discover the top-rated residential projects in Bangalore.
                 </p>
 
-                <!-- Carousel Container -->
-                <div id="projects-carousel"
-                    class="carousel-container flex overflow-x-hidden gap-8 pb-4 scroll-reveal px-4 lg:px-0"
-                    style="animation-delay: 0.4s;">
-                    <!-- Project Group -->
-                    <div class="project-group flex flex-shrink-0 gap-8">
+                <!-- CAROUSEL SECTION START -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- <h2 class="text-4xl font-extrabold text-gray-900 mb-10 text-center">
+                Featured Projects
+            </h2> -->
 
-                        <!-- Project Card 1 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <!-- Image Section -->
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/urbanrise.jpg" alt="Project Skyline" class="w-full h-full object-cover">
-                                <span
-                                    class="bg-blue-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Urbanrise</span>
-                            </div>
-                            <!-- Details -->
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Urbanrise Paradise On Earth</p>
-                                <p class="text-xs text-gray-500 mb-3">Gangasandra, Kanakapura Road</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4"> ₹3.17 Cr Onwards</p>
-                                <a style="background-color: #B49B11;" href="/project"
-                                    class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-                                    View Details</a>
+            <div class="relative group">
+                <!-- Carousel Track Container -->
+                <div id="carousel-track-container" 
+                     class="carousel-track flex overflow-x-scroll p-4 -mx-4 space-x-6">
 
-                            </div>
-                        </div>
-
-                        <!-- Project Card 2 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/godrejlakeside.jpg" alt="Green Valley Villas"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-green-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Godrej</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Godrej Lakeside Orchard</p>
-                                <p class="text-xs text-gray-500 mb-3">Sarjapur Road, Bangalore</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹2.25 Cr Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 3 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/sunworthcity.jpg" alt="Commercial Hub"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-yellow-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Provident</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Provident Sunworth city</p>
-                                <p class="text-xs text-gray-500 mb-3">RR Nagar, Off Mysore Road</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹69 Lakhs Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 4 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/simplicity.jpg" alt="Bayfront Penthouses"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Sattva</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Sattva Simplicity</p>
-                                <p class="text-xs text-gray-500 mb-3">BHEL Layout, RR Nagar, Mysore Road</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹42 L Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 4 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/tatacarnatica.jpg" alt="Bayfront Penthouses"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">TATA</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">TATA Carnatica</p>
-                                <p class="text-xs text-gray-500 mb-3">Shettigere, Bangalore</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹1.80 Cr Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 4 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/birlaevara.jpg" alt="Bayfront Penthouses"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Birla</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Birla Evara</p>
-                                <p class="text-xs text-gray-500 mb-3">Sarjapur Road, Bangalore</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹71 Lakhs Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 4 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/allureavani.jpg" alt="Bayfront Penthouses"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Allure</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Avani</p>
-                                <p class="text-xs text-gray-500 mb-3">Kammasandra, Bengaluru</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹4 cr Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 4 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/codenamebliss.jpg" alt="Bayfront Penthouses"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Puravankara</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Codename Bliss</p>
-                                <p class="text-xs text-gray-500 mb-3">ECR Coastal Zone</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹2.5 Cr Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 5 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/Deansgate.jpg" alt="Bayfront Penthouses"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Provident</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Deansgate - 3BHK Dublex Villa</p>
-                                <p class="text-xs text-gray-500 mb-3">IVC Road, Bangalore</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹2.9 Cr Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 5 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/sattvavasanta.jpg" alt="Bayfront Penthouses"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">SATTVA</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Vasanta Sky</p>
-                                <p class="text-xs text-gray-500 mb-3">Bellary Road, Bangalore</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹78 L Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 6 -->
-                        <div
-                            class="carousel-item project-carousel-card bg-white rounded-2xl shadow-xl border border-gray-200 flex flex-col overflow-hidden w-full max-w-sm">
-                            <div class="relative h-56 overflow-hidden">
-                                <img src="/image/atmosphere.jpg" alt="Bayfront Penthouses"
-                                    class="w-full h-full object-cover">
-                                <span
-                                    class="bg-red-600 text-xs font-semibold px-2 py-0.5 rounded-full absolute top-4 right-4 text-white">Puravankara</span>
-                            </div>
-                            <div class="p-5 flex flex-col flex-grow">
-                                <p class="text-lg font-bold mb-1 text-gray-900">Atmosphere</p>
-                                <p class="text-xs text-gray-500 mb-3">Thanisandra, Bangalore</p>
-                                <p class="text-xl font-extrabold text-blue-600 mb-4">₹2.85 cr Onwards</p>
-                                <button style="background-color: #B49B11;"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">View
-                                    Details</button>
-                            </div>
+                    <!-- Repeat this card structure for all items -->
+                    <!-- Card 1 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/allureavani.jpg" 
+                             alt="Placeholder image for Project Alpha" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">ALLURE AVANI</h3>
+                            <p class="text-gray-600 text-sm">Kammasandra, Bangalore - <span  style="color: chocolate;" class="font-bold" >₹4 Cr Onwards</span></p></p>
+                            <a href="bangalore-residential-projects/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
                         </div>
                     </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/sunworthcity.jpg" 
+                             alt="Placeholder image for Project Beta" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">Provident Sunworth city</h3>
+                            <p class="text-gray-600 text-sm">Raja Rajeshwari nagar, Bangalore - <span  style="color: chocolate;" class="font-bold" >₹69 L Onwards</span></p></p>
+                            <a href="provident-sunworthcity-apartment/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/simplicity.jpg" 
+                             alt="Placeholder image for Project Gamma" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Sattva Simplicity</h3>
+                            <p class="text-gray-600 text-sm">BHEL Layout, RR Nagar, Mysore Road - <span  style="color: chocolate;" class="font-bold" >₹42 L Onwards</span></p></p>
+                            <a href="bangalore-residential-projects/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/tatacarnatica.jpg" 
+                             alt="Placeholder image for Project Delta" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">TATA Carnatica</h3>
+                            <p class="text-gray-600 text-sm">Shettigere, Bangalore - <span  style="color: chocolate;" class="font-bold" >₹1.80 Cr Onwards</span></p>
+                            <a href="bangalore-residential-projects/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/birlaevara.jpg" 
+                             alt="Placeholder image for Project Epsilon" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Birla Evara</h3>
+                            <p class="text-gray-600 text-sm">Sarjapur Road, Bangalore - <span  style="color: chocolate;" class="font-bold" >₹71 L Onwards</span></p>
+                            <a href="bangalore-residential-projects/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/codenamebliss.jpg" 
+                             alt="Placeholder image for Project Zeta" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Purvankara Codename Bliss</h3>
+                            <p class="text-gray-600 text-sm">Hebbagudi, Bengaluru - <span  style="color: chocolate;" class="font-bold" >₹2.5 Cr Onwards</span></p>
+                            <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/Deansgate.jpg" 
+                             alt="Placeholder image for Project Eta" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Deansgate - 3BHK Dublex Villa</h3>
+                            <p class="text-gray-600 text-sm">IVC Road, Bangalore - <span  style="color: chocolate;" class="font-bold" >₹2.9 Cr Onwards</span>   </p>
+                            <a href="bangalore-residential-projects/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/sattvavasanta.jpg" 
+                             alt="Placeholder image for Project Theta" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Sattva Vasanta Sky</h3>
+                            <p class="text-gray-600 text-sm">Bellary Road, Bangalore - <span  style="color: chocolate;" class="font-bold" >₹71 L Onwards</span></p>
+                            <a href="bangalore-residential-projects/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="carousel-card bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                        <img src="image/godrejlakeside.jpg" 
+                             alt="Placeholder image for Project Iota" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Godrej Lakeside Orchard</h3>
+                            <p class="text-gray-600 text-sm">Sarjapur Road, Bangalore - <span  style="color: chocolate;" class="font-bold" >₹2.25 cr Onwards</span></p>
+                            <a href="bangalore-residential-projects/" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold text-sm">View Details &rarr;</a>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- Navigation Arrows -->
+                <!-- Left Arrow -->
+                <button id="prev-btn" 
+                        class="absolute top-1/2 -left-3 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg opacity-70 hover:opacity-100 transition duration-300 hidden md:block z-10">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+
+                <!-- Right Arrow -->
+                <button id="next-btn" 
+                        class="absolute top-1/2 -right-3 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg opacity-70 hover:opacity-100 transition duration-300 hidden md:block z-10">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <!-- Scroll Indicator (optional, useful for mobile) -->
+            <div class="mt-6 flex justify-center space-x-2">
+                <span class="w-16 h-2 bg-blue-600 rounded-full"></span>
+                <span class="w-16 h-2 bg-blue-200 rounded-full opacity-50"></span>
+            </div>
+        </div>
+    </section>
+    <!-- CAROUSEL SECTION END -->
 
                 <!-- CTA -->
                 <div class="text-center mt-12 scroll-reveal" style="animation-delay: 0.6s;">
@@ -1300,6 +1091,96 @@
             autoScrollCarousel('logo-carousel', 0.5); // Slow speed for logos
             autoScrollCarousel('services-carousel', 0.8); // Medium speed for services
             autoScrollCarousel('projects-carousel', 1); // Normal speed for projects
+        });
+
+        const trackContainer = document.getElementById('carousel-track-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let cardWidth = 0; // Calculated on load
+
+        // --- Core Scrolling Logic ---
+
+        function calculateCardWidth() {
+            // Get the width of the first card element to determine scroll step
+            const firstCard = trackContainer.querySelector('.carousel-card');
+            if (firstCard) {
+                // Includes the card's width and the space-x-6 gap (24px)
+                cardWidth = firstCard.offsetWidth + 24; 
+                // For desktop (3-card view), scroll by 3 card widths
+                if (window.innerWidth >= 768) {
+                    cardWidth *= 3; 
+                }
+            }
+        }
+
+        function scrollToNext() {
+            calculateCardWidth();
+            trackContainer.scrollLeft += cardWidth;
+        }
+
+        function scrollToPrev() {
+            calculateCardWidth();
+            trackContainer.scrollLeft -= cardWidth;
+        }
+
+        // --- Event Listeners for Arrows ---
+
+        prevBtn.addEventListener('click', scrollToPrev);
+        nextBtn.addEventListener('click', scrollToNext);
+
+        // Calculate card width on load and resize
+        window.addEventListener('load', calculateCardWidth);
+        window.addEventListener('resize', calculateCardWidth);
+
+
+        // --- Draggable (Hand-Swipe) Logic ---
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        trackContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            // Prevent text selection
+            trackContainer.classList.add('select-none'); 
+            startX = e.pageX - trackContainer.offsetLeft;
+            scrollLeft = trackContainer.scrollLeft;
+        });
+
+        trackContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            trackContainer.classList.remove('select-none');
+        });
+
+        trackContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            trackContainer.classList.remove('select-none');
+        });
+
+        trackContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return; 
+            e.preventDefault();
+            const x = e.pageX - trackContainer.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll faster
+            trackContainer.scrollLeft = scrollLeft - walk;
+        });
+
+        // --- Touch Events for Mobile Swiping ---
+
+        trackContainer.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - trackContainer.offsetLeft;
+            scrollLeft = trackContainer.scrollLeft;
+        });
+
+        trackContainer.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        trackContainer.addEventListener('touchmove', (e) => {
+            if (!isDown) return; 
+            const x = e.touches[0].pageX - trackContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            trackContainer.scrollLeft = scrollLeft - walk;
         });
     </script>
     

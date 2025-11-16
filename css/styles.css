@@ -163,3 +163,46 @@ html {
     padding: 1cm;
   }
 }
+
+
+/* Custom CSS for smooth scrolling and disabling text selection during drag */
+        .carousel-track {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* For smoother iOS scrolling */
+            cursor: grab;
+        }
+
+        .carousel-track:active {
+            cursor: grabbing;
+        }
+
+        .carousel-card {
+            /* Force the cards to take up the space of 3 columns, with a small gap on the right for the next card hint */
+            flex: 0 0 calc(100% / 3 - 1rem); /* 3 cards + gaps */
+            scroll-snap-align: start;
+        }
+
+        /* Adjustments for mobile (1 card view) */
+        @media (max-width: 768px) {
+            .carousel-card {
+                flex: 0 0 90%; /* Show 90% of the card, hinting at the next one */
+                margin-right: 1.5rem; /* Add spacing between cards */
+            }
+        }
+
+              /* Apply smooth transition for the animated effect */
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            background-color: #ffffff;
+            padding: 1.5rem;
+        }
+        /* Hover effect: slight scale and red border/icon */
+        .service-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--primary-red);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
