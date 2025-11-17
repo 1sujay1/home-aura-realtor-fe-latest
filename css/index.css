@@ -125,3 +125,23 @@ body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
 .popup-modal.show { opacity: 1; visibility: visible; }
 .popup-content { transform: scale(0.9); transition: transform 0.3s ease; }
 .popup-modal.show .popup-content { transform: scale(1); }
+
+/* Carousel Track Styling */
+.carousel-track {
+    scroll-behavior: smooth;
+    scroll-padding: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carousel-card {
+    transition: all 0.3s ease;
+}
