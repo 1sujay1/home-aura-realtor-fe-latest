@@ -247,92 +247,296 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
     const projectsPerPage = 12;
     let visibleProjects = 0;
+    let isLoading = false;
 
-    // Function to create project card HTML
+    // Add CSS styles
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Project Card Styles */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            will-change: transform, box-shadow;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .project-card .p-6 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+        
+        .project-card .mt-auto {
+            margin-top: auto;
+        }
+        
+        .line-clamp-1 {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Load More Button Styles */
+        #view-more-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #B49B11 0%, #d4af37 100%);
+            border: none;
+            color: white;
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(180, 155, 17, 0.4);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            animation: float 3s ease-in-out infinite;
+            letter-spacing: 0.5px;
+            min-width: 220px;
+            margin: 2rem auto;
+        }
+        
+        #view-more-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(180, 155, 17, 0.6);
+            animation: none;
+        }
+        
+        #view-more-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(180, 155, 17, 0.6);
+        }
+        
+        #view-more-btn.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        
+        .pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 0 2px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .pulse:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .pulse:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.8s ease-in-out infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Create project card HTML
     function createProjectCard(project) {
         return `
-            <div class="project-card rounded-xl shadow-lg scroll-reveal" 
+            <div class="project-card rounded-xl shadow-lg scroll-reveal overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1" 
                  style="animation-delay: ${project.animationDelay};" 
                  data-project-id="${project.id}">
-                <div class="relative overflow-hidden h-56 rounded-t-xl">
-                    <img src="${project.image}" alt="${project.title}" class="project-image w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                        <span class="text-white text-sm font-semibold ${project.builderClass} px-3 py-1 rounded-full">
+                <div class="relative h-56 overflow-hidden group">
+                    <img src="${project.image}" alt="${project.title}" 
+                         class="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4 transition-all duration-300 group-hover:bg-opacity-50">
+                        <span class="text-white text-sm font-semibold ${project.builderClass} px-3 py-1 rounded-full transform transition-transform duration-300 group-hover:scale-105">
                             ${project.builder}
                         </span>
                     </div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">${project.title}</h3>
-                    <p style="color:coral" class="text-gray-500 text-sm mb-4">${project.type}</p>
-                    <p class="text-gray-500 text-sm mb-4">${project.location}</p>
-                    <p class="text-2xl font-extrabold text-blue-600 mb-4">${project.price}</p>
-                    <a style="background-color: #B49B11;" href="${project.detailsUrl}" 
-                       class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-                        View Details
-                    </a>
+                <div class="p-6 flex flex-col" style="min-height: 280px;">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2" style="min-height: 3.5rem;">${project.title}</h3>
+                    <p style="color:coral" class="text-gray-500 text-sm mb-2 line-clamp-1">${project.type}</p>
+                    <p class="text-gray-500 text-sm mb-4 line-clamp-1">${project.location}</p>
+                    <p class="text-2xl font-extrabold text-blue-600 mb-5">${project.price}</p>
+                    <div class="mt-auto">
+                        <a href="${project.detailsUrl}" 
+                           class="block w-full text-center bg-[#B49B11] hover:bg-[#9a8310] text-white font-bold py-2.5 px-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-md">
+                            View Details
+                        </a>
+                    </div>
                 </div>
             </div>
         `;
     }
 
-    // Function to render projects
-    function renderProjects() {
-        const startIndex = 0; // Always start from the beginning
-        const endIndex = Math.min(visibleProjects + projectsPerPage, projects.length);
-        
-        // Clear container if it's the first page
-        if (visibleProjects === 0) {
-            projectsContainer.innerHTML = '';
+    // Update view more button state
+    function updateViewMoreButton(loading = false) {
+        if (visibleProjects >= projects.length) {
+            viewMoreBtn.style.display = 'none';
+            return;
         }
 
-        // Add projects to container
-        for (let i = visibleProjects; i < endIndex; i++) {
+        if (loading) {
+            viewMoreBtn.classList.add('loading');
+            viewMoreBtn.innerHTML = `Loading <span class="spinner"></span>`;
+        } else {
+            viewMoreBtn.classList.remove('loading');
+            viewMoreBtn.innerHTML = `Load More Projects 
+                <span class="pulse"></span>
+                <span class="pulse"></span>
+                <span class="pulse"></span>`;
+        }
+    }
+
+    // Render projects
+    async function renderProjects() {
+        if (isLoading) return;
+        
+        const startIndex = visibleProjects;
+        const endIndex = Math.min(visibleProjects + projectsPerPage, projects.length);
+        
+        if (startIndex >= endIndex) {
+            updateViewMoreButton(false);
+            return;
+        }
+
+        isLoading = true;
+        updateViewMoreButton(true);
+
+        // Simulate loading (remove in production)
+        await new Promise(resolve => setTimeout(resolve, 800));
+
+        // Create document fragment for better performance
+        const fragment = document.createDocumentFragment();
+        
+        // Add projects to fragment
+        for (let i = startIndex; i < endIndex; i++) {
             if (projects[i]) {
-                projectsContainer.innerHTML += createProjectCard(projects[i]);
+                const div = document.createElement('div');
+                div.innerHTML = createProjectCard(projects[i]);
+                fragment.appendChild(div.firstElementChild);
             }
         }
 
+        // Append all at once
+        projectsContainer.appendChild(fragment);
+        
         visibleProjects = endIndex;
-
-        // Update button visibility
-        if (visibleProjects >= projects.length) {
-            viewMoreBtn.style.display = 'none';
-        } else {
-            viewMoreBtn.style.display = 'inline-block';
-            // viewMoreBtn.textContent = `Load More (${projects.length - visibleProjects} remaining)`;
-            viewMoreBtn.textContent = `Load More Projects`;
-        }
-
-        // Initialize scroll reveal for new elements
+        isLoading = false;
+        
+        updateViewMoreButton(false);
         initScrollReveal();
     }
 
-    // Function to initialize scroll reveal
+    // Initialize scroll reveal
     function initScrollReveal() {
-        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealElements = document.querySelectorAll('.scroll-reveal:not(.revealed)');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('revealed');
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
         revealElements.forEach(element => {
             observer.observe(element);
         });
     }
 
-    // Event listener for View More button
-    viewMoreBtn.addEventListener('click', () => {
-        renderProjects();
-    });
+    // Event listeners
+    viewMoreBtn.addEventListener('click', renderProjects);
 
     // Initial render
     renderProjects();
+
+    // Infinite scroll (optional)
+    let isScrolling = false;
+    window.addEventListener('scroll', () => {
+        if (isScrolling || isLoading || visibleProjects >= projects.length) return;
+        
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        const scrolledToBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight - 600;
+        
+        if (scrolledToBottom) {
+            isScrolling = true;
+            renderProjects().then(() => {
+                isScrolling = false;
+            });
+        }
+    });
 });
 // Export the array if using modules
 // export default projects;
