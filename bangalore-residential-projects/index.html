@@ -31,6 +31,7 @@ content="https://www.homeaurarealtor.com/image/godrejlakeside.jpg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
+<script src="/bangalore-residential-projects/js/projects.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root { scroll-behavior: smooth; }
@@ -293,6 +294,16 @@ content="https://www.homeaurarealtor.com/image/godrejlakeside.jpg" />
             background: rgba(0, 0, 0, 0.2);
             transform: rotate(90deg);
         }
+        .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
     </style>
 </head>
 <body class="text-gray-800">
@@ -359,377 +370,19 @@ content="https://www.homeaurarealtor.com/image/godrejlakeside.jpg" />
         Discover premium residential and commercial developments from trusted builders across the city.
     </p>
 </div>            
-                <!-- UPDATED: Grid layout ensures 4 columns on large screens with padding (gap-8) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    
-                    <!-- REPEAT CARDS TO CREATE 4 ROWS (16 TOTAL) -->
-                    <!-- Row 1 -->
-                    <!-- Project Card 1 -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.1s;" data-project-id="1" data-name="The Skyline Residences" data-location="Downtown, City" data-price="Starts at $500k" data-details="Ultra-modern apartments with panoramic city views. Amenities include a rooftop pool, gym, and co-working space. Expected completion: Q3 2025.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/urbanrise.jpg" alt="The Skyline Residences" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">URBANRISE</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Paradise On Earth</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">4BHK, 4.5BHK, 5BHK Villas</p>
-                            <p class="text-gray-500 text-sm mb-4">Kanakapura Road, bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹3.17 Cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/urbanrise-paradise-on-earth-luxury-villa" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
 
-                    <!-- Project Card 2 -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.2s;" data-project-id="2" data-name="Green Valley Villas" data-location="Suburban Enclave" data-price="Starts at $1.2M" data-details="Spacious luxury villas surrounded by natural parks. Each unit features a private garden and smart home technology. Expected completion: Q1 2026.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/godrejlakeside.jpg" alt="Green Valley Villas" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">GODREJ</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Lakeside Orchard</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK, 3.5BHK, 4BHK Flats</p>
-                            <p class="text-gray-500 text-sm mb-4">Sarjapur Road, bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.25 Cr Onwards</p>
-                             <a  style="background-color: #B49B11;"  href="/godrej-lakeside-orchard" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project Card 3 -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.3s;" data-project-id="3" data-name="The Commercial Hub" data-location="Business District" data-price="Price on Request" data-details="Premium office spaces and retail outlets in the heart of the business district. High foot traffic and excellent connectivity. Available for fit-out immediately.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/sunworthcity.jpg" alt="The Commercial Hub" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">PROVIDENT</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Sunworth City</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHK,3BHk Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">RR Nagar, Mysore Road, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹62 L Onwards</p>
-                           <a   style="background-color: #B49B11;"  href="/provident-sunworthcity-apartment" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
+                <!-- New Dynamic DIV Start-->
+                 <!-- Replace the existing grid div and its contents with this: -->
+<div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Cards will be dynamically inserted here -->
+</div>
+<div class="mt-12 text-center">
+    <button id="view-more-btn" class="px-8 py-3 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors">
+        Load More Projects
+    </button>
+</div>
+                <!-- New Dynamic DIV End-->
 
-                    <!-- Project Card 4 -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.4s;" data-project-id="4" data-name="Bayfront Penthouses" data-location="Coastal Road" data-price="POA" data-details="Exclusive, limited-edition penthouses with breathtaking ocean views. Private elevator access and bespoke interior design options. Construction starting soon.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/simplicity.jpg" alt="Bayfront Penthouses" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">SATTVA</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Simplicity</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">1BHK,2BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">BHEL Layout, RR Nagar, Mysore Road</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹42 L Onwards</p>
-                           <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Row 2 -->
-                    <!-- Project Card 5 (Copy of 1) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.5s;" data-project-id="5" data-name="Azure Towers" data-location="North City" data-price="Starts at $650k" data-details="High-end apartment complex focusing on sustainable living and energy efficiency. Great investment potential.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/tatacarnatica.jpg" alt="Azure Towers" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">TATA</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Carnatica</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Shettigere, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹1.80 cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project Card 6 (Copy of 2) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.6s;" data-project-id="6" data-name="Riverbend Retreat" data-location="Countryside" data-price="Starts at $900k" data-details="Luxury homes with direct river access and expansive private grounds. Perfect for a secluded family life.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/codenamebliss.jpg" alt="Riverbend Retreat" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">PURAVANKARA - New Launch</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Codename BLISS </h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK, 3.5BHK, 4BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Hebbagodi, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.50 cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 7 (Copy of 3) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.7s;" data-project-id="7" data-name="Tech Park Office Suites" data-location="Tech Hub" data-price="POR" data-details="Flexible, modern office suites designed for startups and technology companies. High-speed connectivity guaranteed.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/birlaevara.jpg" alt="Tech Park Office Suites" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">BIRLA</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Evara</h3>
-                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK, 4BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Sarjapur Road, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹71 L Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 8 (Copy of 4) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.8s;" data-project-id="8" data-name="Central Lofts" data-location="Midtown" data-price="POA" data-details="Stylish, industrial-design lofts located in the central entertainment district. High rental yield potential.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/atmosphere.jpg" alt="Central Lofts" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">PURAVANKARA</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Atmosphere</h3>
-                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Thanisandra, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.85 Cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Row 3 -->
-                    <!-- Project Card 9 (Copy of 1) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.9s;" data-project-id="9" data-name="Emerald Gardens" data-location="West End" data-price="Starts at $720k" data-details="Luxury apartments integrated with parklands and exclusive club facilities. Ideal for families.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/Deansgate.jpg" alt="Emerald Gardens" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">PROVIDENT</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Deansgate</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK Dublex Villa</p>
-                            <p class="text-gray-500 text-sm mb-4">IVC Road, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.9 Cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 10 (Copy of 2) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.0s;" data-project-id="10" data-name="Oasis Penthouses" data-location="The Island" data-price="Starts at $2.5M" data-details="Ultra-luxury two-level penthouses with private rooftop terraces and infinity pools overlooking the ocean.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/allureavani.jpg" alt="Oasis Penthouses" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">ALLURE</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Avani Villa</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">4BHK Villa</p>
-                            <p class="text-gray-500 text-sm mb-4">Kammasandra, Bengaluru</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹4 Cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project Card 11 (Copy of 3) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.1s;" data-project-id="11" data-name="Metro Retail Center" data-location="Transit Hub" data-price="Price on Request" data-details="Prime retail spaces adjacent to the main metro station. High investment returns expected due to traffic.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/assetztrees.jpg" alt="Metro Retail Center" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">Assetz</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Trees & Tandem</h3>
-                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">3BHK Luxury Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Off Sarjapur Road, Bengaluru</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.02 Cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 12 (Copy of 4) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.2s;" data-project-id="12" data-name="Vista Homes" data-location="Hillside" data-price="POA" data-details="Bespoke luxury homes situated on a hillside with stunning natural views. Private, gated community.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/Melodiesoflife.jpg" alt="Vista Homes" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">Assetz</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Melodies of Life</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">Luxury Villa Plots</p>
-                            <p class="text-gray-500 text-sm mb-4">Off Hosa Road, Bengaluru</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹2.83 Cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-
-                    <!-- Row dublicate -->
-                    <!-- Project Card 9 (Copy of 1) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 0.9s;" data-project-id="9" data-name="Emerald Gardens" data-location="West End" data-price="Starts at $720k" data-details="Luxury apartments integrated with parklands and exclusive club facilities. Ideal for families.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/aaria.webp" alt="Emerald Gardens" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">ABHEE</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Aaria</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHK,3 BHK,4.5 BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Gunjur Lake, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹1.42 Cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 10 (Copy of 2) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.0s;" data-project-id="10" data-name="Oasis Penthouses" data-location="The Island" data-price="Starts at $2.5M" data-details="Ultra-luxury two-level penthouses with private rooftop terraces and infinity pools overlooking the ocean.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/celestialcity.jpg" alt="Oasis Penthouses" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">ABHEE</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Serenity Springs</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHK,3BHk Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Bommasandra, Bengaluru</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹78 L Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project Card 11 (Copy of 3) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.1s;" data-project-id="11" data-name="Metro Retail Center" data-location="Transit Hub" data-price="Price on Request" data-details="Prime retail spaces adjacent to the main metro station. High investment returns expected due to traffic.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/tvsproject.jpg" alt="Metro Retail Center" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">TVS</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Emerald Auralis</h3>
-                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHk,3BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Thanisandra Main Road, Bengaluru</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹1.14 Cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 12 (Copy of 4) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.2s;" data-project-id="12" data-name="Vista Homes" data-location="Hillside" data-price="POA" data-details="Bespoke luxury homes situated on a hillside with stunning natural views. Private, gated community.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/ProvidentBotanico.jpg" alt="Vista Homes" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">PROVIDENT</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Botanico</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">Luxury Villa Plots</p>
-                            <p class="text-gray-500 text-sm mb-4">Soukya Road, Whitefield, Bengaluru</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹94 L Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Row 4 -->
-                    <!-- Project Card 13 (Copy of 1) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.3s;" data-project-id="13" data-name="The Nexus Apartments" data-location="University Area" data-price="Starts at $350k" data-details="Affordable, compact apartments designed for students and young professionals. High rental occupancy rates.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/sattvavasanta.jpg" alt="The Nexus Apartments" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">SATTVA</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Vasanta Sky</h3>
-                               <p  style="color:coral" class="text-gray-500 text-sm mb-4">1,2,3,4 BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">Bellary Road, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹78 L Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project Card 14 (Copy of 2) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.4s;" data-project-id="14" data-name="Coastal Cottages" data-location="Beachfront" data-price="Starts at $1.5M" data-details="Charming, modern cottages steps away from the sand. Excellent for vacation rentals and seasonal income.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/parkcubix.jpg" alt="Coastal Cottages" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-green-600 px-3 py-1 rounded-full">SATTVA</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Park Cubix</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">1,2,3 BHK Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">At Devanahalli, Bengaluru</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹48 L Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 15 (Copy of 3) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.5s;" data-project-id="15" data-name="Logistics Hub" data-location="Industrial Zone" data-price="Price on Request" data-details="Large-scale warehousing and distribution facilities. Strategically located near major transport links.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/lavita.jpg" alt="Logistics Hub" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">SATTVA</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">La Vita</h3>
-                            <p  style="color:coral" class="text-gray-500 text-sm mb-4">4BHK Villa</p>
-                            <p class="text-gray-500 text-sm mb-4">Off Hennur Main Road, Bengaluru</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹5.26 cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 16 (Copy of 4) -->
-                    <div class="project-card rounded-xl shadow-lg scroll-reveal" style="animation-delay: 1.6s;" data-project-id="16" data-name="Apex Residences" data-location="Mountain View" data-price="POA" data-details="Exclusive high-rise with unparalleled views and state-of-the-art security features. Available only to qualified investors.">
-                        <div class="relative overflow-hidden h-56 rounded-t-xl">
-                            <img src="/image/celestialcity.jpg" alt="Apex Residences" class="project-image w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4">
-                                <span class="text-white text-sm font-semibold bg-red-600 px-3 py-1 rounded-full">ABHEE</span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Celestial City</h3>
-                             <p  style="color:coral" class="text-gray-500 text-sm mb-4">2BHK, 3BHk Apartments</p>
-                            <p class="text-gray-500 text-sm mb-4">At Sarjapur Road, Bangalore</p>
-                            <p class="text-2xl font-extrabold text-blue-600 mb-4">₹1.52 cr Onwards</p>
-                            <a  style="background-color: #B49B11;"  href="/project" class="w-full inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition">
-  View Details</a>
-                        </div>
-                    </div>
-                    
-                </div>
             </div>
         </section>
     </main>
