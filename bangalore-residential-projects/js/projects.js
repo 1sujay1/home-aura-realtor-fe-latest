@@ -238,6 +238,18 @@ const projects = [
     builderClass: "bg-red-600",
     detailsUrl: "/project",
     animationDelay: "1.6s"
+  },
+  {
+    id: 21,
+    title: "Sattva Simplicity",
+    type: "1BHK, 2BHK, 3BHK Apartments",
+    location: "Pattanagere, Bangalore",
+    price: "₹42.42 L Onwards",
+    image: "/sattva-simplicity/image/banner.jpg",
+    builder: "SATTVA",
+    builderClass: "bg-red-600",
+    detailsUrl: "/sattva-simplicity",
+    animationDelay: "1.7s"
   }
 ];
 
