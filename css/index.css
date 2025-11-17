@@ -90,6 +90,35 @@ body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
 @media (min-width: 1024px) { .logo-carousel-item { flex: 0 0 16.6666%; } } */
 
 
+/* Section Padding Optimization */
+#builder-logos {
+    padding: 3rem 0;
+}
+
+#services {
+    padding: 3rem 0;
+}
+
+#featured-projects {
+    padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+    #builder-logos,
+    #services,
+    #featured-projects {
+        padding: 4rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    #builder-logos,
+    #services,
+    #featured-projects {
+        padding: 5rem 0;
+    }
+}
+
 /* Contact Popup Transition */
 .popup-modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
 .popup-modal.hidden { opacity: 0; visibility: hidden; }
