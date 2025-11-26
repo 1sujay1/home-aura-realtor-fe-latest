@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Sattva Simplicity: Studio & 1BHK Apartments in Bengaluru | Salarpuria Sattva">
+    <meta name="description" content="Discover Sattva Simplicity, a new residential project offering chic studio and 1BHK apartments in RR Nagar, Bangalore. Experience smart urban living with top-tier amenities, green spaces, and seamless connectivity.">
+    <meta name="keywords" content="Sattva Simplicity, Salarpuria Sattva, apartments in Bangalore, apartments in RR Nagar, Studio apartments, 1 BHK apartments, new launch apartments, residential projects in Bangalore, apartments in Rajarajeshwari Nagar, Sattva Simplicity price, Sattva Simplicity brochure, Sattva Group projects, compact homes Bangalore">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            keyframes: {
+              fadeIn: {
+                from: {
+                  opacity: 0,
+                  transform: 'translateY(30px)',
+                },
+                to: {
+                  opacity: 1,
+                  transform: 'translateY(0)',
+                },
+              },
+              slideInLeft: {
+                from: {
+                  opacity: 0,
+                  transform: 'translateX(-50px)',
+                },
+                to: {
+                  opacity: 1,
+                  transform: 'translateX(0)',
+                },
+              },
+              slideInRight: {
+                from: {
+                  opacity: 0,
+                  transform: 'translateX(50px)',
+                },
+                to: {
+                  opacity: 1,
+                  transform: 'translateX(0)',
+                },
+              },
+              scaleIn: {
+                from: {
+                  opacity: 0,
+                  transform: 'scale(0.8)',
+                },
+                to: {
+                  opacity: 1,
+                  transform: 'scale(1)',
+                },
+              },
+              bounceIn: {
+                '0%': {
+                  opacity: 0,
+                  transform: 'scale(0.3) translateY(-50px)',
+                },
+                '50%': {
+                  opacity: 1,
+                  transform: 'scale(1.05) translateY(-10px)',
+                },
+                '70%': {
+                  transform: 'scale(0.95) translateY(0)',
+                },
+                '100%': {
+                  opacity: 1,
+                  transform: 'scale(1) translateY(0)',
+                },
+              },
+              pulse: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.1)' },
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+            },
+            animation: {
+              fadeIn: 'fadeIn 1s ease-out',
+              slideInLeft: 'slideInLeft 0.8s ease-out',
+              slideInRight: 'slideInRight 0.8s ease-out',
+              scaleIn: 'scaleIn 0.6s ease-out',
+              bounceIn: 'bounceIn 1s ease-out',
+              pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              scroll: 'scroll 60s linear infinite',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        --primary-color: #0d1a26;
+        --secondary-color: #f7f7f7;
+        --accent-color: #e4b363;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        overflow-x: hidden;
+      }
+
+      .hero-section {
+        background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(13,26,38,0.6)), url('/image/urbanrisebanner.jpg') no-repeat center center/cover;
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 30%, rgba(228, 179, 99, 0.1) 50%, transparent 70%);
+        animation: shimmer 3s ease-in-out infinite;
+      }
+      
+      @keyframes shimmer {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .floating-elements {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+      }
+      
+      .floating-element {
+        position: absolute;
+        background: rgba(228, 179, 99, 0.1);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      .floating-element:nth-child(1) {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      
+      .floating-element:nth-child(2) {
+        width: 60px;
+        height: 60px;
+        top: 60%;
+        right: 15%;
+        animation-delay: 2s;
+      }
+      
+      .floating-element:nth-child(3) {
+        width: 100px;
+        height: 100px;
+        bottom: 20%;
+        left: 20%;
+        animation-delay: 4s;
+      }
+      
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+          opacity: 0.6;
+        }
+      }
+
+      .section-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .section-fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .stagger-animation > * {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+      
+      .stagger-animation.is-visible > *:nth-child(1) { transition-delay: 0.1s; }
+      .stagger-animation.is-visible > *:nth-child(2) { transition-delay: 0.2s; }
+      .stagger-animation.is-visible > *:nth-child(3) { transition-delay: 0.3s; }
+      .stagger-animation.is-visible > *:nth-child(4) { transition-delay: 0.4s; }
+      .stagger-animation.is-visible > *:nth-child(5) { transition-delay: 0.5s; }
+      .stagger-animation.is-visible > *:nth-child(6) { transition-delay: 0.6s; }
+      
+      .stagger-animation.is-visible > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .contact-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 50;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+
+      .contact-modal-overlay.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .contact-modal {
+        background-color: var(--primary-color);
+        border: 1px solid var(--accent-color);
+        max-width: 90%;
+        width: 500px;
+        position: relative;
+        transform: translateY(-20px);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .contact-modal-overlay.show .contact-modal {
+        transform: translateY(0);
+      }
+
+      .message-box-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 60;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+
+      .message-box-overlay.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .message-box {
+        background-color: var(--primary-color);
+        border: 1px solid var(--accent-color);
+        max-width: 90%;
+        width: 400px;
+        position: relative;
+      }
+
+      .pricing-table-row:nth-child(even) {
+        background-color: rgba(228, 179, 99, 0.05);
+      }
+
+      .pricing-table-row:hover {
+          background-color: rgba(228, 179, 99, 0.2);
+          transform: scale(1.01);
+          transition: transform 0.2s ease-in-out;
+      }
+
+      /* Gallery Carousel Styles */
+      .gallery-carousel {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .gallery-track {
+        display: flex;
+        transition: transform 0.3s ease-out;
+        cursor: grab;
+        will-change: transform;
+      }
+      
+      .gallery-track:active {
+        cursor: grabbing;
+      }
+      
+      .gallery-slide {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 0 10px;
+      }
+      
+      @media (min-width: 768px) {
+        .gallery-slide {
+          width: 33.333%;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .gallery-slide {
+          width: 25%;
+        }
+      }
+      
+      .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(228, 179, 99, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+      
+      .gallery-nav:hover {
+        background: rgba(228, 179, 99, 1);
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      .gallery-nav.prev {
+        left: 20px;
+      }
+      
+      .gallery-nav.next {
+        right: 20px;
+      }
+      
+      .gallery-nav:disabled,
+      .gallery-nav.disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+      
+      /* Removed dots navigation for infinite carousel */
+
+      /* Enhanced Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.3) translateY(-50px);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.05) translateY(-10px);
+        }
+        70% {
+          transform: scale(0.95) translateY(0);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      
+      .animate-fadeIn {
+        animation: fadeIn 1s ease-out;
+      }
+      
+      .animate-slideInLeft {
+        animation: slideInLeft 0.8s ease-out;
+      }
+      
+      .animate-slideInRight {
+        animation: slideInRight 0.8s ease-out;
+      }
+      
+      .animate-scaleIn {
+        animation: scaleIn 0.6s ease-out;
+      }
+      
+      .animate-bounceIn {
+        animation: bounceIn 1s ease-out;
+      }
+      
+      .animate-pulse-slow {
+        animation: pulse 3s ease-in-out infinite;
+      }
+      
+      /* Intersection Observer Animations */
+      .section-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      
+      .section-fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .stagger-animation > * {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+      
+      .stagger-animation.is-visible > *:nth-child(1) { transition-delay: 0.1s; }
+      .stagger-animation.is-visible > *:nth-child(2) { transition-delay: 0.2s; }
+      .stagger-animation.is-visible > *:nth-child(3) { transition-delay: 0.3s; }
+      .stagger-animation.is-visible > *:nth-child(4) { transition-delay: 0.4s; }
+      .stagger-animation.is-visible > *:nth-child(5) { transition-delay: 0.5s; }
+      .stagger-animation.is-visible > *:nth-child(6) { transition-delay: 0.6s; }
+      
+      .stagger-animation.is-visible > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .play-button {
+          transition: transform 0.3s ease-in-out;
+      }
+
+      .play-button:hover {
+          transform: scale(1.1);
+      }
+
+       .floating-btn-container {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      #top-btn {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+      
+      #top-btn.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Custom animations for the fade-in effect */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .transition-delay-100 { animation-delay: 0.2s; }
+        .transition-delay-200 { animation-delay: 0.4s; }
+        .transition-delay-300 { animation-delay: 0.5s; }
+        .transition-delay-400 { animation-delay: 0.7s; }
+        .transition-delay-500 { animation-delay: 0.8s; }
+    </style>
+    <!-- Schema.org Markup for RealEstateAgent -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "The Pinnacle Residences",
+        "url": "https://www.example.com",
+        "telephone": "+1-800-123-4567",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Skyview Lane",
+          "addressLocality": "Metropolis",
+          "addressRegion": "CA",
+          "postalCode": "90210",
+          "addressCountry": "US"
+        }
+      }
+    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GL54ZBE3XE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GL54ZBE3XE');
+</script>
+
+</head>
+
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-40 bg-primary-color/90 backdrop-blur-md p-4 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="#hero" class="text-lg font-bold text-accent-color">
+          <!-- <img src="/image/logo wensite.png" alt="Home Aura logo" class="h-8"> -->
+           <a href="#" style="color:#B49B11" 
+                class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">HOME<span
+                    style="color:#096088" class="text-blue-500"> AURA</span></a>
+        </a>
+        <div class="space-x-4 hidden md:flex">
+          <a href="https://homeaurarealtor.com" class="text-secondary-color hover:text-accent-color transition-colors">Home</a>
+          <a href="\bangalore-residential-projects " class="text-secondary-color hover:text-accent-color transition-colors">Projects</a>
+          <a href="#about" class="text-secondary-color hover:text-accent-color transition-colors">About Us</a>
+          <a href="#floor-plans" class="text-secondary-color hover:text-accent-color transition-colors">Floor Plans</a>
+          <a href="#location" class="text-secondary-color hover:text-accent-color transition-colors">Location</a>
+          <a href="#contact-us" class="text-secondary-color hover:text-accent-color transition-colors">Contact Us</a>
+        </div>
+        <button  style="background-color:white; color:black" id="nav-contact-btn" class="bg-accent-color text-primary-color font-medium py-2 px-4 rounded-lg shadow-lg transition-all duration-300 hover:bg-opacity-80 hover:shadow-xl hover:scale-105">
+          For Enquiry
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header id="hero" class="hero-section flex items-center justify-center text-center px-4">
+      <!-- Floating Elements -->
+      <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+      </div>
+      
+      <div class="hero-content max-w-4xl animate-fadeIn">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-secondary-color leading-tight tracking-tight animate-bounceIn">
+          Urbanrise <br>
+          <span class="uppercase font-family-Playfair Display text-accent-color animate-pulse-slow">Paradise on Earth</span>
+        </h1>
+
+        <p class="mt-6 text-xl md:text-2xl text-secondary-color font-light leading-relaxed animate-slideInLeft">
+         Discover the epitome of luxury living in the heart of Bangalore.<br>
+          <span class="text-accent-color font-medium">Luxury Villa</span><br>
+          <span style="font-size: 28px; font-weight: bold; color:#e4b363" class="text-lg"><strong>&#8377 3.17 cr* Onwards</strong></span>
+        </p>
+        
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center animate-slideInRight">
+          <button style="background-color:white; color:black" id="hero-cta-btn" class="bg-accent-color text-primary-color font-bold text-lg py-4 px-10 rounded-lg shadow-xl transition-all duration-300 hover:bg-opacity-80 hover:shadow-2xl hover:scale-105 transform">
+            Get Pricing Details
+          </button>
+          <button class="border-2 border-accent-color text-accent-color font-medium text-lg py-4 px-10 rounded-lg transition-all duration-300 hover:bg-accent-color hover:text-primary-color transform hover:scale-105 contact-cta">
+            Virtual Tour
+          </button>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="mt-16 animate-bounce contact-cta">
+          <svg class="w-6 h-6 mx-auto text-accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+      <!-- About Us Section -->
+      <section id="about" class="py-16 section-fade-in">
+        <h2 class="text-4xl font-bold text-center text-accent-color">About Urbanrise Paradise On Earth</h2>
+        <div class="mt-8 flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2 w-full">
+                <img src="\image\urbanrisebanner.jpg" alt="The modern facade of The Pinnacle Residences" class="rounded-xl shadow-lg w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 w-full">
+                <p style="text-align: justify;" class="text-lg leading-relaxed text-secondary-color">
+                  Welcome to Urbanrise Paradise on Earth — Bengaluru’s first water-superabundant villa community where luxury meets responsibility. 
+                  Spread across 24 acres with just 9 villas per acre, this IGBC Platinum pre-certified enclave ensures abundant open spaces, privacy, and peace of mind.<br><br>
+
+Nestled in Gangasandra and embraced by 2190 acres of state-reserved forest, it offers an unmatched bond with nature — 
+from walks under 1500+ trees to relaxing by a perennial stream. Choose from thoughtfully designed 4 BHK and 4 BHK + Home Office villas starting 
+from ₹3.17 Cr, blending modern elegance with environmental intelligence. With 2.5 acres of themed leisure spaces, glamping zones, hammock parks, rain gardens, 
+and a 32,000 sq.ft. grand clubhouse featuring an infinity pool, gym, banquet hall, squash court and co-working spaces — life here is nothing short of extraordinary. 
+Urbanrise Paradise on Earth is more than a home — it’s a greener, healthier, future-ready lifestyle.
+
+                </p>
+                <button  style="background-color:white; color:black" class="mt-6 bg-accent-color text-primary-color font-medium py-3 px-6 rounded-lg w-full md:w-auto transition-all duration-300 hover:bg-opacity-80 hover:shadow-xl hover:scale-105 contact-cta">
+                    Schedule a Tour
+                </button>
+            </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="py-16 section-fade-in">
+        <h2 class="text-4xl font-bold text-center text-accent-color">Configuration & Pricing</h2>
+        <p class="mt-4 text-center max-w-2xl mx-auto text-lg leading-relaxed text-secondary-color">
+          Smartly designed 4BHk Villa.
+        </p>
+        <div class="mt-12 overflow-x-auto">
+          <table class="w-full text-left table-auto border-collapse bg-primary-color rounded-xl shadow-lg">
+            <thead class="text-accent-color">
+              <tr class="animate-fadeIn">
+                <th class="p-4 border-b-2 border-accent-color text-center">Unit Type</th>
+                <th class="p-4 border-b-2 border-accent-color text-center">Area</th>
+                <th class="p-4 border-b-2 border-accent-color text-center">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pricing-table-row">
+                <td class="p-4 border-b border-accent-color/20 text-center">
+                  <h3 class="font-semibold text-lg text-accent-color">4BHK</h3>
+                </td>
+                <td class="p-4 border-b border-accent-color/20 text-center">2150 - 2982 sq.ft</td>
+                <td class="p-4 border-b border-accent-color/20 text-center">Request for Pricing</td>
+              </tr>
+              <tr class="pricing-table-row">
+                <td class="p-4 border-b border-accent-color/20 text-center">
+                  <h3 class="font-semibold text-lg text-accent-color">4BHK + Home Office</h3>
+                </td>
+                <td class="p-4 border-b border-accent-color/20 text-center">2150 - 2934 sq. ft.</td>
+                <td class="p-4 border-b border-accent-color/20 text-center">Request for Pricing</td>
+              </tr>
+              <!-- <tr class="pricing-table-row">
+                <td class="p-4 border-b border-accent-color/20 text-center">
+                  <h3 class="font-semibold text-lg text-accent-color">Grand Penthouse</h3>
+                </td>
+                <td class="p-4 border-b border-accent-color/20 text-center">3,500 sq. ft.</td>
+                <td class="p-4 border-b border-accent-color/20 text-center">$4,500,000</td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-8 text-center">
+            <button style="background-color:white; color:black" id="price-breakup-btn" class="bg-accent-color text-primary-color font-bold text-lg py-3 px-8 rounded-lg shadow-xl transition-all duration-300 hover:bg-opacity-80 hover:shadow-2xl hover:scale-105 contact-cta">
+              Get Price Breakup
+            </button>
+        </div>
+      </section>
+
+      <!-- Amenities Section -->
+      <section class="py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+        <h2 style="color:white" class="text-3xl font-bold text-center mb-10 text-gray-800">
+            Amenities Of Urbanrise Paradise On Earth
+        </h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 text-center">
+
+            <!-- 1. Luxe Glamping Site (Tent Icon) -->
+            <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-godrej-primary mb-3">
+                    <path d="M4 14.5V17H20V14.5M6 14.5V17M18 14.5V17M12 21V17M3 14H21L12 3L3 14Z"/>
+                </svg>
+                <div class="font-semibold text-godrej-primary">Luxe Glamping Site</div>
+            </div>
+
+            <!-- 2. Bird Watching Deck (Bird Icon) -->
+            <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-godrej-primary mb-3">
+                    <path d="M16 4h4v4M16 8l-6 6M12 12l-6 6M8 16L4 20M4 16L8 12"/>
+                </svg>
+                <div class="font-semibold text-godrej-primary">Bird Watching Deck</div>
+            </div>
+
+            <!-- 3. Open-Air Theatre (Projector Icon) -->
+            <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-godrej-primary mb-3">
+                    <path d="M12 3v3m0 12v3m10-9h-3m-14 0H2m4 0h12a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6a2 2 0 012-2zM12 11.5a1 1 0 100-2 1 1 0 000 2z"/>
+                </svg>
+                <div class="font-semibold text-godrej-primary">Open-Air Theatre</div>
+            </div>
+
+            <!-- 4. Clubhouse (Building Icon) -->
+            <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-godrej-primary mb-3">
+                    <path d="M12 2L2 7V21H22V7L12 2ZM6 10H18M6 14H18M6 18H18"/>
+                </svg>
+                <div class="font-semibold text-godrej-primary">Clubhouse</div>
+            </div>
+
+            <!-- 5. Fishing Corner (Fishing Hook Icon) -->
+            <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-godrej-primary mb-3">
+                    <path d="M19 12h-2m-2-2v4m-2 2h4m2-4a7 7 0 00-14 0c0 7 7 12 7 12s7-5 7-12zM12 2v4"/>
+                </svg>
+                <div class="font-semibold text-godrej-primary">Fishing Corner</div>
+            </div>
+
+            <!-- 6. Infinity Pool (Water/Wave Icon) -->
+            <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-godrej-primary mb-3">
+                    <path d="M2 22h20M4 18h16M6 14h12M8 10h8M10 6h4M12 2v4"/>
+                </svg>
+                <div class="font-semibold text-godrej-primary">Infinity Pool</div>
+            </div>
+
+            <!-- 7. Squash Court (Racquet Icon) -->
+            <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-godrej-primary mb-3">
+                    <circle cx="12" cy="12" r="8"/><path d="M12 20v2M12 2h0m-6 4l6 6m0 0l-6 6M18 6l-6 6m0 0l6 6M12 12a1 1 0 100-2 1 1 0 000 2z"/>
+                </svg>
+                <div class="font-semibold text-godrej-primary">Squash Court</div>
+            </div>
+            
+            <!-- 8. Jacking (Assuming Jogging/Running Man Icon) -->
+            <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 animate-fade-in transition-delay-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-godrej-primary mb-3">
+                    <circle cx="18" cy="6" r="3"/><path d="M12 22v-4l-3-1M12 18v-5l-3 4-2-4M16 13l-2-2-3 3"/>
+                </svg>
+                <div class="font-semibold text-godrej-primary">Jacking</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      <!-- Project Highlights Section -->
+      <section id="project-highlights" class="py-16 section-fade-in">
+        <h2 class="text-4xl font-bold text-center text-accent-color">Project Highlights</h2>
+        <div class="mt-12 flex flex-col-reverse md:flex-row items-center gap-12">
+          <!-- Left Column: Video Section -->
+          <div class="md:w-1/2 w-full">
+            <div class="relative w-full h-80 rounded-xl overflow-hidden shadow-lg border-2 border-accent-color/30 flex items-center justify-center bg-gray-900">
+              <!-- <img src="/image/urbanrisebanner.jpg" alt="Placeholder for project video" class="absolute inset-0 w-full h-full object-cover opacity-70"> -->
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/FLBkPoZLlvI?si=tBZ-HzzTgpA1KoRj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <button class="play-button bg-accent-color text-primary-color rounded-full p-4 transform transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-accent-color focus:ring-opacity-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary-color animate-pulse" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <p class="mt-4 text-center text-lg text-secondary-color">Experience the lifestyle in our stunning video tour.</p>
+          </div>
+          <!-- Right Column: Highlight Points -->
+          <div class="md:w-1/2 w-full p-8 bg-primary-color rounded-xl shadow-lg border-2 border-accent-color/30">
+            <!-- <h3 class="text-3xl font-bold text-accent-color mb-4">Unmatched Quality & Amenities</h3> -->
+            <p class="text-lg leading-relaxed text-secondary-color mb-6">
+              Transforming the Essence of Urban Living
+            </p>
+            <ul class="space-y-4 text-lg text-secondary-color">
+              <li class="flex items-start">
+                <span class="mr-2 text-accent-color font-bold">&bull;</span>
+                <div>
+                  <strong class="font-semibold text-secondary-color">24-Acre Low-Density Villa Community offering wide open spaces and serene green surroundings.</strong>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-accent-color font-bold">&bull;</span>
+                <div>
+                  <strong class="font-semibold text-secondary-color">Premium 4 BHK Villas designed for ventilation, natural light, private gardens, and modern family living.</strong>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-accent-color font-bold">&bull;</span>
+                <div>
+                  <strong class="font-semibold text-secondary-color">32,000 Sq.Ft Grand Clubhouse & Lifestyle Amenities including glamping site, infinity pool, OAT, sports zones, and more.</strong>
+              </li>
+              <!-- <li class="flex items-start">
+                <span class="mr-2 text-accent-color font-bold">&bull;</span>
+                <div>
+                  <strong class="font-semibold text-secondary-color">Top 7 engineering colleges within a 5 km radius.</strong>
+                </div>
+              </li> -->
+            </ul>
+            <button  style="background-color:white; color:black" class="mt-6 bg-accent-color text-primary-color font-bold py-3 px-6 rounded-lg w-full transition-all duration-300 hover:bg-opacity-80 hover:shadow-xl hover:scale-105 contact-cta">
+              Download Full Brochure
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Floor Plan Section -->
+      <section id="floor-plans" class="py-16 section-fade-in">
+        <h2 class="text-4xl font-bold text-center text-accent-color">Floor Plan</h2>
+        <div class="mt-12 flex flex-col md:flex-row items-center justify-between gap-12">
+            <!-- Left Column: Text Content -->
+            <div class="md:w-1/2 w-full text-center md:text-left">
+                <p class="text-lg text-accent-color font-medium">Your Home Plan</p>
+                <!-- <h3 class="mt-2 text-3xl font-bold text-secondary-color">Intelligently Designed Spaces</h3> -->
+                <p  style="text-align: justify;" class="mt-4 text-lg leading-relaxed text-secondary-color">
+                    Urbanrise Paradise on Earth Kanakapura Road is a perfect place for those who want to experience a balanced lifestyle. With its prime location, beautiful amenities, and spacious apartments, you will experience the best of both worlds.
+
+The master plan and floor plan of Urbanrise Paradise on Earth Kanakapura Road are designed with your comfort and convenience in mind. The apartments are equipped with world-class features that cater to your every need. Whether it's the premium fittings or the modern finishes, everything is designed to make your life easy. <br><br>
+
+If you're looking for a serene environment away from the hustle-bustle of city life but still be connected to it, then Urbanrise Paradise on Earth Kanakapura Road can offer just that. The complex has been built keeping in mind all aspects of contemporary living including green spaces that provide an oasis amidst urban chaos.<br><br>
+
+If you're searching for a great investment opportunity or looking for an excellent place to call home in Bangalore - Urbanrise Paradise on Earth Kanakapura Road should definitely be on top of your list. Experience enhanced quality living today!
+                </p>
+                <!-- <ul class="mt-6 space-y-3 text-lg leading-relaxed text-secondary-color list-disc list-inside">
+                    <li>Recreation and Shopping areas nearby</li>
+                    <li>Schools within a 5 km</li>
+                    <li>Health Care Facilities within a 9 km </li>
+                    <li>Connectivity to all major highways</li>
+                    <li>Work Zones - IT Parks, Industrial Zones</li>
+                    
+                </ul> -->
+                <button  style="background-color:white; color:black" class="mt-6 bg-accent-color text-primary-color font-medium py-3 px-6 rounded-lg w-full md:w-auto transition-all duration-300 hover:bg-opacity-80 hover:shadow-xl hover:scale-105 contact-cta">
+                    Schedule Visit Now
+                </button>
+            </div>
+            <!-- Right Column: Images with Buttons -->
+            <div class="md:w-1/2 w-full relative flex flex-col items-center">
+                <div class="relative w-full p-4 rounded-xl shadow-lg border-2 border-accent-color/30 transform -rotate-3 transition-transform duration-300 hover:rotate-0">
+                    <img src="/image/floorplan/1.jpg" alt="A detailed layout of a section of the property" 
+     style="filter: blur(4px);" 
+     class="w-full rounded-lg h-auto object-cover">
+                    <button  style="background-color:white; color:black"  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-color text-primary-color font-bold py-3 px-8 rounded-full shadow-lg opacity-90 transition-all duration-300 hover:opacity-100 hover:bg-opacity-80 contact-cta">
+                        Click Me
+                    </button>
+                </div>
+                <!-- <div class="relative w-full p-4 rounded-xl shadow-lg border-2 border-accent-color/30 mt-8 transform rotate-3 transition-transform duration-300 hover:rotate-0">
+                  <img src="image/f2.jpg" alt="A detailed layout of a section of the property" 
+     style="filter: blur(4px);" 
+     class="w-full rounded-lg h-auto object-cover">
+                    <button  style="background-color:white; color:black"  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-color text-primary-color font-bold py-3 px-8 rounded-full shadow-lg opacity-90 transition-all duration-300 hover:opacity-100 hover:bg-opacity-80 contact-cta">
+                        Click Me
+                    </button> -->
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section - Advanced Carousel -->
+      <section id="gallery" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-4xl font-bold text-center text-accent-color mb-8">Property Gallery</h2>
+        <p class="text-center max-w-2xl mx-auto text-lg leading-relaxed text-secondary-color mb-12">
+          Explore the stunning spaces and premium amenities that define luxury living.
+        </p>
+        <div class="gallery-carousel">
+          <!-- Navigation Buttons -->
+          <button class="gallery-nav prev" id="gallery-prev">
+            <svg class="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button class="gallery-nav next" id="gallery-next">
+            <svg class="w-6 h-6 text-primary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          
+          <!-- Gallery Track -->
+          <div class="gallery-track" id="gallery-track">
+            <div class="gallery-slide">
+              <img src="\image\urbanrisegallery1.jpg" alt="Modern luxury lobby with premium finishes" class="w-full h-80 object-cover rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div class="mt-4 text-center">
+                <!-- <h3 class="text-lg font-semibold text-accent-color">Luxury Lobby</h3>
+                <p class="text-secondary-color">Premium finishes and modern design</p> -->
+              </div>
+            </div>
+            <div class="gallery-slide">
+              <img src="\image\urbanrisegallery2.jpg" alt="Rooftop terrace with city views" class="w-full h-80 object-cover rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div class="mt-4 text-center">
+                <!-- <h3 class="text-lg font-semibold text-accent-color">Rooftop Terrace</h3>
+                <p class="text-secondary-color">Panoramic city views and seating area</p> -->
+              </div>
+            </div>
+            <div class="gallery-slide">
+              <img src="\image\urbanrisegallery3.jpg" alt="Infinity pool with cityscape view" class="w-full h-80 object-cover rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div class="mt-4 text-center">
+                <!-- <h3 class="text-lg font-semibold text-accent-color">Infinity Pool</h3>
+                <p class="text-secondary-color">Stunning cityscape views</p> -->
+              </div>
+            </div>
+            <div class="gallery-slide">
+              <img src="\image\urbanrisegallery4.jpg" alt="State-of-the-art fitness center" class="w-full h-80 object-cover rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div class="mt-4 text-center">
+                <!-- <h3 class="text-lg font-semibold text-accent-color">Fitness Center</h3>
+                <p class="text-secondary-color">Modern equipment and facilities</p> -->
+              </div>
+            </div>
+            <div class="gallery-slide">
+              <img src="\image\urbanrisegallery5.jpg" alt="Premium amenities space" class="w-full h-80 object-cover rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div class="mt-4 text-center">
+                <!-- <h3 class="text-lg font-semibold text-accent-color">Premium Amenities</h3>
+                <p class="text-secondary-color">Luxury lifestyle facilities</p> -->
+              </div>
+            </div>
+            <div class="gallery-slide">
+              <img src="\image\urbanrisegallery6.jpg" alt="Community spaces and recreation" class="w-full h-80 object-cover rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <div class="mt-4 text-center">
+                <!-- <h3 class="text-lg font-semibold text-accent-color">Community Spaces</h3>
+                <p class="text-secondary-color">Recreation and social areas</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Location Section -->
+      <!-- <section id="location" class="py-16 section-fade-in">
+        <h2 class="text-4xl font-bold text-center text-accent-color">Location Highlights</h2>
+        <div class="mt-8 flex flex-col md:flex-row items-center gap-8">
+          <img src="image/location.jpg" alt="A map highlighting the property's location" class="md:w-1/2 w-full rounded-lg shadow-md">
+          <div class="md:w-1/2 w-full text-secondary-color">
+            <ul class="space-y-4">
+              <li><strong>Walk Score:</strong> 98 - Walker's Paradise</li>
+              <li><strong>Proximity:</strong> Minutes from fine dining, cultural venues, and luxury boutiques.</li>
+              <li><strong>Transit:</strong> Convenient access to major subway lines and bus routes.</li>
+              <li><strong>Green Spaces:</strong> Close to multiple parks and recreational areas.</li>
+            </ul>
+          </div>
+         
+        </div>
+        <button  style="background-color:white; color:black" class="mt-6 bg-accent-color text-primary-color font-bold py-3 px-6 rounded-lg w-full transition-all duration-300 hover:bg-opacity-80 hover:shadow-xl hover:scale-105 contact-cta">
+              Location Map
+            </button>
+         
+      </section> -->
+
+
+      <!-- Location Section -->
+      <section id="location" class="container mx-auto px-4 py-16 section-fade-in">
+        <h2 class="text-4xl font-bold text-center text-accent-color mb-8">Location Highlights</h2>
+        <div class="flex flex-col lg:flex-row items-start gap-8">
+            <div class="lg:w-1/2 w-full">
+                <div class="relative w-full h-0 pb-[75%] rounded-lg overflow-hidden shadow-lg">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5535.618666620901!2d77.45929253695688!3d12.840513613841871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae473d736cbda7%3A0x3d6a49a5ebbfa36a!2sUrban%20Rise%20Classic%20Homes%20-%20Villa%20Project%20By%20Alliance%20Group!5e1!3m2!1sen!2sin!4v1764141510462!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="lg:w-1/2 w-full text-secondary-color">
+                <h3 class="text-2xl font-semibold text-accent-color mb-6">Nearby </h3>
+                <ul class="space-y-4 text-lg">
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>Challeghatta Metro Station: </strong> 11.7 km (15 min)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>Silk Institute Metro Station: </strong> 10 km (15 min)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>BGS International Residential School: </strong> 150 m (1 min)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>Delhi Public School: </strong> 2.5 km (6 min)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>Gopalan National School: </strong> 5.2 km (12 min)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>Rajarajeshwari Medical College and Hospital: </strong> 8.4 km (16 min)</span>
+                    </li>
+                     <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>BGS Gleneagles Global Hospital:  </strong> 10.8 km (27 min)</span>
+                    </li>
+                      <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>Decathlon:   </strong> 9.9 km (18 min)</span>
+                    </li>
+                      <li class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-accent-color rounded-full flex-shrink-0"></span>
+                        <span><strong>Guhantara Arts & Sports Club: </strong> 10.9 km (25 min) </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </section>
+
+     
+
+      <!-- Contact Us Section -->
+      <section id="contact-us" class="container mx-auto px-4 py-16 section-fade-in">
+          <h2 class="text-4xl font-bold text-center text-accent-color mb-8">Contact Us</h2>
+          <p class="text-center max-w-2xl mx-auto text-lg leading-relaxed text-secondary-color mb-8">
+              Our team is ready to answer your questions and guide you through the process. Please fill out the form below to connect with us.
+          </p>
+          <div class="max-w-2xl mx-auto bg-primary-color p-8 rounded-xl shadow-lg border-2 border-accent-color/30">
+              <form id="booking_form" class="space-y-4">
+                  <div>
+                      <label for="onpage-name" class="block text-sm font-medium text-secondary-color">Full Name</label>
+                      <input type="text" id="onpage-name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-gray-800 text-white focus:border-accent-color focus:ring focus:ring-accent-color focus:ring-opacity-50" required aria-required="true">
+                  </div>
+                  <div>
+                      <label for="onpage-email" class="block text-sm font-medium text-secondary-color">Email Address</label>
+                      <input type="email" id="onpage-email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-gray-800 text-white focus:border-accent-color focus:ring focus:ring-accent-color focus:ring-opacity-50" required aria-required="true">
+                  </div>
+                  <div>
+                      <label for="onpage-phone" class="block text-sm font-medium text-secondary-color">Phone Number</label>
+                      <input type="tel" id="onpage-phone" name="mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-gray-800 text-white focus:border-accent-color focus:ring focus:ring-accent-color focus:ring-opacity-50">
+                  </div>
+                  <div>
+                      <label for="onpage-message" class="block text-sm font-medium text-secondary-color">Message</label>
+                      <textarea id="onpage-message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-gray-800 text-white focus:border-accent-color focus:ring focus:ring-accent-color focus:ring-opacity-50"></textarea>
+                  </div>
+                  <button id="contact_form_btn1"  style="background-color:white; color:black" type="submit" class="w-full bg-accent-color text-primary-color font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-opacity-80 hover:shadow-2xl hover:scale-105">
+                      Send Message
+                  </button>
+                  <div id="success_message_col" class='mt-2'>
+                       
+                  </div>
+                  <div id="error_message" class='error'>
+                     
+                  </div>
+              </form>
+          </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-color py-8 px-4 text-center border-t border-accent-color/30">
+      <div class="mb-4">
+        <!-- <img src="" alt="The Pinnacle Residences Logo" class="h-8 mx-auto"> -->
+         <a href="#" style="color:#B49B11"
+                class="text-2xl font-bold text-white hover:text-blue-400 transition duration-300">HOME<span
+                    style="color:#096088" class="text-blue-500"> AURA</span></a>
+      </div>
+      <p class="text-xs text-secondary-color/60 max-w-2xl mx-auto">Disclaimer: This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any property. All information is subject to change. Images are artist's renderings and may not be to scale.</p>
+      <p class="mt-4">&copy;2025 <a href="https://homeaurarealtor.com">Home Aura Realtor</a>. All Rights Reserved.</p>
+<p class="mt-2">Designed by <a href="https://digitalgrowthx.in" target="_blank" rel="noopener noreferrer">Digital Growthx</a></p>
+    </footer>
+
+    <!-- Contact Modal Pop-up -->
+    <div id="contact-modal-overlay" class="contact-modal-overlay">
+      <div class="contact-modal p-8 rounded-xl shadow-2xl">
+        <button id="modal-close-btn" class="absolute top-4 right-4 text-secondary-color hover:text-accent-color text-2xl font-bold">&times;</button>
+        <h2 class="text-2xl font-bold text-center text-accent-color mb-4">Contact Us</h2>
+        <p class="text-center text-secondary-color mb-6"> Please fill out the form below to connect with us.</p>
+        <form id="contact-form2" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-secondary-color">Full Name</label>
+            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-gray-800 text-white focus:border-accent-color focus:ring focus:ring-accent-color focus:ring-opacity-50" required aria-required="true" aria-labelledby="name-label">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-secondary-color">Email Address</label>
+            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-gray-800 text-white focus:border-accent-color focus:ring focus:ring-accent-color focus:ring-opacity-50" required aria-required="true" aria-labelledby="email-label">
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-secondary-color">Phone Number</label>
+            <input type="tel" id="phone" name="mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-gray-800 text-white focus:border-accent-color focus:ring focus:ring-accent-color focus:ring-opacity-50" required aria-labelledby="phone-label">
+          </div>
+          <button id="contact_form_btn2"  style="background-color:white; color:black" type="submit" class="w-full bg-accent-color text-primary-color font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-opacity-80 hover:shadow-2xl hover:scale-105">
+            Submit Request
+          </button>
+
+          <div id="success_message_col2" class='mt-2'>
+                       
+          </div>
+          <div id="error_message2" class='error'>
+             
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Custom Message Box -->
+    <div id="message-box-overlay" class="message-box-overlay">
+        <div class="message-box p-8 rounded-xl text-center">
+            <h3 id="message-box-title" class="text-2xl font-bold mb-4"></h3>
+            <p id="message-box-text" class="text-secondary-color mb-6"></p>
+            <button id="message-box-close-btn" class="bg-accent-color text-primary-color font-bold py-2 px-6 rounded-lg transition-all duration-300 hover:bg-opacity-80">Close</button>
+        </div>
+    </div>
+
+
+
+    <!-- Floating Buttons -->
+    <div class="floating-btn-container">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919880779843" class="bg-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110" aria-label="Chat with us on WhatsApp">
+    <img src="image/wa.jpg" alt="WhatsApp" class="h-6 w-6">
+</a>
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.0007 2C6.48071 2 2.00071 6.48 2.00071 12C2.00071 13.7226 2.47822 15.3375 3.32832 16.7135L2.00071 22.0007L7.42068 20.7397C8.75039 21.4939 10.3204 21.9056 12.0007 21.9056C17.5207 21.9056 22.0007 17.4256 22.0007 11.9056C22.0007 6.38563 17.5207 1.90563 12.0007 1.90563V2ZM17.1309 15.655C17.0094 16.035 16.6974 16.0825 16.3268 16.0963C15.9546 16.1102 15.3562 15.9325 14.6599 15.7548C13.9635 15.5771 13.0645 15.2818 12.1654 14.9866C11.2664 14.6913 10.3673 14.2882 9.59604 13.792C8.82396 13.2951 8.25701 12.6372 7.77123 11.9792C7.28546 11.3213 7.02678 10.596 6.90526 10.216C6.78374 9.83602 6.90526 9.49987 7.0001 9.25624C7.09495 9.01344 7.21647 8.81881 7.37346 8.62418C7.53127 8.42955 7.68908 8.24354 7.91702 8.04961C8.14496 7.85568 8.3729 7.68535 8.66752 7.61699C8.96214 7.54862 9.22081 7.54862 9.44876 7.54862C9.67669 7.54862 9.94586 7.54862 10.1236 7.54862C10.3013 7.54862 10.4591 7.57788 10.6169 7.72485C10.7747 7.87182 10.9995 8.13075 11.2274 8.3587C11.4554 8.58664 11.6661 8.81458 11.8385 8.94902C12.0108 9.08346 12.1687 9.24127 12.4357 9.53589C12.7035 9.83051 13.1144 10.4137 13.2359 10.6698C13.3574 10.9259 13.4359 11.0837 13.3144 11.221C13.1929 11.3582 12.8794 11.536 12.6687 11.6443C12.458 11.7525 12.3002 11.9004 12.1432 12.0474C11.9862 12.1943 11.8596 12.3025 11.7381 12.4503C11.6166 12.5982 11.3579 12.8674 11.0993 13.1366C10.8406 13.4058 10.605 13.6265 10.3546 13.8471C10.1042 14.0678 9.85386 14.2885 9.62674 14.5091C9.40045 14.7298 9.21528 14.9315 9.09376 15.0531C8.97224 15.1746 8.86872 15.3091 8.7472 15.456C8.62568 15.603 8.49042 15.8236 8.24004 16.035C8.01292 16.2464 7.78508 16.4241 7.66355 16.5456C7.54203 16.6671 7.39498 16.7951 7.27346 16.9166C7.15194 17.0381 7.0001 17.1521 7.0001 17.3801C7.0001 17.608 7.0001 17.7658 7.0001 17.8924C7.0001 18.0189 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924L7.0001 18.0924L7.0001 18.0924L7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924L7.0001 18.0924L7.0001 18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924V18.0924L7.0001 18.0924V18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924L7.0001 18.0924V18.0924L7.0001 18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924L7.0001 18.0924V18.0924L7.0001 18.0924V18.0924V18.0924Z" fill="#25D366"/>
+                <path d="M17.1309 15.655C17.0094 16.035 16.6974 16.0825 16.3268 16.0963C15.9546 16.1102 15.3562 15.9325 14.6599 15.7548C13.9635 15.5771 13.0645 15.2818 12.1654 14.9866C11.2664 14.6913 10.3673 14.2882 9.59604 13.792C8.82396 13.2951 8.25701 12.6372 7.77123 11.9792C7.28546 11.3213 7.02678 10.596 6.90526 10.216C6.78374 9.83602 6.90526 9.49987 7.0001 9.25624C7.09495 9.01344 7.21647 8.81881 7.37346 8.62418C7.53127 8.42955 7.68908 8.24354 7.91702 8.04961C8.14496 7.85568 8.3729 7.68535 8.66752 7.61699C8.96214 7.54862 9.22081 7.54862 9.44876 7.54862C9.67669 7.54862 9.94586 7.54862 10.1236 7.54862C10.3013 7.54862 10.4591 7.57788 10.6169 7.72485C10.7747 7.87182 10.9995 8.13075 11.2274 8.3587C11.4554 8.58664 11.6661 8.81458 11.8385 8.94902C12.0108 9.08346 12.1687 9.24127 12.4357 9.53589C12.7035 9.83051 13.1144 10.4137 13.2359 10.6698C13.3574 10.9259 13.4359 11.0837 13.3144 11.221C13.1929 11.3582 12.8794 11.536 12.6687 11.6443C12.458 11.7525 12.3002 11.9004 12.1432 12.0474C11.9862 12.1943 11.8596 12.3025 11.7381 12.4503C11.6166 12.5982 11.3579 12.8674 11.0993 13.1366C10.8406 13.4058 10.605 13.6265 10.3546 13.8471C10.1042 14.0678 9.85386 14.2885 9.62674 14.5091C9.40045 14.7298 9.21528 14.9315 9.09376 15.0531C8.97224 15.1746 8.86872 15.3091 8.7472 15.456C8.62568 15.603 8.49042 15.8236 8.24004 16.035C8.01292 16.2464 7.78508 16.4241 7.66355 16.5456C7.54203 16.6671 7.39498 16.7951 7.27346 16.9166C7.15194 17.0381 7.0001 17.1521 7.0001 17.3801C7.0001 17.608 7.0001 17.7658 7.0001 17.8924C7.0001 18.0189 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924L7.0001 18.0924L7.0001 18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924V18.0924L7.0001 18.0924V18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924L7.0001 18.0924V18.0924L7.0001 18.0924V18.0924C7.0001 18.0924 7.0001 18.0924 7.0001 18.0924V18.0924L7.0001 18.0924V18.0924L7.0001 18.0924V18.0924V18.0924Z" fill="#25D366"/>
+            </svg> -->
+        </a>
+        <!-- Scroll to Top Button -->
+        <button id="top-btn" class="bg-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110" aria-label="Scroll to top">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </button>
+    </div>
+
+    <script>
+      // --- Helper Functions ---
+      function showMessageBox(title, message) {
+        const overlay = document.getElementById('message-box-overlay');
+        document.getElementById('message-box-title').textContent = title;
+        document.getElementById('message-box-text').textContent = message;
+        overlay.classList.add('show');
+      }
+
+      function hideMessageBox() {
+        document.getElementById('message-box-overlay').classList.remove('show');
+      }
+
+      // --- Bounded Gallery Carousel Functionality ---
+      class BoundedGalleryCarousel {
+        constructor() {
+          this.track = document.getElementById('gallery-track');
+          this.prevBtn = document.getElementById('gallery-prev');
+          this.nextBtn = document.getElementById('gallery-next');
+          this.slides = this.track?.querySelectorAll('.gallery-slide') || [];
+          this.totalSlides = this.slides.length;
+          this.currentIndex = 0;
+          this.slideWidth = 0;
+          this.containerWidth = 0;
+          this.visibleSlides = 1;
+          this.maxIndex = 0;
+          this.isTransitioning = false;
+          this.autoPlayInterval = null;
+          this.isAutoPlaying = true;
+          
+          this.init();
+        }
+        
+        init() {
+          if (!this.track || this.totalSlides === 0) return;
+          
+          // Calculate dimensions
+          this.calculateDimensions();
+          
+          // Set initial position
+          this.setPosition(0, false);
+          this.updateNavigationState();
+          
+          // Add event listeners
+          this.prevBtn?.addEventListener('click', () => this.prevSlide());
+          this.nextBtn?.addEventListener('click', () => this.nextSlide());
+          
+          // Touch/drag support
+          this.addTouchSupport();
+          
+          // Auto-play
+          this.startAutoPlay();
+          
+          // Pause on hover
+          this.track.addEventListener('mouseenter', () => this.pauseAutoPlay());
+          this.track.addEventListener('mouseleave', () => this.startAutoPlay());
+          
+          // Handle window resize
+          window.addEventListener('resize', () => {
+            this.calculateDimensions();
+            this.setPosition(this.currentIndex, false);
+            this.updateNavigationState();
+          });
+        }
+        
+        calculateDimensions() {
+          if (!this.track || this.slides.length === 0) return;
+          
+          const slide = this.slides[0];
+          const container = this.track.parentElement;
+          
+          this.slideWidth = slide.offsetWidth;
+          this.containerWidth = container.offsetWidth;
+          
+          // Calculate how many slides are visible based on screen size
+          if (window.innerWidth >= 1024) {
+            this.visibleSlides = Math.min(4, this.totalSlides);
+          } else if (window.innerWidth >= 768) {
+            this.visibleSlides = Math.min(3, this.totalSlides);
+          } else {
+            this.visibleSlides = 1;
+          }
+          
+          // Calculate maximum index (last position where we can scroll)
+          this.maxIndex = Math.max(0, this.totalSlides - this.visibleSlides);
+        }
+        
+        setPosition(index, animate = true) {
+          if (animate) {
+            this.track.style.transition = 'transform 0.3s ease-out';
+          } else {
+            this.track.style.transition = 'none';
+          }
+          
+          const translateX = -index * this.slideWidth;
+          this.track.style.transform = `translateX(${translateX}px)`;
+        }
+        
+        updateNavigationState() {
+          // Disable/enable previous button
+          if (this.prevBtn) {
+            if (this.currentIndex <= 0) {
+              this.prevBtn.classList.add('disabled');
+            } else {
+              this.prevBtn.classList.remove('disabled');
+            }
+          }
+          
+          // Disable/enable next button
+          if (this.nextBtn) {
+            if (this.currentIndex >= this.maxIndex) {
+              this.nextBtn.classList.add('disabled');
+            } else {
+              this.nextBtn.classList.remove('disabled');
+            }
+          }
+        }
+        
+        nextSlide() {
+          if (this.isTransitioning || this.currentIndex >= this.maxIndex) return;
+          
+          this.isTransitioning = true;
+          this.currentIndex++;
+          
+          this.setPosition(this.currentIndex, true);
+          this.updateNavigationState();
+          
+          setTimeout(() => {
+            this.isTransitioning = false;
+          }, 300);
+        }
+        
+        prevSlide() {
+          if (this.isTransitioning || this.currentIndex <= 0) return;
+          
+          this.isTransitioning = true;
+          this.currentIndex--;
+          
+          this.setPosition(this.currentIndex, true);
+          this.updateNavigationState();
+          
+          setTimeout(() => {
+            this.isTransitioning = false;
+          }, 300);
+        }
+        
+        addTouchSupport() {
+          let startX = 0;
+          let currentX = 0;
+          let isDragging = false;
+          let startTime = 0;
+          
+          this.track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startTime = Date.now();
+            isDragging = true;
+            this.pauseAutoPlay();
+          });
+          
+          this.track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+            e.preventDefault();
+          });
+          
+          this.track.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            const diff = startX - currentX;
+            const timeDiff = Date.now() - startTime;
+            const velocity = Math.abs(diff) / timeDiff;
+            
+            if (Math.abs(diff) > 50 || velocity > 0.3) {
+              if (diff > 0) {
+                this.nextSlide();
+              } else {
+                this.prevSlide();
+              }
+            }
+            this.startAutoPlay();
+          });
+          
+          // Mouse drag support
+          this.track.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            startTime = Date.now();
+            isDragging = true;
+            this.track.style.cursor = 'grabbing';
+            this.pauseAutoPlay();
+            e.preventDefault();
+          });
+          
+          document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            currentX = e.clientX;
+          });
+          
+          document.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            this.track.style.cursor = 'grab';
+            
+            const diff = startX - currentX;
+            const timeDiff = Date.now() - startTime;
+            const velocity = Math.abs(diff) / timeDiff;
+            
+            if (Math.abs(diff) > 50 || velocity > 0.3) {
+              if (diff > 0) {
+                this.nextSlide();
+              } else {
+                this.prevSlide();
+              }
+            }
+            this.startAutoPlay();
+          });
+        }
+        
+        startAutoPlay() {
+          if (!this.isAutoPlaying) return;
+          this.pauseAutoPlay();
+          this.autoPlayInterval = setInterval(() => {
+            if (this.currentIndex >= this.maxIndex) {
+              // Reset to beginning when reaching the end
+              this.currentIndex = 0;
+              this.setPosition(this.currentIndex, true);
+              this.updateNavigationState();
+            } else {
+              this.nextSlide();
+            }
+          }, 3000);
+        }
+        
+        pauseAutoPlay() {
+          if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+          }
+        }
+      }
+
+      // --- Intersection Observer for Animations ---
+      function initScrollAnimations() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        
+        // Observe all sections with fade-in animation
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+          observer.observe(section);
+        });
+        
+        // Observe stagger animation containers
+        document.querySelectorAll('.stagger-animation').forEach(container => {
+          observer.observe(container);
+        });
+      }
+
+      // --- Main Script ---
+      document.addEventListener('DOMContentLoaded', () => {
+        // Initialize Bounded Gallery Carousel
+        new BoundedGalleryCarousel();
+        
+        // Initialize Scroll Animations
+        initScrollAnimations();
+        
+        // Get DOM elements
+        const contactModalOverlay = document.getElementById('contact-modal-overlay');
+        const heroCtaBtn = document.getElementById('hero-cta-btn');
+        const showModalBtn = document.querySelectorAll(".showModal")
+        const navContactBtn = document.getElementById('nav-contact-btn');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const contactForm = document.getElementById('contact-form2');
+        const topBtn = document.getElementById('top-btn');
+        const ctaButtons = document.querySelectorAll('.contact-cta');
+        const messageBoxCloseBtn = document.getElementById('message-box-close-btn');
+        const contactUsForm = document.getElementById('booking_form');
+        const priceBreakupBtn = document.getElementById('price-breakup-btn');
+
+
+        // Show modal when CTA buttons are clicked
+        function showContactModal() {
+          contactModalOverlay.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        }
+
+        heroCtaBtn.addEventListener('click', showContactModal);
+        navContactBtn.addEventListener('click', showContactModal);
+        ctaButtons.forEach(btn => btn.addEventListener('click', showContactModal));
+        priceBreakupBtn.addEventListener('click', showContactModal);
+        showModalBtn.forEach(btn => btn.addEventListener('click', showContactModal));
+
+        // Hide modal
+        function hideContactModal() {
+          contactModalOverlay.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+
+        modalCloseBtn.addEventListener('click', hideContactModal);
+        contactModalOverlay.addEventListener('click', (e) => {
+          if (e.target.id === 'contact-modal-overlay') {
+            hideContactModal();
+          }
+        });
+
+        // Form submission with client-side validation for the modal form
+        // contactForm.addEventListener('submit', (e) => {
+        //   e.preventDefault();
+        //   const name = document.getElementById('name').value;
+        //   const email = document.getElementById('email').value;
+
+        //   if (!name || !email) {
+        //     showMessageBox('Validation Error', 'Please fill out all required fields.');
+        //     return;
+        //   }
+          
+        //   if (!/\S+@\S+\.\S+/.test(email)) {
+        //     showMessageBox('Validation Error', 'Please enter a valid email address.');
+        //     return;
+        //   }
+
+        //   // Simulate form submission
+        //   console.log('Modal Form Submitted:', { name, email, phone: document.getElementById('phone').value });
+
+        //   hideContactModal();
+        //   showMessageBox('Thank You!', 'Your request has been submitted. A representative will contact you shortly.');
+
+        //   // Reset the form
+        //   contactForm.reset();
+        // });
+
+        // Form submission with client-side validation for the on-page contact form
+        // contactUsForm.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     const name = document.getElementById('onpage-name').value;
+        //     const email = document.getElementById('onpage-email').value;
+        //     const message = document.getElementById('onpage-message').value;
+
+        //     if (!name || !email) {
+        //         showMessageBox('Validation Error', 'Please fill out all required fields.');
+        //         return;
+        //     }
+
+        //     if (!/\S+@\S+\.\S+/.test(email)) {
+        //         showMessageBox('Validation Error', 'Please enter a valid email address.');
+        //         return;
+        //     }
+
+        //     console.log('On-Page Form Submitted:', { name, email, phone: document.getElementById('onpage-phone').value, message });
+
+        //     showMessageBox('Thank You!', 'Your message has been sent. We will get back to you shortly.');
+
+        //     contactUsForm.reset();
+        // });
+
+        // Close message box
+        messageBoxCloseBtn.addEventListener('click', hideMessageBox);
+
+        // Scroll to Top button functionality
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 200) {
+            topBtn.classList.add('show');
+          } else {
+            topBtn.classList.remove('show');
+          }
+        });
+
+        topBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Custom Tailwind Configuration to define 'godrej-primary'
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'godrej-primary': '#005b8e', // A deep blue for the primary color
+                    }
+                },
+            }
+        }
+     
+    </script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/contact.js"></script>
+
+</body>
+</html>
