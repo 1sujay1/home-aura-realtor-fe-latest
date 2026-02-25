@@ -1,16 +1,5 @@
 const projects = [
-  {
-    id: 1,
-    title: "Paradise On Earth",
-    type: "4BHK, 4.5BHK, 5BHK Villas",
-    location: "Kanakapura Road, Bangalore",
-    price: "₹3.17 Cr Onwards",
-    image: "/image/urbanrise.jpg",
-    builder: "URBANRISE",
-    builderClass: "bg-blue-600",
-    detailsUrl: "/urbanrise-paradise-on-earth-villa",
-    animationDelay: "0.1s"
-  },
+
   {
     id: 2,
     title: "Lakeside Orchard",
