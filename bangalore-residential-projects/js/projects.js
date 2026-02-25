@@ -2,7 +2,7 @@ const projects = [
   {
     id: 1,
     title: "Paradise On Earth",
-    type: "4BHK, 4.5BHK, 5BHK Luxury Villas",
+    type: "4BHK, 4.5BHK, 5BHK Villas",
     location: "Kanakapura Road, Bangalore",
     price: "₹3.17 Cr Onwards",
     image: "/image/urbanrise.jpg",
