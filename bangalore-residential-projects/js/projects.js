@@ -8,7 +8,7 @@ const projects = [
     image: "/image/urbanrise.jpg",
     builder: "URBANRISE",
     builderClass: "bg-blue-600",
-    detailsUrl: "/urbanrise-paradise-on-earth-luxury-villa",
+    detailsUrl: "/urbanrise-paradise-on-earth-villa",
     animationDelay: "0.1s"
   },
   {
