@@ -17,7 +17,7 @@ const projects = [
     type: "3BHK, 3.5BHK, 4BHK Flats",
     location: "Sarjapur Road, Bangalore",
     price: "₹2.25 Cr Onwards",
-    image: "/image/godrejlakeside.jpg",
+    image: "/image/bannergodrej.jpg",
     builder: "GODREJ",
     builderClass: "bg-green-600",
     detailsUrl: "/godrej-lakeside-orchard",
