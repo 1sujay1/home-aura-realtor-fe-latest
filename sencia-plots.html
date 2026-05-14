@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PropShell - Maraimalai Nagar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#fff;
+      color:#111827;
+      overflow-x:hidden;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    /* NAVBAR */
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:999;
+      background:rgba(0,0,0,0.65);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      color:#fff;
+    }
+
+    .logo h2{
+      font-size:28px;
+      font-weight:800;
+    }
+
+    .logo span{
+      font-size:12px;
+      color:#ddd;
+    }
+
+    .nav-btn{
+      background:#7c3aed;
+      color:#fff;
+      padding:14px 28px;
+      border-radius:50px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      border:none;
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-2px);
+      background:#6d28d9;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      background:
+      linear-gradient(to right, rgba(0,0,0,0.82), rgba(0,0,0,0.35)),
+      url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+    }
+
+    .hero-content{
+      max-width:700px;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.15);
+      padding:12px 22px;
+      border-radius:40px;
+      margin-bottom:25px;
+      backdrop-filter:blur(10px);
+    }
+
+    .hero h1{
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:25px;
+      font-weight:800;
+    }
+
+    .hero p{
+      font-size:20px;
+      line-height:1.8;
+      color:#e5e7eb;
+      margin-bottom:40px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .primary-btn{
+      background:#7c3aed;
+      color:#fff;
+      padding:16px 34px;
+      border-radius:50px;
+      font-weight:600;
+      cursor:pointer;
+      border:none;
+      transition:0.3s;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-3px);
+      background:#6d28d9;
+    }
+
+    .secondary-btn{
+      border:1px solid rgba(255,255,255,0.25);
+      color:#fff;
+      padding:16px 34px;
+      border-radius:50px;
+      transition:0.3s;
+    }
+
+    .secondary-btn:hover{
+      background:rgba(255,255,255,0.12);
+    }
+
+    /* ABOUT */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .section-tag{
+      color:#7c3aed;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:3px;
+      margin-bottom:18px;
+      text-transform:uppercase;
+    }
+
+    .section-title{
+      font-size:48px;
+      line-height:1.2;
+      margin-bottom:25px;
+      font-weight:800;
+    }
+
+    .section-text{
+      color:#6b7280;
+      line-height:1.9;
+      margin-bottom:35px;
+      font-size:17px;
+    }
+
+    .about-image img{
+      border-radius:30px;
+      box-shadow:0 20px 60px rgba(0,0,0,0.12);
+      height:600px;
+      object-fit:cover;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      background:#f9fafb;
+    }
+
+    .center{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+    }
+
+    .gallery-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      cursor:pointer;
+    }
+
+    .gallery-card img{
+      height:280px;
+      object-fit:cover;
+      transition:0.7s;
+    }
+
+    .gallery-card:hover img{
+      transform:scale(1.1);
+    }
+
+    .gallery-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      opacity:0;
+      transition:0.4s;
+      display:flex;
+      align-items:flex-end;
+      padding:25px;
+    }
+
+    .gallery-card:hover .gallery-overlay{
+      opacity:1;
+    }
+
+    .gallery-overlay h4{
+      color:#fff;
+      font-size:22px;
+    }
+
+    /* VIDEO */
+
+    .video-section{
+      background:#111827;
+      color:#fff;
+    }
+
+    .video-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    iframe{
+      width:100%;
+      border:none;
+      border-radius:28px;
+      height:400px;
+    }
+
+    /* HIGHLIGHTS */
+
+    .highlight-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+    }
+
+    .highlight-card{
+      background:#fff;
+      padding:40px 30px;
+      border-radius:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+      transition:0.4s;
+      border:1px solid #eee;
+    }
+
+    .highlight-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .highlight-number{
+      width:60px;
+      height:60px;
+      background:#ede9fe;
+      color:#7c3aed;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    .highlight-card h4{
+      font-size:24px;
+      margin-bottom:15px;
+    }
+
+    .highlight-card p{
+      color:#6b7280;
+      line-height:1.8;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      background:linear-gradient(135deg,#7c3aed,#9333ea);
+      color:#fff;
+      border-radius:35px;
+      padding:70px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .contact-details p{
+      margin-bottom:16px;
+      font-size:18px;
+    }
+
+    .contact-form-preview{
+      background:#fff;
+      padding:40px;
+      border-radius:28px;
+      color:#111827;
+    }
+
+    .contact-form-preview input,
+    .contact-form-preview textarea{
+      width:100%;
+      padding:16px;
+      margin-bottom:18px;
+      border-radius:16px;
+      border:1px solid #ddd;
+      font-family:inherit;
+    }
+
+    /* FAQ */
+
+    .faq{
+      background:#f9fafb;
+    }
+
+    .faq-item{
+      background:#fff;
+      margin-bottom:18px;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid #eee;
+    }
+
+    .faq-question{
+      padding:24px;
+      font-weight:600;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:0.4s;
+      padding:0 24px;
+      color:#6b7280;
+      line-height:1.8;
+    }
+
+    .faq-item.active .faq-answer{
+      max-height:200px;
+      padding-bottom:24px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111827;
+      color:#d1d5db;
+      padding:70px 0 30px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:40px;
+      margin-bottom:40px;
+    }
+
+    footer h4{
+      color:#fff;
+      margin-bottom:20px;
+    }
+
+    footer ul{
+      list-style:none;
+    }
+
+    footer li{
+      margin-bottom:12px;
+    }
+
+    .copyright{
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:25px;
+      text-align:center;
+      color:#9ca3af;
+    }
+
+    /* MODAL */
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      opacity:0;
+      visibility:hidden;
+      transition:0.4s;
+      z-index:9999;
+      padding:20px;
+    }
+
+    .modal.active{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .modal-box{
+      background:#fff;
+      width:100%;
+      max-width:520px;
+      padding:40px;
+      border-radius:30px;
+      position:relative;
+      transform:translateY(40px);
+      transition:0.4s;
+    }
+
+    .modal.active .modal-box{
+      transform:translateY(0);
+    }
+
+    .close-modal{
+      position:absolute;
+      top:18px;
+      right:22px;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+    .modal-box h3{
+      font-size:34px;
+      margin-bottom:25px;
+    }
+
+    .modal-box input,
+    .modal-box textarea{
+      width:100%;
+      padding:16px;
+      border-radius:16px;
+      border:1px solid #ddd;
+      margin-bottom:18px;
+      font-family:inherit;
+    }
+
+    /* ANIMATION */
+
+    .fade-up{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s;
+    }
+
+    .fade-up.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:992px){
+
+      .hero h1{
+        font-size:52px;
+      }
+
+      .about-grid,
+      .video-grid,
+      .contact-box{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-grid,
+      .highlight-grid,
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .section-title{
+        font-size:36px;
+      }
+
+      .gallery-grid,
+      .highlight-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .contact-box{
+        padding:40px 25px;
+      }
+
+      iframe{
+        height:260px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <h2>PropShell</h2>
+          <span>Maraimalai Nagar</span>
+        </div>
+
+        <button class="nav-btn open-modal">
+          Book Site Visit
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content fade-up">
+
+        <div class="hero-tag">
+          Premium Villa Plots in Maraimalai Nagar
+        </div>
+
+        <h1>
+          Invest in Chennai’s Fastest Growing Corridor
+        </h1>
+
+        <p>
+          DTCP & RERA approved villa plots with premium infrastructure, excellent connectivity, and high appreciation potential near GST Road.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="primary-btn open-modal">
+            Get Free Consultation
+          </button>
+
+          <a href="#about" class="secondary-btn">
+            Explore Project
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="fade-up">
+          <div class="section-tag">
+            About The Project
+          </div>
+
+          <h2 class="section-title">
+            Smart Investment Opportunity for Future Living
+          </h2>
+
+          <p class="section-text">
+            Located in the rapidly developing Maraimalai Nagar corridor, this premium plotted development offers modern infrastructure, strong connectivity, and excellent future value.
+          </p>
+
+          <p class="section-text">
+            Designed for investors and families seeking long-term growth, the project includes wide roads, gated security, landscaped surroundings, and ready-to-build villa plots.
+          </p>
+
+          <button class="primary-btn open-modal">
+            Request Brochure
+          </button>
+        </div>
+
+        <div class="about-image fade-up">
+          <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+
+  <section class="gallery">
+
+    <div class="container">
+
+      <div class="center fade-up">
+        <div class="section-tag">
+          Project Gallery
+        </div>
+
+        <h2 class="section-title">
+          Explore Premium Living Spaces
+        </h2>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card fade-up">
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="gallery-overlay">
+            <h4>Premium Villa Plot</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="gallery-overlay">
+            <h4>Luxury Community</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="gallery-overlay">
+            <h4>Wide Roads</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="gallery-overlay">
+            <h4>Modern Infrastructure</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="gallery-overlay">
+            <h4>Green Environment</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="gallery-overlay">
+            <h4>Future Ready Layout</h4>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VIDEO -->
+
+  <section class="video-section">
+
+    <div class="container">
+
+      <div class="video-grid">
+
+        <div class="fade-up">
+
+          <div class="section-tag">
+            Project Walkthrough
+          </div>
+
+          <h2 class="section-title">
+            Experience Modern Community Living
+          </h2>
+
+          <p class="section-text" style="color:#d1d5db;">
+            Discover premium villa plots with organized layouts, secure surroundings, and strong future investment value.
+          </p>
+
+          <button class="primary-btn open-modal">
+            Schedule Site Visit
+          </button>
+
+        </div>
+
+        <div class="fade-up">
+          <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- HIGHLIGHTS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="center fade-up">
+
+        <div class="section-tag">
+          Project Highlights
+        </div>
+
+        <h2 class="section-title">
+          Why Buyers Choose This Community
+        </h2>
+
+      </div>
+
+      <div class="highlight-grid">
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">01</div>
+
+          <h4>DTCP & RERA Approved</h4>
+
+          <p>
+            Fully approved project with clear documentation and secure investment opportunity.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">02</div>
+
+          <h4>Strategic Location</h4>
+
+          <p>
+            Excellent connectivity to GST Road, schools, colleges, and IT corridors.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">03</div>
+
+          <h4>Premium Infrastructure</h4>
+
+          <p>
+            Black top roads, gated access, drainage systems, and modern planning.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">04</div>
+
+          <h4>High Appreciation</h4>
+
+          <p>
+            Maraimalai Nagar continues to grow as a major investment hotspot.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">05</div>
+
+          <h4>Bank Loan Assistance</h4>
+
+          <p>
+            Easy financing support from leading financial institutions and banks.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">06</div>
+
+          <h4>Ready to Build</h4>
+
+          <p>
+            Villa plots are construction-ready with developed infrastructure in place.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="contact-box fade-up">
+
+        <div>
+
+          <div class="section-tag" style="color:#e9d5ff;">
+            Contact Us
+          </div>
+
+          <h2 class="section-title">
+            Let’s Help You Find the Perfect Investment
+          </h2>
+
+          <p class="section-text" style="color:#ede9fe;">
+            Speak with our property experts and schedule a personalized site visit today.
+          </p>
+
+          <div class="contact-details">
+            <p>📞 +91 98765 43210</p>
+            <p>📧 sales@propshell.com</p>
+            <p>📍 Maraimalai Nagar, Chennai</p>
+          </div>
+
+        </div>
+
+        <div class="contact-form-preview">
+
+          <h3 style="margin-bottom:25px;">
+            Quick Inquiry
+          </h3>
+
+          <input type="text" placeholder="Your Name">
+
+          <input type="email" placeholder="Email Address">
+
+          <textarea rows="4" placeholder="Your Message"></textarea>
+
+          <button class="primary-btn open-modal" style="width:100%;">
+            Open Full Contact Form
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section class="faq">
+
+    <div class="container">
+
+      <div class="center fade-up">
+
+        <div class="section-tag">
+          FAQ
+        </div>
+
+        <h2 class="section-title">
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Where is the project located?
+          <span>+</span>
+        </div>
+
+        <div class="faq-answer">
+          The project is located in Maraimalai Nagar with excellent access to GST Road and major city connectivity.
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Is the project approved?
+          <span>+</span>
+        </div>
+
+        <div class="faq-answer">
+          Yes, the project is fully DTCP & RERA approved with legal documentation.
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Is bank loan assistance available?
+          <span>+</span>
+        </div>
+
+        <div class="faq-answer">
+          Yes, loan assistance is available through major banking partners.
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Can I schedule a site visit?
+          <span>+</span>
+        </div>
+
+        <div class="faq-answer">
+          Absolutely. Use any CTA button on the page to schedule your free site visit.
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h4>PropShell</h4>
+
+          <p>
+            Premium real estate investment opportunities designed for future growth and modern living.
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+
+          <ul>
+            <li>About</li>
+            <li>Gallery</li>
+            <li>Highlights</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+
+          <ul>
+            <li>+91 98765 43210</li>
+            <li>sales@propshell.com</li>
+            <li>Chennai</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Newsletter</h4>
+
+          <p>
+            Get updates on new launches and offers.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 PropShell. All Rights Reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- MODAL -->
+
+  <div class="modal" id="contactModal">
+
+    <div class="modal-box">
+
+      <div class="close-modal">&times;</div>
+
+      <h3>
+        Schedule Your Site Visit
+      </h3>
+
+      <input type="text" placeholder="Full Name">
+
+      <input type="email" placeholder="Email Address">
+
+      <textarea rows="5" placeholder="Your Inquiry"></textarea>
+
+      <button class="primary-btn" style="width:100%;">
+        Submit Inquiry
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    // MODAL
+
+    const modal = document.getElementById('contactModal');
+    const openBtns = document.querySelectorAll('.open-modal');
+    const closeBtn = document.querySelector('.close-modal');
+
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal){
+        modal.classList.remove('active');
+      }
+    });
+
+    // FAQ
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // SCROLL ANIMATION
+
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    },{
+      threshold:0.15
+    });
+
+    fadeElements.forEach(el => {
+      observer.observe(el);
+    });
+
+  </script>
+
+</body>
+</html>
