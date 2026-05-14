@@ -104,8 +104,8 @@
       display:flex;
       align-items:center;
       background:
-      linear-gradient(to right, rgba(0,0,0,0.82), rgba(0,0,0,0.35)),
-      url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop');
+      linear-gradient(to right, rgba(0,0,0,0.52), rgba(0,0,0,0.15)),
+      url('/image/bannerpropshell.png');
       background-size:cover;
       background-position:center;
       color:#fff;
@@ -315,6 +315,104 @@
   transform:scale(1.06);
 }
 
+
+/*=========================
+PROJECT LOCATION
+==========================*/
+
+.project-location{
+    padding:100px 0;
+    background:#f7f7f7;
+}
+
+.location-title{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:50px;
+    color:#111;
+}
+
+.location-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+}
+
+.location-card{
+    background:#fff;
+    border-radius:35px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.location-card:hover{
+    transform:translateY(-8px);
+}
+
+.map-card iframe{
+    width:100%;
+    height:700px;
+    border:0;
+    display:block;
+}
+
+.layout-card img{
+    width:100%;
+    height:700px;
+    object-fit:cover;
+    display:block;
+}
+
+
+/* tablet */
+
+@media(max-width:992px){
+
+    .location-grid{
+        grid-template-columns:1fr;
+    }
+
+    .location-title{
+        font-size:44px;
+    }
+
+    .map-card iframe,
+    .layout-card img{
+        height:500px;
+    }
+
+}
+
+
+/* mobile */
+
+@media(max-width:768px){
+
+    .project-location{
+        padding:70px 0;
+    }
+
+    .location-title{
+        font-size:34px;
+        margin-bottom:30px;
+    }
+
+    .location-grid{
+        gap:25px;
+    }
+
+    .map-card iframe,
+    .layout-card img{
+        height:320px;
+    }
+
+    .location-card{
+        border-radius:22px;
+    }
+
+}
+
 /* Floating Glow */
 
 .about-image-box::after{
@@ -468,7 +566,7 @@
     }
 
     .highlight-card{
-      background:#fff;
+      background:#c7c3c3;
       padding:40px 30px;
       border-radius:24px;
       box-shadow:0 10px 30px rgba(0,0,0,0.06);
@@ -766,13 +864,11 @@
     <div class="container">
       <div class="hero-content fade-up">
 
-        <div class="hero-tag">
+        <div  style="font-size: large;" class="hero-tag">
           Premium Villa Plots in Maraimalai Nagar
         </div>
 
-        <h1>
-          Invest in Chennai’s Fastest Growing Corridor
-        </h1>
+       
 
         <p>
           DTCP & RERA approved villa plots with premium infrastructure, excellent connectivity, and high appreciation potential near GST Road.
@@ -806,46 +902,48 @@
       <div class="about-left fade-up">
 
         <div class="section-mini-title">
-          ABOUT THE PROJECT
+         Discover Your Future at Propshell Sencia
         </div>
 
         <h2   style="font-size: 28px;"  class="about-main-title">
-          Smart Investment Opportunity for <br> Future 
-          Living
+        Invest in Chennai’s Fastest Growing Corridor
         </h2>
 
-        <p  style="font-size: 18px;" class="about-description">
-          Located in the rapidly developing Maraimalai Nagar corridor,
-          this premium plotted development offers the perfect blend
-          of accessibility, infrastructure, and long-term investment value.
+        <p  style="font-size: 14px; text-align: justify;" class="about-description">
+          Propshell Sencia is an exclusive gated community spread over 5 acres, offering 152 spacious residential plots (ranging from 593 to 2258 sq. ft.). With prices starting at just ₹2,999 per sq. ft., this is more than land—it’s a smart investment in your future.
+Why Choose Propshell Sencia?
+
+<p  style="font-size: 14px;  font-weight: bold;"> 
+✔ Prime Location – Situated in one of Chennai’s fastest-growing areas.<br>
+✔ Modern Amenities – Enjoy a perfect blend of comfort and convenience.<br>
+✔ Freedom to Build – Design your dream home exactly the way you want.<br>
+✔ Peaceful Living, well-connected neighborhood designed for a thriving lifestyle.<br></p>
+<br>
         </p>
 
         <!-- FEATURE GRID -->
 
-        <div class="feature-grid">
+        <div  class="feature-grid">
 
           <div class="feature-card">
             <div class="feature-line"></div>
-            <h4>DTCP & RERA Approved</h4>
+            <h4 style="font-size: 18px;" >DTCP & RERA Approved</h4>
           </div>
 
           <div class="feature-card">
             <div class="feature-line"></div>
-            <h4>Near GST Road Connectivity</h4>
+            <h4 style="font-size: 18px;" >Near GST Road Connectivity</h4>
           </div>
 
           <div class="feature-card">
             <div class="feature-line"></div>
-            <h4>Black Top Internal Roads</h4>
+            <h4 style="font-size: 18px;" >Black Top Internal Roads</h4>
           </div>
 
           <div class="feature-card">
             <div class="feature-line"></div>
-            <h4>Rapidly Growing Investment Zone</h4>
+            <h4 style="font-size: 18px;" >Rapidly Growing Investment Zone</h4>
           </div>
-
-          
-
         </div>
 
         <button class="about-btn open-modal">
@@ -861,7 +959,7 @@
         <div class="about-image-box">
 
           <img
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"
+            src="image/propshell/aboutpropshell.jpg"
             alt="Premium Villa"
           >
 
@@ -894,7 +992,7 @@
       <div class="gallery-grid">
 
         <div class="gallery-card fade-up">
-          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/propshell/g1.jpg">
 
           <div class="gallery-overlay">
             <h4>Premium Villa Plot</h4>
@@ -902,7 +1000,7 @@
         </div>
 
         <div class="gallery-card fade-up">
-          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/propshell/g2.jpg">
 
           <div class="gallery-overlay">
             <h4>Luxury Community</h4>
@@ -910,7 +1008,7 @@
         </div>
 
         <div class="gallery-card fade-up">
-          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/propshell/g3.jpg">
 
           <div class="gallery-overlay">
             <h4>Wide Roads</h4>
@@ -918,7 +1016,7 @@
         </div>
 
         <div class="gallery-card fade-up">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/propshell/g4.jpg">
 
           <div class="gallery-overlay">
             <h4>Modern Infrastructure</h4>
@@ -926,7 +1024,7 @@
         </div>
 
         <div class="gallery-card fade-up">
-          <img src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/propshell/g5.jpg">
 
           <div class="gallery-overlay">
             <h4>Green Environment</h4>
@@ -934,7 +1032,7 @@
         </div>
 
         <div class="gallery-card fade-up">
-          <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1200&auto=format&fit=crop">
+          <img src="image/propshell/g6.jpg">
 
           <div class="gallery-overlay">
             <h4>Future Ready Layout</h4>
@@ -949,7 +1047,7 @@
 
   <!-- VIDEO -->
 
-  <section class="video-section">
+  <!-- <section class="video-section">
 
     <div class="container">
 
@@ -983,7 +1081,41 @@
 
     </div>
 
-  </section>
+  </section> -->
+
+  <section class="project-location">
+
+    <div class="container">
+
+        <h2 class="location-title">
+            Project Location & Layouts
+        </h2>
+
+        <div class="location-grid">
+
+            <!-- LEFT MAP -->
+
+            <div class="location-card map-card">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4656.128904201447!2d80.03464727507308!3d12.772999987524457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDQ2JzIyLjgiTiA4MMKwMDInMTQuMCJF!5e1!3m2!1sen!2sin!4v1778737629720!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+
+            <!-- RIGHT LAYOUT IMAGE -->
+
+            <div class="location-card layout-card">
+
+                <img
+                src="image/propshell/layout.jpg"
+                alt="Layout Plan">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
   <!-- HIGHLIGHTS -->
 
@@ -1049,26 +1181,20 @@
           <div class="highlight-number">05</div>
 
           <h4>Bank Loan Assistance</h4>
-
           <p>
             Easy financing support from leading financial institutions and banks.
           </p>
         </div>
-
         <div class="highlight-card fade-up">
           <div class="highlight-number">06</div>
 
           <h4>Ready to Build</h4>
-
           <p>
             Villa plots are construction-ready with developed infrastructure in place.
           </p>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- CONTACT -->
@@ -1081,21 +1207,21 @@
 
         <div>
 
-          <div class="section-tag" style="color:#e9d5ff;">
+          <h1><div class="section-tag" style="color:#e9d5ff; font-size: 38px;">
             Contact Us
-          </div>
+          </div></h1><br>
 
-          <h2 class="section-title">
+          <!-- <h2 class="section-title">
             Let’s Help You Find the Perfect Investment
-          </h2>
+          </h2> --> 
 
           <p class="section-text" style="color:#ede9fe;">
             Speak with our property experts and schedule a personalized site visit today.
-          </p>
+          </p><br>
 
           <div class="contact-details">
-            <p>📞 +91 98765 43210</p>
-            <p>📧 sales@propshell.com</p>
+            <p>📞 +91 98807 79843</p>
+            <p>📧 marketing@homeaurarealtor.com</p>
             <p>📍 Maraimalai Nagar, Chennai</p>
           </div>
 
@@ -1239,7 +1365,7 @@
       </div>
 
       <div class="copyright">
-        © 2026 PropShell. All Rights Reserved.
+        © 2026 Home Aura Realtor. All Rights Reserved.
       </div>
 
     </div>
