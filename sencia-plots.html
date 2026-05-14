@@ -316,6 +316,227 @@
 }
 
 
+
+/*=====================
+AMENITIES
+=====================*/
+
+.amenities-section{
+padding:120px 0;
+background:linear-gradient(
+180deg,
+#fafafa,
+#f4f4f4
+);
+overflow:hidden;
+position:relative;
+}
+
+.amenities-section::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(124,58,237,.08);
+filter:blur(130px);
+top:-150px;
+left:-150px;
+border-radius:50%;
+}
+
+.amenities-header{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-mini{
+letter-spacing:4px;
+font-size:13px;
+font-weight:700;
+color:#7c3aed;
+display:block;
+margin-bottom:16px;
+}
+
+.amenities-header h2{
+font-size:58px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.amenities-header p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+color:#6b7280;
+font-size:18px;
+}
+
+.amenities-grid{
+
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:28px;
+
+}
+
+.amenity-card{
+
+background:rgba(255,255,255,.65);
+backdrop-filter:blur(20px);
+
+padding:35px 25px;
+border-radius:30px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.5);
+
+transition:.5s;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.amenity-card::before{
+content:"";
+position:absolute;
+width:100%;
+height:0;
+left:0;
+bottom:0;
+
+background:linear-gradient(
+135deg,
+rgba(124,58,237,.1),
+transparent
+);
+
+transition:.5s;
+}
+
+.amenity-card:hover::before{
+height:100%;
+}
+
+.amenity-card:hover{
+
+transform:
+translateY(-15px);
+
+box-shadow:
+0 30px 60px rgba(124,58,237,.18);
+
+}
+
+.icon-box{
+
+width:90px;
+height:90px;
+
+margin:auto;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:40px;
+
+border-radius:25px;
+
+background:#fff;
+
+margin-bottom:25px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+transition:.5s;
+
+}
+
+.amenity-card:hover .icon-box{
+
+transform:
+rotate(8deg)
+scale(1.1);
+
+}
+
+.amenity-card h4{
+
+font-size:18px;
+line-height:1.5;
+
+font-weight:600;
+
+}
+
+/* tablet */
+
+@media(max-width:1100px){
+
+.amenities-grid{
+grid-template-columns:
+repeat(3,1fr);
+}
+
+}
+
+
+/* mobile */
+
+@media(max-width:768px){
+
+.amenities-section{
+padding:80px 0;
+}
+
+.amenities-header h2{
+font-size:38px;
+}
+
+.amenities-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:18px;
+
+}
+
+.amenity-card{
+padding:25px 18px;
+border-radius:22px;
+}
+
+.icon-box{
+width:70px;
+height:70px;
+font-size:30px;
+}
+
+.amenity-card h4{
+font-size:15px;
+}
+
+}
+
+
+/* very small */
+
+@media(max-width:480px){
+
+.amenities-grid{
+grid-template-columns:1fr;
+}
+
+}
 /*=========================
 PROJECT LOCATION
 ==========================*/
@@ -1115,6 +1336,107 @@ Why Choose Propshell Sencia?
 
     </div>
 
+</section>
+
+<!-- AMENITIES -->
+
+<section class="amenities-section">
+
+<div class="container">
+
+    <div class="amenities-header fade-up">
+
+        <span class="section-mini">
+            PREMIUM FEATURES
+        </span>
+
+        <h2>
+            Amenities
+        </h2>
+
+        <p>
+            Carefully planned infrastructure and lifestyle amenities
+            designed for comfortable future living.
+        </p>
+
+    </div>
+
+
+<div class="amenities-grid">
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🎠</div>
+<h4>Children's Play Area</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">💧</div>
+<h4>Potable Drinking Water</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🛡️</div>
+<h4>24/7 Security</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🏡</div>
+<h4>Secured Community</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🧘</div>
+<h4>Yoga & Meditation</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🌳</div>
+<h4>Landscaped Park</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">📹</div>
+<h4>CCTV</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🛣️</div>
+<h4>Blacktop Road</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">💡</div>
+<h4>Fully Lighted Campus</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🏋️</div>
+<h4>Outdoor Gym</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🧱</div>
+<h4>Overall Compound Wall</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🚰</div>
+<h4>Water Connection</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">📶</div>
+<h4>Underground Internet Line</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">⚡</div>
+<h4>Underground Power Line</h4>
+</div>
+
+</div>
+
+</div>
 </section>
 
   <!-- HIGHLIGHTS -->
