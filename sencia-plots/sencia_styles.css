@@ -94,7 +94,7 @@ nav {
   justify-content: center;
   background:
     linear-gradient(to right, rgba(15, 23, 42, 0.64), rgba(15, 23, 42, 0.32)),
-    url("/image/bannerpropshell.png");
+    url("/image/propshell/bannerprop.png");
   background-size: cover;
   background-position: center;
   color: #fff;
