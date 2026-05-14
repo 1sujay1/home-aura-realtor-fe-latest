@@ -29,10 +29,34 @@
       transform: translateY(-4px);
       box-shadow: 0 22px 46px rgba(0, 0, 0, 0.22);
     }
-    .whatsapp-float svg {
+    .whatsapp-float img {
       width: 28px;
       height: 28px;
-      fill: currentColor;
+      object-fit: contain;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .header-nav-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .header-nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      padding: 8px 0;
+    }
+    .header-nav-links a:hover {
+      color: #d1d5db;
     }
     @keyframes whatsapp-bounce {
       0%, 100% { transform: translateY(0); }
@@ -59,14 +83,18 @@
 
   <header>
     <div class="container">
-      <nav>
-        <!-- <div class="logo">
-          <h2>PropShell</h2>
-          <span>Maraimalai Nagar</span>
-        </div> -->
-  <div class="logo">
-  <img src="/image/proplogo.png" alt="Logo">
-</div>
+      <nav class="header-nav">
+        <div class="logo">
+          <img src="/image/proplogo.png" alt="Logo">
+        </div>
+
+        <div class="header-nav-links">
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#location">Location</a>
+          <a href="#amenities">Amenities</a>
+          <a href="#contact">Contact</a>
+        </div>
 
         <button class="nav-btn open-modal">
           Book Site Visit
@@ -192,7 +220,7 @@ Why Choose Propshell Sencia?
 
   <!-- GALLERY -->
 
-  <section class="gallery">
+  <section id="gallery" class="gallery">
 
     <div class="container">
 
@@ -300,7 +328,7 @@ Why Choose Propshell Sencia?
 
   </section> -->
 
-  <section class="project-location">
+  <section id="location" class="project-location">
 
     <div class="container">
 
@@ -336,7 +364,7 @@ Why Choose Propshell Sencia?
 
 <!-- AMENITIES -->
 
-<section class="amenities-section">
+<section id="amenities" class="amenities-section">
 
 <div class="container">
 
@@ -517,7 +545,7 @@ Why Choose Propshell Sencia?
 
   <!-- CONTACT -->
 
-  <section>
+  <section id="contact">
 
     <div class="container">
 
