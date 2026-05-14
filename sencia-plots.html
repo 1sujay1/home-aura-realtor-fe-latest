@@ -65,14 +65,16 @@
       padding:18px 0;
     }
 
-    .logo{
-      color:#fff;
-    }
-
-    .logo h2{
+    
+    /* .logo h2{
       font-size:28px;
-      font-weight:800;
-    }
+      font-weight:800; */
+      .logo img{
+  height:48px;
+  width:auto;
+  object-fit:contain;
+}
+    
 
     .logo span{
       font-size:12px;
@@ -172,43 +174,215 @@
     }
 
     /* ABOUT */
+/* =========================================
+   PREMIUM ABOUT SECTION
+========================================= */
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-    }
+.premium-about{
+  background:#f5f5f7;
+  padding:120px 0;
+  position:relative;
+  overflow:hidden;
+}
 
-    .section-tag{
-      color:#7c3aed;
-      font-size:14px;
-      font-weight:700;
-      letter-spacing:3px;
-      margin-bottom:18px;
-      text-transform:uppercase;
-    }
+.about-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
 
-    .section-title{
-      font-size:48px;
-      line-height:1.2;
-      margin-bottom:25px;
-      font-weight:800;
-    }
+.section-mini-title{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:5px;
+  color:#6d28d9;
+  margin-bottom:22px;
+}
 
-    .section-text{
-      color:#6b7280;
-      line-height:1.9;
-      margin-bottom:35px;
-      font-size:17px;
-    }
+.about-main-title{
+  font-size:68px;
+  line-height:1.08;
+  font-weight:800;
+  color:#111827;
+  margin-bottom:30px;
+}
 
-    .about-image img{
-      border-radius:30px;
-      box-shadow:0 20px 60px rgba(0,0,0,0.12);
-      height:600px;
-      object-fit:cover;
-    }
+.about-description{
+  font-size:20px;
+  line-height:2;
+  color:#4b5563;
+  max-width:650px;
+  margin-bottom:40px;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-bottom:30px;
+}
+
+.feature-card{
+  background:#fff;
+  padding:20px 20px;
+  border-radius:22px;
+  border:1px solid #ececec;
+  box-shadow:0 8px 25px rgba(0,0,0,0.05);
+  transition:0.4s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.feature-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(124,58,237,0.08),
+    transparent
+  );
+  opacity:0;
+  transition:0.4s;
+}
+
+.feature-card:hover::before{
+  opacity:1;
+}
+
+.feature-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(124,58,237,0.15);
+}
+
+.feature-line{
+  width:58px;
+  height:7px;
+  background:#7c3aed;
+  border-radius:50px;
+  margin-bottom:18px;
+}
+
+.feature-card h4{
+  font-size:22px;
+  line-height:1.5;
+  color:#1f2937;
+  font-weight:600;
+}
+
+.about-btn{
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #5b21b6
+  );
+  color:#fff;
+  border:none;
+  padding:18px 42px;
+  border-radius:60px;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s ease;
+  box-shadow:0 15px 35px rgba(124,58,237,0.25);
+}
+
+.about-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+.about-right{
+  position:relative;
+}
+
+.about-image-box{
+  position:relative;
+  border-radius:36px;
+  overflow:hidden;
+  height:760px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.18);
+}
+
+.about-image-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1s ease;
+}
+
+.about-image-box:hover img{
+  transform:scale(1.06);
+}
+
+/* Floating Glow */
+
+.about-image-box::after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(124,58,237,0.18);
+  filter:blur(100px);
+  top:-100px;
+  left:-80px;
+  z-index:2;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+  .about-main-title{
+    font-size:56px;
+  }
+
+}
+
+@media(max-width:992px){
+
+  .about-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .about-main-title{
+    font-size:48px;
+  }
+
+  .about-image-box{
+    height:600px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .premium-about{
+    padding:80px 0;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-main-title{
+    font-size:38px;
+  }
+
+  .about-description{
+    font-size:17px;
+    line-height:1.9;
+  }
+
+  .feature-card h4{
+    font-size:18px;
+  }
+
+  .about-image-box{
+    height:420px;
+  }
+
+}
 
     /* GALLERY */
 
@@ -571,10 +745,13 @@
   <header>
     <div class="container">
       <nav>
-        <div class="logo">
+        <!-- <div class="logo">
           <h2>PropShell</h2>
           <span>Maraimalai Nagar</span>
-        </div>
+        </div> -->
+  <div class="logo">
+  <img src="image/proplogo.png" alt="Logo">
+</div>
 
         <button class="nav-btn open-modal">
           Book Site Visit
@@ -616,42 +793,87 @@
   </section>
 
   <!-- ABOUT -->
+<!-- ABOUT SECTION -->
 
-  <section id="about">
-    <div class="container">
+<section id="about" class="premium-about">
 
-      <div class="about-grid">
+  <div class="container">
 
-        <div class="fade-up">
-          <div class="section-tag">
-            About The Project
-          </div>
+    <div class="about-wrapper">
 
-          <h2 class="section-title">
-            Smart Investment Opportunity for Future Living
-          </h2>
+      <!-- LEFT CONTENT -->
 
-          <p class="section-text">
-            Located in the rapidly developing Maraimalai Nagar corridor, this premium plotted development offers modern infrastructure, strong connectivity, and excellent future value.
-          </p>
+      <div class="about-left fade-up">
 
-          <p class="section-text">
-            Designed for investors and families seeking long-term growth, the project includes wide roads, gated security, landscaped surroundings, and ready-to-build villa plots.
-          </p>
-
-          <button class="primary-btn open-modal">
-            Request Brochure
-          </button>
+        <div class="section-mini-title">
+          ABOUT THE PROJECT
         </div>
 
-        <div class="about-image fade-up">
-          <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h2   style="font-size: 28px;"  class="about-main-title">
+          Smart Investment Opportunity for <br> Future 
+          Living
+        </h2>
+
+        <p  style="font-size: 18px;" class="about-description">
+          Located in the rapidly developing Maraimalai Nagar corridor,
+          this premium plotted development offers the perfect blend
+          of accessibility, infrastructure, and long-term investment value.
+        </p>
+
+        <!-- FEATURE GRID -->
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+            <div class="feature-line"></div>
+            <h4>DTCP & RERA Approved</h4>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-line"></div>
+            <h4>Near GST Road Connectivity</h4>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-line"></div>
+            <h4>Black Top Internal Roads</h4>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-line"></div>
+            <h4>Rapidly Growing Investment Zone</h4>
+          </div>
+
+          
+
+        </div>
+
+        <button class="about-btn open-modal">
+          Request Brochure
+        </button>
+
+      </div>
+
+      <!-- RIGHT IMAGE -->
+
+      <div class="about-right fade-up">
+
+        <div class="about-image-box">
+
+          <img
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"
+            alt="Premium Villa"
+          >
+
         </div>
 
       </div>
 
     </div>
-  </section>
+
+  </div>
+
+</section>
 
   <!-- GALLERY -->
 
@@ -985,7 +1207,7 @@
           </p>
         </div>
 
-        <div>
+        <!-- <div>
           <h4>Quick Links</h4>
 
           <ul>
@@ -994,7 +1216,7 @@
             <li>Highlights</li>
             <li>FAQ</li>
           </ul>
-        </div>
+        </div> -->
 
         <div>
           <h4>Contact</h4>
