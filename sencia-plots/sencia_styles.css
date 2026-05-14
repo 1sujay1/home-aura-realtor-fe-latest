@@ -1072,7 +1072,7 @@ IMAGE SECTION
 
 .banner-image img{
   width:100%;
-  max-width:70%;
+  max-width:1200px;
   height:auto;
   object-fit:contain;
   display:block;
