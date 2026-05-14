@@ -125,10 +125,16 @@ nav {
   gap: 32px;
   text-align: center;
 }
+@media screen and (min-width: 767px) {
+  .hero-text-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 33% !important;
+    width: 100%;
+  }
+}
 .hero-text-wrapper {
-  position: absolute;
-  top: 100%;
-  left: 33%;
+  /* position: static; */
   width: 100%;
 }
 .hero-tag {
@@ -151,6 +157,10 @@ nav {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-size: 16px;
+  max-width: calc(100% - 40px);
+  white-space: normal;
+  line-height: 1.2;
 }
 
 .hero h1 {
