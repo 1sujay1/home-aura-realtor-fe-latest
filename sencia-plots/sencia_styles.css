@@ -163,6 +163,10 @@ nav {
   line-height: 1.2;
 }
 
+.hero-tag.hidden {
+  display: none !important;
+}
+
 .hero h1 {
   font-size: 72px;
   line-height: 1.02;

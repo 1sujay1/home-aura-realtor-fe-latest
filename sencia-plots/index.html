@@ -215,7 +215,7 @@
 
   <section class="hero">
     <div class="container">
-      <div  style="color: blue; text-align: center;white-space: nowrap;cursor: pointer;" class="hero-tag open-modal">
+      <div id="heroTag" style="color: blue; text-align: center;white-space: nowrap;cursor: pointer;" class="hero-tag open-modal">
         Premium Villa Plots in Maraimalai Nagar <br>
         <!-- *GET 10+10 OFFER (10 SQFT FREE + 10 GOLD COIN) ON BOOKING* -->
       </div>
@@ -883,16 +883,19 @@ Why Choose Propshell Sencia?
 
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const navLinks = document.getElementById('navLinks');
+    const heroTag = document.getElementById('heroTag');
 
     hamburgerMenu.addEventListener('click', () => {
       hamburgerMenu.classList.toggle('active');
       navLinks.classList.toggle('active');
+      if (heroTag) heroTag.classList.toggle('hidden');
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburgerMenu.classList.remove('active');
         navLinks.classList.remove('active');
+        if (heroTag) heroTag.classList.remove('hidden');
       });
     });
 
