@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PropShell - Sereno Plots for Avadi - Veppampattu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sencia_styles.css" />
+  <style>
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+      z-index: 9999;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.22);
+    }
+    .whatsapp-float img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .header-nav-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .header-nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      padding: 8px 0;
+    }
+    .header-nav-links a:hover {
+      color: #d1d5db;
+    }
+
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1000;
+    }
+    .hamburger-menu span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger-menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+    .hamburger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger-menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    @media (max-width: 860px) {
+      .hamburger-menu {
+        display: flex;
+      }
+      .header-nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        position: relative;
+      }
+      .header-nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 8px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        justify-content: flex-start;
+        z-index: 999;
+      }
+      .header-nav-links.active {
+        display: flex;
+      }
+      .header-nav-links a {
+        font-size: 14px;
+        padding: 12px 16px;
+        display: block;
+        color: #fff;
+        transition: color 0.2s ease;
+      }
+      .header-nav-links a:hover {
+        color: #60a5fa;
+      }
+      .nav-btn {
+        display: none;
+      }
+      .hero {
+        min-height: 75vh;
+        background-position: top center;
+      }
+      .hero-content {
+        padding-top: 120px;
+      }
+      .hero-tag {
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 18px;
+        font-size: 12px;
+        width: auto;
+        max-width: calc(100% - 30px);
+        letter-spacing: 0.06em;
+        line-height: 1.25;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .primary-btn,
+      .secondary-btn {
+        width: 100%;
+        padding: 16px 24px;
+      }
+    }
+
+    @keyframes whatsapp-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .whatsapp-float.animate {
+      animation: whatsapp-bounce 3s ease-in-out infinite;
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-597VNNBMX0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-597VNNBMX0');
+</script>
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+    <div class="container">
+      <nav class="header-nav">
+        <div class="logo">
+          <img src="/image/proplogo.png" alt="Logo">
+        </div>
+
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="header-nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#location">Location</a>
+          <a href="#amenities">Amenities</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button class="nav-btn open-modal">
+          Book Site Visit
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+      <div  style="font-size: large; color: blue; text-align: center;" class="hero-tag">
+        Premium Villa Plots in Veppampattu <br>
+        <!-- *GET 10+10 OFFER (10 SQFT FREE + 10 GOLD COIN) ON BOOKING* -->
+      </div>
+      <div class="hero-content fade-up">
+
+       
+<div class="hero-text-wrapper">
+        <!-- <p>
+          DTCP & RERA approved villa plots with premium infrastructure, excellent connectivity, and high appreciation potential near GST Road.
+        </p> -->
+
+        <div class="hero-buttons">
+          <button class="primary-btn open-modal">
+            GET BROUCHURE
+          </button>
+
+          <a href="#about" class="secondary-btn">
+            Explore Project
+          </a>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+<!-- ABOUT SECTION -->
+
+<section id="about" class="premium-about">
+
+  <div class="container">
+
+    <div class="about-wrapper">
+
+      <!-- LEFT CONTENT -->
+
+      <div class="about-left fade-up">
+
+        <div class="section-mini-title">
+         Discover Your Future at Propshell Sereno
+        </div>
+
+        <h2   style="font-size: 20px;"  class="about-main-title">
+          DTCP & RERA Approved Villa Plots in Veppampattu 
+        </h2>
+
+        <p  style="font-size: 14px; text-align: justify;" class="about-description">
+         A Peaceful place to build your future, SERENO is located in the growing Avadi–Veppampattu area. It is a well-planned plotted development made for both investment and future living with 
+         improving roads, railway access, and easy connectivity to nearby work locations like TIDEL Park. It offers both convenience and comfort. Veppampattu is quickly becoming a preferred residential area in Chennai, and SERENO gives you the chance to be part of this growth. It offers a good balance of affordable pricing, future value, and a calm, peaceful environment making it a safe and smart choice for your next investment or home.
+
+         <p  style="font-size: 14px;  font-weight: bold;"> 
+✔ Prime Location – Situated in one of Chennai’s fastest-growing areas.<br>
+✔ Modern Amenities – Enjoy a perfect blend of comfort and convenience.<br>
+</p>
+<br>
+        </p>
+
+ 
+
+        <!-- FEATURE GRID -->
+
+        <div  class="feature-grid">
+
+          <div class="feature-card">
+            <div class="feature-line"></div>
+            <h4 style="font-size: 18px;" >DTCP & RERA Approved</h4>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-line"></div>
+            <h4 style="font-size: 18px;" >Villa plots</h4>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-line"></div>
+            <h4 style="font-size: 18px;" >294 Plots</h4>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-line"></div>
+            <h4 style="font-size: 18px;" >₹1840 /sq. ft</h4>
+          </div>
+        </div>
+
+        <button class="about-btn open-modal">
+          Request Brochure
+        </button>
+
+      </div>
+
+      <!-- RIGHT IMAGE -->
+
+      <div class="about-right fade-up">
+
+        <div class="about-image-box">
+
+          <img
+            src="/image/propshell/aboutpropshell.jpg"
+            alt="Premium Villa"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+       <!-- RIGHT IMAGE SECTION -->
+<div class="banner-image">
+
+  <!-- MAIN IMAGE -->
+  <img src="\image\banner2.png" alt="Sencia Entrance">
+
+  <!-- OPTIONAL OVERLAY -->
+  <div class="image-overlay"></div>
+</div>
+
+  <!-- GALLERY -->
+
+  <section id="gallery" class="gallery">
+
+    <div class="container">
+
+      <div class="center fade-up">
+        <div class="section-tag">
+          Project Gallery
+        </div>
+
+        <h2 class="section-title">
+          Explore Premium Living Spaces
+        </h2>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card fade-up">
+          <img src="/image/propshell/g1.jpg">
+
+          <div class="gallery-overlay">
+            <h4>Premium Villa Plot</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="/image/propshell/g2.jpg">
+
+          <div class="gallery-overlay">
+            <h4>Luxury Community</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="/image/propshell/g3.jpg">
+
+          <div class="gallery-overlay">
+            <h4>Wide Roads</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="/image/propshell/g4.jpg">
+
+          <div class="gallery-overlay">
+            <h4>Modern Infrastructure</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="/image/propshell/g5.jpg">
+
+          <div class="gallery-overlay">
+            <h4>Green Environment</h4>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-up">
+          <img src="/image/propshell/g6.jpg">
+
+          <div class="gallery-overlay">
+            <h4>Future Ready Layout</h4>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VIDEO -->
+
+  <!-- <section class="video-section">
+
+    <div class="container">
+
+      <div class="video-grid">
+
+        <div class="fade-up">
+
+          <div class="section-tag">
+            Project Walkthrough
+          </div>
+
+          <h2 class="section-title">
+            Experience Modern Community Living
+          </h2>
+
+          <p class="section-text" style="color:#d1d5db;">
+            Discover premium villa plots with organized layouts, secure surroundings, and strong future investment value.
+          </p>
+
+          <button class="primary-btn open-modal">
+            Schedule Site Visit
+          </button>
+
+        </div>
+
+        <div class="fade-up">
+          <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section> -->
+
+  <section id="location" class="project-location">
+
+    <div class="container">
+
+        <h2 class="location-title">
+            Project Location & Layouts
+        </h2>
+
+        <div class="location-grid">
+
+            <!-- LEFT MAP -->
+
+            <div class="location-card map-card">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4656.128904201447!2d80.03464727507308!3d12.772999987524457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDQ2JzIyLjgiTiA4MMKwMDInMTQuMCJF!5e1!3m2!1sen!2sin!4v1778737629720!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+
+            <!-- RIGHT LAYOUT IMAGE -->
+
+            <div class="location-card layout-card">
+
+                <img
+                src="/image/propshell/layout.jpg"
+                alt="Layout Plan">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- AMENITIES -->
+
+<section id="amenities" class="amenities-section">
+
+<div class="container">
+
+    <div class="amenities-header fade-up">
+
+        <span class="section-mini">
+            PREMIUM FEATURES
+        </span>
+
+        <h2 style="font-size: 28px;">
+            Amenities
+        </h2>
+
+        <p>
+            Carefully planned infrastructure and lifestyle amenities
+            designed for comfortable future living.
+        </p>
+
+    </div>
+
+
+<div class="amenities-grid">
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🎠</div>
+<h4>Children's Play Area</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">💧</div>
+<h4>Potable Drinking Water</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🛡️</div>
+<h4>24/7 Security</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🏡</div>
+<h4>Secured Community</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🧘</div>
+<h4>Yoga & Meditation</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🌳</div>
+<h4>Landscaped Park</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">📹</div>
+<h4>CCTV</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🛣️</div>
+<h4>Blacktop Road</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">💡</div>
+<h4>Fully Lighted Campus</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🏋️</div>
+<h4>Outdoor Gym</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🧱</div>
+<h4>Overall Compound Wall</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">🚰</div>
+<h4>Water Connection</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">📶</div>
+<h4>Underground Internet Line</h4>
+</div>
+
+<div class="amenity-card fade-up">
+<div class="icon-box">⚡</div>
+<h4>Underground Power Line</h4>
+</div>
+
+</div>
+
+</div>
+</section>
+
+  <!-- HIGHLIGHTS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="center fade-up">
+
+        <div class="section-tag">
+          Project Highlights
+        </div>
+
+        <h2 class="section-title">
+          Why Buyers Choose This Community
+        </h2>
+
+      </div>
+
+      <div class="highlight-grid">
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">01</div>
+
+          <h4>DTCP & RERA Approved</h4>
+
+          <p>
+            Fully approved project with clear documentation and secure investment opportunity.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">02</div>
+
+          <h4>Strategic Location</h4>
+
+          <p>
+            Excellent connectivity to GST Road, schools, colleges, and IT corridors.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">03</div>
+
+          <h4>Premium Infrastructure</h4>
+
+          <p>
+            Black top roads, gated access, drainage systems, and modern planning.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">04</div>
+
+          <h4>High Appreciation</h4>
+
+          <p>
+            Maraimalai Nagar continues to grow as a major investment hotspot.
+          </p>
+        </div>
+
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">05</div>
+
+          <h4>Bank Loan Assistance</h4>
+          <p>
+            Easy financing support from leading financial institutions and banks.
+          </p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-number">06</div>
+
+          <h4>Ready to Build</h4>
+          <p>
+            Villa plots are construction-ready with developed infrastructure in place.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-box fade-up">
+
+        <div>
+
+          <h1><div class="section-tag" style="color:#e9d5ff; font-size: 38px;">
+            Contact Us
+          </div></h1><br>
+
+          <!-- <h2 class="section-title">
+            Let’s Help You Find the Perfect Investment
+          </h2> --> 
+
+          <p class="section-text" style="color:#ede9fe;">
+            Speak with our property experts and schedule a personalized site visit today.
+          </p><br>
+
+          <div class="contact-details">
+            <p>📞 +91 98807 79843</p>           
+            <p>📍 Maraimalai Nagar, Chennai</p>
+          </div>
+
+        </div>
+
+        <div class="contact-form-preview">
+
+          <h3 style="margin-bottom:25px;">
+            Quick Inquiry
+          </h3>
+<form id="contact-form2">
+          <input type="text" name="name" placeholder="Your Name">
+          <input type="email" name="email" placeholder="Your Email">
+
+          <input type="tel" name="mobile" placeholder="Mobile Number">
+
+          <textarea rows="4" name="message" placeholder="Your Message"></textarea>
+
+          <button id="contact_form_btn2" class="primary-btn" type="submit" style="width:100%;">
+            Submit
+          </button>
+           <div id="success_message_col2" class='mt-2'>
+
+                            </div>
+                            <div id="error_message2" class='error'>
+            
+                            </div>
+</form>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section class="faq">
+
+    <div class="container">
+
+      <div class="center fade-up">
+
+        <div class="section-tag">
+          FAQ
+        </div>
+
+        <h2 class="section-title">
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Where is the project located?
+          <span>+</span>
+        </div>
+
+        <div class="faq-answer">
+          The project is located in Maraimalai Nagar, Chennai, near GST Road, with excellent connectivity to schools, colleges, and IT corridors.
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Is the project approved?
+          <span>+</span>
+        </div>
+
+        <div class="faq-answer">
+          Yes, the project is fully DTCP & RERA approved with legal documentation.
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Is bank loan assistance available?
+          <span>+</span>
+        </div>
+
+        <div class="faq-answer">
+          Yes, loan assistance is available through major banking partners.
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Can I schedule a site visit?
+          <span>+</span>
+        </div>
+
+        <div class="faq-answer">
+          Absolutely. Use any CTA button on the page to schedule your free site visit.
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h4>PropShell</h4>
+
+          <p style="font-size: 14px; text-align: justify;">
+            Premium Villa Plots in Maraimalai Nagar with DTCP & RERA approval, modern amenities, and excellent connectivity. Invest in your dream home today!
+          </p>
+        </div>
+
+        <!-- <div>
+          <h4>Quick Links</h4>
+
+          <ul>
+            <li>About</li>
+            <li>Gallery</li>
+            <li>Highlights</li>
+            <li>FAQ</li>
+          </ul>
+        </div> -->
+
+        <div>
+          <h4>Contact</h4>
+
+          <ul>
+            <li>+91 98807 79843</li>
+            <li>marketing@homeaurarealtor.com</li>
+            <li>Chennai</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Newsletter</h4>
+
+          <p>
+            Get updates on new launches and offers.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 Home Aura Realtor. All Rights Reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- MODAL -->
+
+  <div class="modal" id="contactModal">
+
+    <div class="modal-box">
+
+      <div class="close-modal">&times;</div>
+
+      <h3>
+        Schedule Your Site Visit
+      </h3>
+ <form id="contact-form">
+      <input type="text" name="name" placeholder="Full Name">
+<input type="email" name="email" placeholder="Email Address">
+      <input type="tel" name="mobile" placeholder="Mobile Number">
+
+      <textarea rows="5" name="message" placeholder="Your Inquiry"></textarea>
+
+      <button id="contact_form_btn" type="submit" class="primary-btn" style="width:100%;">
+        Submit Inquiry
+      </button>
+       <div id="success_message_col" class='mt-2'>
+
+                </div>
+                <div id="error_message" class='error'>
+
+                </div>
+</form>
+    </div>
+
+  </div>
+<script src="contact.js"></script>
+  <script>
+
+    // HAMBURGER MENU
+
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburgerMenu.addEventListener('click', () => {
+      hamburgerMenu.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // MODAL
+
+    const modal = document.getElementById('contactModal');
+    const openBtns = document.querySelectorAll('.open-modal');
+    const closeBtn = document.querySelector('.close-modal');
+
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal){
+        modal.classList.remove('active');
+      }
+    });
+
+    // FAQ
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // SCROLL ANIMATION
+
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    },{
+      threshold:0.15
+    });
+
+    fadeElements.forEach(el => {
+      observer.observe(el);
+    });
+
+  </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/config.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const whatsappBtn = document.createElement('a');
+        whatsappBtn.href = 'https://wa.me/918123317373';
+        whatsappBtn.target = '_blank';
+        whatsappBtn.rel = 'noreferrer noopener';
+        whatsappBtn.className = 'whatsapp-float animate';
+        whatsappBtn.setAttribute('aria-label', 'Chat on WhatsApp');
+        whatsappBtn.innerHTML = `
+         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.964-.941 1.162-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.499.1-.202.05-.376-.025-.524-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.198 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.27-.198-.57-.345m-5.446 7.443h-.016a9.878 9.878 0 01-5.031-1.378l-.36-.214-3.75.982.998-3.648-.236-.375a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.118 1.03 6.986 2.9a9.825 9.825 0 012.896 6.966c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297a11.773 11.773 0 00-8.415-3.47c-6.555 0-11.894 5.336-11.896 11.892 0 2.189.594 4.315 1.721 6.18l-1.792 6.53 6.733-1.768a11.83 11.83 0 006.233 1.748c6.555 0 11.894-5.336 11.896-11.891a11.77 11.77 0 00-3.479-8.386"/>
+        </svg>
+        `;
+        document.body.appendChild(whatsappBtn);
+      });
+    </script>
+</body>
+</html>
