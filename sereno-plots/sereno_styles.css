@@ -93,7 +93,7 @@ nav {
   align-items: center;
   justify-content: center;
   background:
-    linear-gradient(to right, rgba(15, 23, 42, 0.64), rgba(15, 23, 42, 0.32)),
+    linear-gradient(to right, rgba(15, 23, 42, 0.26), rgba(15, 23, 42, 0.32)),
     url("/sereno-plots/image/banner.png");
   background-size: cover;
   background-position: center;
@@ -139,7 +139,7 @@ nav {
 }
 .hero-tag {
   position: fixed;
-  top: 15%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
   display: inline-flex;
